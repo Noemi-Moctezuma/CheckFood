@@ -1,6 +1,9 @@
 .header{
     position: absolute;
 }
+.back-button{
+    --background:#d7e6a3;
+}
 .contenido{
     --background: white!important;
 }
@@ -11,8 +14,8 @@ ion-toolbar {
 .container-gris{
     background-color: #f6f5f4;
     margin: 25px;
-    height: calc(100% - 50px);
     border-radius: 35px;
+    overflow: auto;
 }
 .franja-verde {
     background-color: #81af4f;
@@ -23,7 +26,86 @@ ion-toolbar {
 .container-blanco{
     background-color:white;
     border-radius: 25px;
-    width: 80%;
-    height: 50%;
-    margin: 30% 10% 10% 10%;
+    height: fit-content;
+    margin: 25% 25px 25px 25px!important;
+}
+.container-foto {
+    position: relative;
+}
+.foto {
+    position: absolute; 
+    transform: translate(-50%, -50%);
+    left: 50%;
+    border: 4px solid #d7e6a3;
+    z-index: 2;
+}
+.container-info{
+    position: relative;
+}
+.prod{
+    color: #c75142; font-family: OpenSans-Bold;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 30%;
+    padding: 30% 5% 0% 5%;
+    margin: 0%;
+    position: relative;
+}
+.acs-titulos{
+    color: black;
+    text-align: center;
+    margin: 0;
+    font-family: OpenSans-Light;
+    font-size: 13px;
+}
+.acs-contenido{
+    color: #c75142;
+    text-align: center;
+    margin: 0;
+    font-family: OpenSans-SemiBoldItalic;
+    font-size: 12px;
+}
+.col-nopadding{
+    padding-bottom: 0;
+}
+.rad-titulo{
+    color: #c75142;
+    font-family: OpenSans-Bold;
+    font-size: 14px;
+    margin: 3%;
+}
+.radiografia{
+    margin: 0 3%;
+    color: black;
+    font-size: 12px;
+    p{
+        font-family: OpenSans-Italic;
+    }
+    span{
+        font-family: OpenSans-Regular;
+    }
+}
+.ing-titulo{
+    color: #81af4f;
+    font-family: OpenSans-Bold;
+    font-size: 14px;
+    margin: 3%;
+}
+.ingredientes{
+    margin: 0 3%;
+    color: black;
+    p{
+        font-family: OpenSans-LightItalic;
+        font-size: 12px;
+    }
+}
+.precios {
+    position: absolute; 
+    transform: translateY(-25%);
+    left: 77%;
+    border: 2px solid #c75142;
+    border-radius: 50%;
+    width: 50px!important;
+    height: 50px!important;
+    z-index: 2;
 }

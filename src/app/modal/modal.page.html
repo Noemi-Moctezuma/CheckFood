@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border header">
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button class="cls-button" color="dark" defaultHref="" icon="close" (click)="dismiss()">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="contenido">
+  <div class="container-gris">
+    <div class="franja-roja"></div>
+    <div class="container-circulo">
+      <div class="circulo" >
+        <fa-icon class="icono" icon="dollar-sign" size=3x></fa-icon>
+      </div>
+    </div>
+    <h2 class="titulo">PRECIOS</h2>
+    <div>
+      <ion-img src="{{this.banner_aurrera}}"></ion-img>
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

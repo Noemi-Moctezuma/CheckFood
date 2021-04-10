@@ -1,13 +1,119 @@
 <ion-header class="ion-no-border header">
   <ion-toolbar >
     <ion-buttons slot="start">
-      <ion-back-button color="light" defaultHref="home"></ion-back-button>
+      <ion-back-button class="back-button" color="dark" defaultHref="home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen class="contenido">
   <div class="container-gris">
     <div class="franja-verde"></div>
-    <div class="container-blanco"></div>
+    <div class="container-blanco">
+      <div class="container-foto">
+        <ion-img class="foto" src="{{ imagen_rt }}"></ion-img>
+      </div> 
+        <ion-fab-button (click)="precios()" class="precios"  color="light"> 
+          <fa-icon style="pointer-events:none;" icon="dollar-sign" size=2x></fa-icon>
+        </ion-fab-button>
+      <div class="container-info">
+        <p class="prod">{{ nombre }} ({{ cantidad_tamano }})</p>
+        <ion-grid *ngIf=" azucares || sodio || calorias || adulcorante || fibra || grasas ">
+          <ion-row>
+            <ion-col class="col-nopadding"  *ngIf= "azucares">
+              <ion-row>
+                <ion-col class="col-nopadding">
+                  <p class="acs-titulos">Azúcar</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col >
+                  <p class="acs-contenido">{{ azucares }}</p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col class="col-nopadding" *ngIf= "calorias">
+              <ion-row>
+                <ion-col class="col-nopadding">
+                  <p class="acs-titulos">Calorías</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <p class="acs-contenido">{{ calorias }}</p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col class="col-nopadding" *ngIf= "sodio">
+              <ion-row>
+                <ion-col class="col-nopadding">
+                  <p class="acs-titulos">Sodio</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <p class="acs-contenido">{{ sodio }}</p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="col-nopadding" *ngIf= "adulcorante">
+              <ion-row>
+                <ion-col class="col-nopadding">
+                  <p class="acs-titulos">Adulcorantes</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <p class="acs-contenido">{{ adulcorante }}</p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col class="col-nopadding" *ngIf= "fibra">
+              <ion-row>
+                <ion-col class="col-nopadding">
+                  <p class="acs-titulos">Fibra</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <p class="acs-contenido">{{ fibra }}</p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col class="col-nopadding" *ngIf= "grasas">
+              <ion-row>
+                <ion-col class="col-nopadding">
+                  <p class="acs-titulos">Grasas</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <p class="acs-contenido">{{ grasas }}</p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-row *ngIf=" sellos || aditivos">
+          <ion-col>
+            <span class="rad-titulo">Radiografía</span>
+            <div class="radiografia">
+              <p *ngIf="sellos" style="margin-bottom: 0;">Sellos de advertencia: <span>{{ sellos }}</span></p>
+              <p *ngIf="aditivos" style="margin-top: 0;">Aditivos: <span>{{ aditivos }}</span></p>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf=" ingredientes ">
+          <ion-col>
+            <span class="ing-titulo">Ingredientes</span>
+            <div class="ingredientes">
+              <p *ngIf="ingredientes">{{ ingredientes }}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
   </div>
+  
 </ion-content>
