@@ -33,9 +33,8 @@ aditivos: any;
 sellos: any;
 imagen_rt: any;
 data_modal: any[];
-_id = 1;
-//_id = localStorage.getItem('id');
-
+producto_id = 6;
+user_id = 2;
   constructor(
     private dataService: DataService,
     public modalController: ModalController
@@ -51,11 +50,11 @@ _id = 1;
   ngOnInit() {
     const sendData = {
       opcion: 'info',
-      id: this._id
+      id: this.producto_id
     };
     this.dataService.post('producto', sendData).subscribe(data =>
       {
-        this.id = data[0].id;
+        this.producto_id = data[0].id;
         this.nombre = data[0].nombre;
         this.precio_comer = data[0].precio_comer;
         this.precio_soriana = data[0].precio_soriana;
@@ -77,6 +76,8 @@ _id = 1;
         this.aditivos = data[0].aditivos;
         this.sellos = data[0].sellos;
         this.imagen_rt = data[0].imagen_rt;
+        //obtener el id del usuario
+        //this.user_id = parseInt(localStorage.getItem('id'), 10);
         this.data_modal = [{
           precio_comer: this.precio_comer,
           precio_soriana: this.precio_soriana,
@@ -87,9 +88,9 @@ _id = 1;
           banner_comer: this.banner_comer,
           banner_aurrera: this.banner_aurrera,
           banner_soriana: this.banner_soriana,
+          user_id : this.user_id,
+          producto_id : this.producto_id
         }];
-        console.log(this.nombre);
-        console.log(data);
       });
   }
 
