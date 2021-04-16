@@ -48,5 +48,40 @@ ion-toolbar {
 .titulo{
     text-align: center;
     color: #81af4f;
-    font-family: Cocogoose-SemiBold;
+    font-family: OpenSans-Bold;
+    margin: 25px 0 0 0;
+    padding-bottom: 15px;
+    border-bottom: dotted 4px black;
+}
+.publicidad{
+    height: 140px!important;
+    width: auto;
+}
+ion-row{
+    margin: 0 10px 25px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: white;
+}
+.container-banner{
+    border-radius: 20px 0 0 20px;
+}
+.container-precio{
+    border-radius: 0 20px 20px 0;
+    background-color: #f6f5f4
+}
+.banners{
+    width: auto;
+    height: 50px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+.precio{
+    color: #81af4f;
+    font-family: Opensans-SemiBold;
+}
+.cambio{
+    color: #c75142;
+    font-family: Opensans-Light;
+    letter-spacing: -1px;
 }

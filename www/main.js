@@ -187,6 +187,69 @@ ModalPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 /***/ }),
 
+/***/ "Af+r":
+/*!*************************************!*\
+  !*** ./src/app/modal/modal.page.ts ***!
+  \*************************************/
+/*! exports provided: ModalPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalPage", function() { return ModalPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_modal_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./modal.page.html */ "wwHD");
+/* harmony import */ var _modal_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modal.page.scss */ "qdCT");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
+
+
+
+
+let ModalPage = class ModalPage {
+    constructor(navParams, viewCtrl) {
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+    }
+    ngOnInit() {
+    }
+    ionViewWillEnter() {
+        this.data = this.navParams.data[0];
+        console.log(this.data);
+        this.banner_aurrera = this.data.banner_aurrera;
+        this.banner_comer = this.data.banner_comer;
+        this.banner_soriana = this.data.banner_soriana;
+        this.precio_aurrera = this.data.precio_aurrera;
+        this.precio_comer = this.data.precio_comer;
+        this.precio_soriana = this.data.precio_soriana;
+        this.fecha_aurrera = this.data.fecha_actualizacion_aurrera;
+        this.fecha_soriana = this.data.fecha_actualizacion_comer;
+        this.precio_soriana = this.data.fecha_actualizacion_soriana;
+        this.user_id = this.data.user_id;
+        this.producto_id = this.data.producto_id;
+        console.log(this.user_id);
+    }
+    dismiss() {
+        this.viewCtrl.dismiss();
+    }
+};
+ModalPage.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["NavParams"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
+];
+ModalPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-modal',
+        template: _raw_loader_modal_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_modal_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], ModalPage);
+
+
+
+/***/ }),
+
 /***/ "AytR":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -351,8 +414,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "8tEE");
 /* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "twK/");
 /* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "wHSu");
-/* harmony import */ var _modalCambioPerfil__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modalCambioPerfil */ "XARU");
-
 
 
 
@@ -379,26 +440,13 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
         entryComponents: [],
         imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeModule"], _modal_modal_module__WEBPACK_IMPORTED_MODULE_7__["ModalPageModule"], _modalCambioPerfil__WEBPACK_IMPORTED_MODULE_13__["ModalModule"]],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeModule"], _modal_modal_module__WEBPACK_IMPORTED_MODULE_7__["ModalPageModule"]],
         providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicRouteStrategy"] }],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
     })
 ], AppModule);
 
 
-
-/***/ }),
-
-/***/ "bpxj":
-/*!**********************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modalCambioPerfil/modal.component.html ***!
-  \**********************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jw-modal\">\n    <div class=\"jw-modal-body\">\n        <ng-content></ng-content>\n    </div>\n</div>\n<div class=\"jw-modal-background\"></div>");
 
 /***/ }),
 
@@ -685,51 +733,6 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ "mEWK":
-/*!****************************************************!*\
-  !*** ./src/app/modalCambioPerfil/modal.service.ts ***!
-  \****************************************************/
-/*! exports provided: ModalService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalService", function() { return ModalService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-let ModalService = class ModalService {
-    constructor() {
-        this.modals = [];
-    }
-    add(modal) {
-        // add modal to array of active modals
-        this.modals.push(modal);
-    }
-    remove(id) {
-        // remove modal from array of active modals
-        this.modals = this.modals.filter(x => x.id !== id);
-    }
-    open(id) {
-        // open modal specified by id
-        const modal = this.modals.find(x => x.id === id);
-        modal.open();
-    }
-    close(id) {
-        // close modal specified by id
-        const modal = this.modals.find(x => x.id === id);
-        modal.close();
-    }
-};
-ModalService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({ providedIn: 'root' })
-], ModalService);
-
-
-
-/***/ }),
-
 /***/ "qdCT":
 /*!***************************************!*\
   !*** ./src/app/modal/modal.page.scss ***!
@@ -739,7 +742,7 @@ ModalService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".header {\n  position: absolute;\n}\n\n.cls-button {\n  border-radius: 50%;\n  --box-shadow:none;\n  --background:#d7e6a3!important;\n}\n\n.contenido {\n  --background: white!important;\n}\n\nion-toolbar {\n  --background: transparent;\n  --ion-color-base: transparent !important;\n}\n\n.container-gris {\n  background-color: #f6f5f4;\n  margin: 25px;\n  border-radius: 35px;\n  overflow: auto;\n}\n\n.franja-roja {\n  background-color: #c75142;\n  width: 100%;\n  height: 70px;\n  border-radius: 35px 35px 0 0;\n}\n\n.container-circulo {\n  position: relative;\n}\n\n.circulo {\n  height: 75px;\n  width: 75px;\n  background-color: white;\n  border-radius: 50%;\n  position: absolute;\n  transform: translate(-50%, -75%);\n  left: 50%;\n  text-align: center;\n}\n\n.icono {\n  color: black;\n  margin: 0;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n.titulo {\n  text-align: center;\n  color: #81af4f;\n  font-family: Cocogoose-SemiBold;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXG1vZGFsLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0FBQ0o7O0FBQ0E7RUFDSSxrQkFBQTtFQUNBLGlCQUFBO0VBQ0EsOEJBQUE7QUFFSjs7QUFBQTtFQUNJLDZCQUFBO0FBR0o7O0FBREE7RUFDSSx5QkFBQTtFQUNBLHdDQUFBO0FBSUo7O0FBRkE7RUFDSSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7QUFLSjs7QUFIQTtFQUNJLHlCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSw0QkFBQTtBQU1KOztBQUpBO0VBQ0ksa0JBQUE7QUFPSjs7QUFMQTtFQUNJLFlBQUE7RUFDQSxXQUFBO0VBQ0EsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0NBQUE7RUFDQSxTQUFBO0VBQ0Esa0JBQUE7QUFRSjs7QUFOQTtFQUNJLFlBQUE7RUFBYyxTQUFBO0VBQ2Qsa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLGdDQUFBO0FBVUo7O0FBUkE7RUFDSSxrQkFBQTtFQUNBLGNBQUE7RUFDQSwrQkFBQTtBQVdKIiwiZmlsZSI6Im1vZGFsLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oZWFkZXJ7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuLmNscy1idXR0b24ge1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgLS1ib3gtc2hhZG93Om5vbmU7XHJcbiAgICAtLWJhY2tncm91bmQ6I2Q3ZTZhMyFpbXBvcnRhbnQ7XHJcbn1cclxuLmNvbnRlbmlkb3tcclxuICAgIC0tYmFja2dyb3VuZDogd2hpdGUhaW1wb3J0YW50O1xyXG59XHJcbmlvbi10b29sYmFyIHtcclxuICAgIC0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcbiAgICAtLWlvbi1jb2xvci1iYXNlOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG59XHJcbi5jb250YWluZXItZ3Jpc3tcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmNmY1ZjQ7XHJcbiAgICBtYXJnaW46IDI1cHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzNXB4O1xyXG4gICAgb3ZlcmZsb3c6IGF1dG87XHJcbn1cclxuLmZyYW5qYS1yb2phIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNjNzUxNDI7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogNzBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDM1cHggMzVweCAwIDA7XHJcbn1cclxuLmNvbnRhaW5lci1jaXJjdWxve1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcbi5jaXJjdWxve1xyXG4gICAgaGVpZ2h0OiA3NXB4O1xyXG4gICAgd2lkdGg6IDc1cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTsgXHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNzUlKTtcclxuICAgIGxlZnQ6IDUwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4uaWNvbm97XHJcbiAgICBjb2xvcjogYmxhY2s7IG1hcmdpbjogMDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogNTAlO1xyXG4gICAgbGVmdDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XHJcbn1cclxuLnRpdHVsb3tcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yOiAjODFhZjRmO1xyXG4gICAgZm9udC1mYW1pbHk6IENvY29nb29zZS1TZW1pQm9sZDtcclxufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".header {\n  position: absolute;\n}\n\n.cls-button {\n  border-radius: 50%;\n  --box-shadow:none;\n  --background:#d7e6a3!important;\n}\n\n.contenido {\n  --background: white!important;\n}\n\nion-toolbar {\n  --background: transparent;\n  --ion-color-base: transparent !important;\n}\n\n.container-gris {\n  background-color: #f6f5f4;\n  margin: 25px;\n  border-radius: 35px;\n  overflow: auto;\n}\n\n.franja-roja {\n  background-color: #c75142;\n  width: 100%;\n  height: 70px;\n  border-radius: 35px 35px 0 0;\n}\n\n.container-circulo {\n  position: relative;\n}\n\n.circulo {\n  height: 75px;\n  width: 75px;\n  background-color: white;\n  border-radius: 50%;\n  position: absolute;\n  transform: translate(-50%, -75%);\n  left: 50%;\n  text-align: center;\n}\n\n.icono {\n  color: black;\n  margin: 0;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n.titulo {\n  text-align: center;\n  color: #81af4f;\n  font-family: OpenSans-Bold;\n  margin: 25px 0 0 0;\n  padding-bottom: 15px;\n  border-bottom: dotted 4px black;\n}\n\n.publicidad {\n  height: 140px !important;\n  width: auto;\n}\n\nion-row {\n  margin: 0 10px 25px;\n  border: 1px solid white;\n  border-radius: 20px;\n  background-color: white;\n}\n\n.container-banner {\n  border-radius: 20px 0 0 20px;\n}\n\n.container-precio {\n  border-radius: 0 20px 20px 0;\n  background-color: #f6f5f4;\n}\n\n.banners {\n  width: auto;\n  height: 50px;\n  object-fit: cover;\n  object-position: 50% 50%;\n}\n\n.precio {\n  color: #81af4f;\n  font-family: Opensans-SemiBold;\n}\n\n.cambio {\n  color: #c75142;\n  font-family: Opensans-Light;\n  letter-spacing: -1px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXG1vZGFsLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0FBQ0o7O0FBQ0E7RUFDSSxrQkFBQTtFQUNBLGlCQUFBO0VBQ0EsOEJBQUE7QUFFSjs7QUFBQTtFQUNJLDZCQUFBO0FBR0o7O0FBREE7RUFDSSx5QkFBQTtFQUNBLHdDQUFBO0FBSUo7O0FBRkE7RUFDSSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7QUFLSjs7QUFIQTtFQUNJLHlCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSw0QkFBQTtBQU1KOztBQUpBO0VBQ0ksa0JBQUE7QUFPSjs7QUFMQTtFQUNJLFlBQUE7RUFDQSxXQUFBO0VBQ0EsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0NBQUE7RUFDQSxTQUFBO0VBQ0Esa0JBQUE7QUFRSjs7QUFOQTtFQUNJLFlBQUE7RUFBYyxTQUFBO0VBQ2Qsa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLGdDQUFBO0FBVUo7O0FBUkE7RUFDSSxrQkFBQTtFQUNBLGNBQUE7RUFDQSwwQkFBQTtFQUNBLGtCQUFBO0VBQ0Esb0JBQUE7RUFDQSwrQkFBQTtBQVdKOztBQVRBO0VBQ0ksd0JBQUE7RUFDQSxXQUFBO0FBWUo7O0FBVkE7RUFDSSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtBQWFKOztBQVhBO0VBQ0ksNEJBQUE7QUFjSjs7QUFaQTtFQUNJLDRCQUFBO0VBQ0EseUJBQUE7QUFlSjs7QUFiQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSx3QkFBQTtBQWdCSjs7QUFkQTtFQUNJLGNBQUE7RUFDQSw4QkFBQTtBQWlCSjs7QUFmQTtFQUNJLGNBQUE7RUFDQSwyQkFBQTtFQUNBLG9CQUFBO0FBa0JKIiwiZmlsZSI6Im1vZGFsLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oZWFkZXJ7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuLmNscy1idXR0b24ge1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgLS1ib3gtc2hhZG93Om5vbmU7XHJcbiAgICAtLWJhY2tncm91bmQ6I2Q3ZTZhMyFpbXBvcnRhbnQ7XHJcbn1cclxuLmNvbnRlbmlkb3tcclxuICAgIC0tYmFja2dyb3VuZDogd2hpdGUhaW1wb3J0YW50O1xyXG59XHJcbmlvbi10b29sYmFyIHtcclxuICAgIC0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcbiAgICAtLWlvbi1jb2xvci1iYXNlOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG59XHJcbi5jb250YWluZXItZ3Jpc3tcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmNmY1ZjQ7XHJcbiAgICBtYXJnaW46IDI1cHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzNXB4O1xyXG4gICAgb3ZlcmZsb3c6IGF1dG87XHJcbn1cclxuLmZyYW5qYS1yb2phIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNjNzUxNDI7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogNzBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDM1cHggMzVweCAwIDA7XHJcbn1cclxuLmNvbnRhaW5lci1jaXJjdWxve1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcbi5jaXJjdWxve1xyXG4gICAgaGVpZ2h0OiA3NXB4O1xyXG4gICAgd2lkdGg6IDc1cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTsgXHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNzUlKTtcclxuICAgIGxlZnQ6IDUwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4uaWNvbm97XHJcbiAgICBjb2xvcjogYmxhY2s7IG1hcmdpbjogMDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogNTAlO1xyXG4gICAgbGVmdDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XHJcbn1cclxuLnRpdHVsb3tcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yOiAjODFhZjRmO1xyXG4gICAgZm9udC1mYW1pbHk6IE9wZW5TYW5zLUJvbGQ7XHJcbiAgICBtYXJnaW46IDI1cHggMCAwIDA7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMTVweDtcclxuICAgIGJvcmRlci1ib3R0b206IGRvdHRlZCA0cHggYmxhY2s7XHJcbn1cclxuLnB1YmxpY2lkYWR7XHJcbiAgICBoZWlnaHQ6IDE0MHB4IWltcG9ydGFudDtcclxuICAgIHdpZHRoOiBhdXRvO1xyXG59XHJcbmlvbi1yb3d7XHJcbiAgICBtYXJnaW46IDAgMTBweCAyNXB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgd2hpdGU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn1cclxuLmNvbnRhaW5lci1iYW5uZXJ7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4IDAgMCAyMHB4O1xyXG59XHJcbi5jb250YWluZXItcHJlY2lve1xyXG4gICAgYm9yZGVyLXJhZGl1czogMCAyMHB4IDIwcHggMDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmNmY1ZjRcclxufVxyXG4uYmFubmVyc3tcclxuICAgIHdpZHRoOiBhdXRvO1xyXG4gICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgb2JqZWN0LWZpdDogY292ZXI7XHJcbiAgICBvYmplY3QtcG9zaXRpb246IDUwJSA1MCU7XHJcbn1cclxuLnByZWNpb3tcclxuICAgIGNvbG9yOiAjODFhZjRmO1xyXG4gICAgZm9udC1mYW1pbHk6IE9wZW5zYW5zLVNlbWlCb2xkO1xyXG59XHJcbi5jYW1iaW97XHJcbiAgICBjb2xvcjogI2M3NTE0MjtcclxuICAgIGZvbnQtZmFtaWx5OiBPcGVuc2Fucy1MaWdodDtcclxuICAgIGxldHRlci1zcGFjaW5nOiAtMXB4O1xyXG59Il19 */");
 
 /***/ }),
 
@@ -806,7 +809,7 @@ AppRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header class=\"ion-no-border header\">\r\n  <ion-toolbar >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button class=\"cls-button\" color=\"dark\" defaultHref=\"\" icon=\"close\" (click)=\"dismiss()\">\r\n      </ion-back-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content fullscreen class=\"contenido\">\r\n  <div class=\"container-gris\">\r\n    <div class=\"franja-roja\"></div>\r\n    <div class=\"container-circulo\">\r\n      <div class=\"circulo\" >\r\n        <fa-icon class=\"icono\" icon=\"dollar-sign\" size=3x></fa-icon>\r\n      </div>\r\n    </div>\r\n    <h2 class=\"titulo\">PRECIOS</h2>\r\n    <div>\r\n      <ion-img src=\"{{this.banner_aurrera}}\"></ion-img>\r\n    </div>\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col></ion-col>\r\n        <ion-col></ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col></ion-col>\r\n        <ion-col></ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col></ion-col>\r\n        <ion-col></ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header class=\"ion-no-border header\">\r\n  <ion-toolbar >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button class=\"cls-button\" color=\"dark\" defaultHref=\"\" icon=\"close\" (click)=\"dismiss()\">\r\n      </ion-back-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content fullscreen class=\"contenido\">\r\n  <div class=\"container-gris\">\r\n    <div class=\"franja-roja\"></div>\r\n    <div class=\"container-circulo\">\r\n      <div class=\"circulo\" >\r\n        <fa-icon class=\"icono\" icon=\"dollar-sign\" size=3x></fa-icon>\r\n      </div>\r\n    </div>\r\n    <h2 class=\"titulo\">PRECIOS</h2>\r\n      <ion-img  class=\"publicidad\" src=\"/assets/fotos/Publicidad_CH.png\"></ion-img>\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col class=\"container-banner\" size= \"7\">\r\n          <ion-img class=\"banners\" src=\"{{this.banner_comer}}\"></ion-img>\r\n        </ion-col>\r\n        <ion-col class=\"container-precio\">\r\n          <ng-container *ngIf=\"this.user_id; else login\">\r\n            <ng-container *ngIf=\"this.precio_comer != 0; else soloSugerirComer\">\r\n              <p class=\"precio\">{{this.precio_comer | currency}} MXN</p>\r\n              <p class=\"cambio\" >SUGERIR PRECIO</p>\r\n            </ng-container>\r\n            <ng-template #soloSugerirComer>SUGERIR PRECIO</ng-template>\r\n          </ng-container>\r\n          <ng-template #login>logeate, ese</ng-template>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col class=\"container-banner\" size= \"7\">\r\n          <ion-img class=\"banners\" src=\"{{this.banner_soriana}}\"></ion-img>\r\n        </ion-col>\r\n        <ion-col class=\"container-precio\"></ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col class=\"container-banner\" size= \"7\">\r\n          <ion-img class=\"banners\" src=\"{{this.banner_aurrera}}\"></ion-img>\r\n        </ion-col>\r\n        <ion-col class=\"container-precio\"></ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ }),
 

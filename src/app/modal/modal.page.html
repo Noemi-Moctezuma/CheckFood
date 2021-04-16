@@ -16,21 +16,34 @@
       </div>
     </div>
     <h2 class="titulo">PRECIOS</h2>
-    <div>
-      <ion-img src="{{this.banner_aurrera}}"></ion-img>
-    </div>
+      <ion-img  class="publicidad" src="/assets/fotos/Publicidad_CH.png"></ion-img>
     <ion-grid>
       <ion-row>
-        <ion-col></ion-col>
-        <ion-col></ion-col>
+        <ion-col class="container-banner" size= "7">
+          <ion-img class="banners" src="{{this.banner_comer}}"></ion-img>
+        </ion-col>
+        <ion-col class="container-precio">
+          <ng-container *ngIf="this.user_id; else login">
+            <ng-container *ngIf="this.precio_comer != 0; else soloSugerirComer">
+              <p class="precio">{{this.precio_comer | currency}} MXN</p>
+              <p class="cambio" >SUGERIR PRECIO</p>
+            </ng-container>
+            <ng-template #soloSugerirComer>SUGERIR PRECIO</ng-template>
+          </ng-container>
+          <ng-template #login>logeate, ese</ng-template>
+        </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col></ion-col>
-        <ion-col></ion-col>
+        <ion-col class="container-banner" size= "7">
+          <ion-img class="banners" src="{{this.banner_soriana}}"></ion-img>
+        </ion-col>
+        <ion-col class="container-precio"></ion-col>
       </ion-row>
       <ion-row>
-        <ion-col></ion-col>
-        <ion-col></ion-col>
+        <ion-col class="container-banner" size= "7">
+          <ion-img class="banners" src="{{this.banner_aurrera}}"></ion-img>
+        </ion-col>
+        <ion-col class="container-precio"></ion-col>
       </ion-row>
     </ion-grid>
   </div>

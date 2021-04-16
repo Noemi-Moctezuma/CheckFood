@@ -9,6 +9,8 @@ import { ModalController, NavParams } from '@ionic/angular';
 export class ModalPage implements OnInit {
 
   constructor(private navParams: NavParams, public viewCtrl: ModalController){}
+  user_id: any;
+  producto_id: any;
   data: any;
   banner_aurrera: any;
   banner_comer: any;
@@ -23,6 +25,8 @@ export class ModalPage implements OnInit {
   }
   ionViewWillEnter(){
     this.data = this.navParams.data[0];
+    console.log(this.data);
+    
     this.banner_aurrera = this.data.banner_aurrera;
     this.banner_comer = this.data.banner_comer;
     this.banner_soriana = this.data.banner_soriana;
@@ -32,6 +36,10 @@ export class ModalPage implements OnInit {
     this.fecha_aurrera = this.data.fecha_actualizacion_aurrera;
     this.fecha_soriana = this.data.fecha_actualizacion_comer;
     this.precio_soriana = this.data.fecha_actualizacion_soriana;
+    this.user_id = this.data.user_id;
+    this.producto_id = this.data.producto_id;
+    console.log(this.user_id);
+    
   }
   dismiss() {
     this.viewCtrl.dismiss();
