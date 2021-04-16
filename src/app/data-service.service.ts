@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   constructor(private http: HttpClient) { }
-    urlLaptop = 'http://192.168.0.19/webservice/checkfood/';
+    urlLaptop = 'http://192.168.1.74/webservice/checkfood/';
     url = 'http://localhost/webservice/checkfood/';
     api = '/service.php';
     

@@ -1,0 +1,47 @@
+<ion-header >
+
+</ion-header>
+<body style="height:100%" >
+  <div class="fondo">
+    
+    <p class="titulo">¿Canjear cupón?</p>
+
+    <div class="linea-punteada">
+
+     
+    </div>
+    <div class="texto">
+      <p>Usted cuenta con:</p>
+      <p style="font-weight: bold; font-size: 20px;">
+        {{puntos}} puntos  
+      </p>
+      <p>lo que equivale a:</p>
+      <p style=" font-weight: bold; font-size: 20px;">
+        $ {{dinero}} pesos mexicanos
+      </p>
+      <br>
+      <p> Si desea cambiarlos presione el botón "canjear puntos", al hacerlo se mostrará el cupón de descuento
+        el cual puede mostrar en las siguientes tiendas de autoservicio: </p>
+      <p>- La Comer
+        <br>
+        - Bodega Ahurrera
+        <br>
+        - Soriana</p>
+      <p>Al canjear el cupón de descuento los puntos se eliminarán de su cuenta por lo que se recomienda tomar captura de pantalla o anotar el cupón de descuento</p>
+    </div>
+
+
+    <button class="boton" (click)="aceptar()" style="margin-right: 5%; background-color:#81af4f;">
+      Canjear cupón
+    </button>
+    <button class="boton" (click)="cancelar()" style="margin-left: 5%; background-color: #c75142;">
+      Cancelar
+    </button>
+
+  </div>
+
+</body>
+
+
+
+

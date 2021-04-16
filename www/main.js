@@ -1,5 +1,42 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "+OVq":
+/*!***********************************************!*\
+  !*** ./src/app/modal/modal-routing.module.ts ***!
+  \***********************************************/
+/*! exports provided: ModalPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalPageRoutingModule", function() { return ModalPageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _modal_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modal.page */ "Af+r");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _modal_page__WEBPACK_IMPORTED_MODULE_3__["ModalPage"]
+    }
+];
+let ModalPageRoutingModule = class ModalPageRoutingModule {
+};
+ModalPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], ModalPageRoutingModule);
+
+
+
+/***/ }),
+
 /***/ 0:
 /*!***************************!*\
   !*** multi ./src/main.ts ***!
@@ -7,7 +44,145 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Rodrigo\Desktop\checkfood\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! C:\Users\anoem\OneDrive\Escritorio\App2\checkfood\src\main.ts */"zUnb");
+
+
+/***/ }),
+
+/***/ "6ejR":
+/*!******************************************************!*\
+  !*** ./src/app/modalCambioPerfil/modal.component.ts ***!
+  \******************************************************/
+/*! exports provided: ModalComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalComponent", function() { return ModalComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_modal_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./modal.component.html */ "bpxj");
+/* harmony import */ var _modal_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modal.component.less */ "GQ0r");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _modal_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modal.service */ "mEWK");
+
+
+
+
+
+let ModalComponent = class ModalComponent {
+    constructor(modalService, el) {
+        this.modalService = modalService;
+        this.el = el;
+        this.element = el.nativeElement;
+    }
+    ngOnInit() {
+        // ensure id attribute exists
+        if (!this.id) {
+            console.error('modal must have an id');
+            return;
+        }
+        // move element to bottom of page (just before </body>) so it can be displayed above everything else
+        document.body.appendChild(this.element);
+        // close modal on background click
+        this.element.addEventListener('click', el => {
+            if (el.target.className === 'jw-modal') {
+                this.close();
+            }
+        });
+        // add self (this modal instance) to the modal service so it's accessible from controllers
+        this.modalService.add(this);
+    }
+    // remove self from modal service when component is destroyed
+    ngOnDestroy() {
+        this.modalService.remove(this.id);
+        this.element.remove();
+    }
+    // open modal
+    open() {
+        this.element.style.display = 'block';
+        document.body.classList.add('jw-modal-open');
+    }
+    // close modal
+    close() {
+        this.element.style.display = 'none';
+        document.body.classList.remove('jw-modal-open');
+    }
+};
+ModalComponent.ctorParameters = () => [
+    { type: _modal_service__WEBPACK_IMPORTED_MODULE_4__["ModalService"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"] }
+];
+ModalComponent.propDecorators = {
+    id: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }]
+};
+ModalComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'jw-modal',
+        template: _raw_loader_modal_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewEncapsulation"].None,
+        styles: [_modal_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], ModalComponent);
+
+
+
+/***/ }),
+
+/***/ "Af+r":
+/*!*************************************!*\
+  !*** ./src/app/modal/modal.page.ts ***!
+  \*************************************/
+/*! exports provided: ModalPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalPage", function() { return ModalPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_modal_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./modal.page.html */ "wwHD");
+/* harmony import */ var _modal_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modal.page.scss */ "qdCT");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
+
+
+
+
+let ModalPage = class ModalPage {
+    constructor(navParams, viewCtrl) {
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+    }
+    ngOnInit() {
+    }
+    ionViewWillEnter() {
+        this.data = this.navParams.data[0];
+        this.banner_aurrera = this.data.banner_aurrera;
+        this.banner_comer = this.data.banner_comer;
+        this.banner_soriana = this.data.banner_soriana;
+        this.precio_aurrera = this.data.precio_aurrera;
+        this.precio_comer = this.data.precio_comer;
+        this.precio_soriana = this.data.precio_soriana;
+        this.fecha_aurrera = this.data.fecha_actualizacion_aurrera;
+        this.fecha_soriana = this.data.fecha_actualizacion_comer;
+        this.precio_soriana = this.data.fecha_actualizacion_soriana;
+    }
+    dismiss() {
+        this.viewCtrl.dismiss();
+    }
+};
+ModalPage.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["NavParams"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
+];
+ModalPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-modal',
+        template: _raw_loader_modal_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_modal_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], ModalPage);
+
 
 
 /***/ }),
@@ -37,6 +212,51 @@ const environment = {
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
+
+/***/ }),
+
+/***/ "Cch1":
+/*!***************************************************!*\
+  !*** ./src/app/modalCambioPerfil/modal.module.ts ***!
+  \***************************************************/
+/*! exports provided: ModalModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalModule", function() { return ModalModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _modal_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modal.component */ "6ejR");
+
+
+
+
+let ModalModule = class ModalModule {
+};
+ModalModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]],
+        declarations: [_modal_component__WEBPACK_IMPORTED_MODULE_3__["ModalComponent"]],
+        exports: [_modal_component__WEBPACK_IMPORTED_MODULE_3__["ModalComponent"]]
+    })
+], ModalModule);
+
+
+
+/***/ }),
+
+/***/ "GQ0r":
+/*!********************************************************!*\
+  !*** ./src/app/modalCambioPerfil/modal.component.less ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("/* MODAL STYLES\n-------------------------------*/\njw-modal {\n  /* modals are hidden by default */\n  display: none;\n}\njw-modal .jw-modal {\n  /* modal container fixed across whole screen */\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  /* z-index must be higher than .jw-modal-background */\n  z-index: 1000;\n  /* enables scrolling for tall modals */\n  overflow: auto;\n}\njw-modal .jw-modal .jw-modal-body {\n  padding: 20px;\n  background: #fff;\n  /* margin exposes part of the modal background */\n  margin: 40px;\n}\njw-modal .jw-modal-background {\n  /* modal background fixed across whole screen */\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  /* semi-transparent black  */\n  background-color: #000;\n  opacity: 0.75;\n  /* z-index must be below .jw-modal and above everything else  */\n  z-index: 900;\n}\nbody.jw-modal-open {\n  /* body overflow is hidden to hide main scrollbar when modal window is open */\n  overflow: hidden;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vZGFsLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO2dDQUNnQztBQUNoQztFQUNFLGlDQUFpQztFQUMvQixhQUFBO0FBQ0o7QUFIQTtFQUtFLDhDQUE4QztFQUN4QyxlQUFBO0VBQ0EsTUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsT0FBQTtFQUNOLHFEQUFxRDtFQUUvQyxhQUFBO0VBQU4sc0NBQXNDO0VBR2hDLGNBQUE7QUFEUjtBQWZBO0VBbUJZLGFBQUE7RUFDQSxnQkFBQTtFQURWLGdEQUFnRDtFQUl0QyxZQUFBO0FBRlo7QUFyQkE7RUF1QkUsK0NBQStDO0VBTXpDLGVBQUE7RUFDQSxNQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxPQUFBO0VBSk4sNEJBQTRCO0VBT3RCLHNCQUFBO0VBQ0EsYUFBQTtFQUxOLCtEQUErRDtFQVF6RCxZQUFBO0FBTlI7QUFVQTtFQVJFLDZFQUE2RTtFQVUzRSxnQkFBQTtBQVJKIiwiZmlsZSI6Im1vZGFsLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiLyogTU9EQUwgU1RZTEVTXG4tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKi9cbmp3LW1vZGFsIHtcbiAgICAvKiBtb2RhbHMgYXJlIGhpZGRlbiBieSBkZWZhdWx0ICovXG4gICAgZGlzcGxheTogbm9uZTtcblxuICAgIC5qdy1tb2RhbCB7XG4gICAgICAgIC8qIG1vZGFsIGNvbnRhaW5lciBmaXhlZCBhY3Jvc3Mgd2hvbGUgc2NyZWVuICovXG4gICAgICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICAgICAgdG9wOiAwO1xuICAgICAgICByaWdodDogMDtcbiAgICAgICAgYm90dG9tOiAwO1xuICAgICAgICBsZWZ0OiAwO1xuXG4gICAgICAgIC8qIHotaW5kZXggbXVzdCBiZSBoaWdoZXIgdGhhbiAuanctbW9kYWwtYmFja2dyb3VuZCAqL1xuICAgICAgICB6LWluZGV4OiAxMDAwO1xuICAgICAgICBcbiAgICAgICAgLyogZW5hYmxlcyBzY3JvbGxpbmcgZm9yIHRhbGwgbW9kYWxzICovXG4gICAgICAgIG92ZXJmbG93OiBhdXRvO1xuXG4gICAgICAgIC5qdy1tb2RhbC1ib2R5IHtcbiAgICAgICAgICAgIHBhZGRpbmc6IDIwcHg7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kOiAjZmZmO1xuXG4gICAgICAgICAgICAvKiBtYXJnaW4gZXhwb3NlcyBwYXJ0IG9mIHRoZSBtb2RhbCBiYWNrZ3JvdW5kICovXG4gICAgICAgICAgICBtYXJnaW46IDQwcHg7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAuanctbW9kYWwtYmFja2dyb3VuZCB7XG4gICAgICAgIC8qIG1vZGFsIGJhY2tncm91bmQgZml4ZWQgYWNyb3NzIHdob2xlIHNjcmVlbiAqL1xuICAgICAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgICAgIHRvcDogMDtcbiAgICAgICAgcmlnaHQ6IDA7XG4gICAgICAgIGJvdHRvbTogMDtcbiAgICAgICAgbGVmdDogMDtcblxuICAgICAgICAvKiBzZW1pLXRyYW5zcGFyZW50IGJsYWNrICAqL1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwO1xuICAgICAgICBvcGFjaXR5OiAwLjc1O1xuICAgICAgICBcbiAgICAgICAgLyogei1pbmRleCBtdXN0IGJlIGJlbG93IC5qdy1tb2RhbCBhbmQgYWJvdmUgZXZlcnl0aGluZyBlbHNlICAqL1xuICAgICAgICB6LWluZGV4OiA5MDA7XG4gICAgfVxufVxuXG5ib2R5Lmp3LW1vZGFsLW9wZW4ge1xuICAgIC8qIGJvZHkgb3ZlcmZsb3cgaXMgaGlkZGVuIHRvIGhpZGUgbWFpbiBzY3JvbGxiYXIgd2hlbiBtb2RhbCB3aW5kb3cgaXMgb3BlbiAqL1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG59XG4iXX0= */");
 
 /***/ }),
 
@@ -87,6 +307,27 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "XARU":
+/*!********************************************!*\
+  !*** ./src/app/modalCambioPerfil/index.ts ***!
+  \********************************************/
+/*! exports provided: ModalModule, ModalService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modal_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal.module */ "Cch1");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModalModule", function() { return _modal_module__WEBPACK_IMPORTED_MODULE_0__["ModalModule"]; });
+
+/* harmony import */ var _modal_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal.service */ "mEWK");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModalService", function() { return _modal_service__WEBPACK_IMPORTED_MODULE_1__["ModalService"]; });
+
+
+
+
+
+/***/ }),
+
 /***/ "ZAI4":
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
@@ -104,11 +345,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "vY5A");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ "jhN1");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "8tEE");
-/* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "twK/");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "wHSu");
+/* harmony import */ var _modal_modal_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modal/modal.module */ "hVeP");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "8tEE");
+/* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "twK/");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "wHSu");
+/* harmony import */ var _modalCambioPerfil__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modalCambioPerfil */ "XARU");
+
+
 
 
 
@@ -123,21 +368,80 @@ __webpack_require__.r(__webpack_exports__);
 
 let AppModule = class AppModule {
     constructor(library) {
-        library.addIconPacks(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_11__["fas"], _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_10__["far"], _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_9__["fab"]);
+        library.addIconPacks(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__["fas"], _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_11__["far"], _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_10__["fab"]);
     }
 };
 AppModule.ctorParameters = () => [
     { type: _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FaIconLibrary"] }
 ];
 AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_7__["NgModule"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_8__["NgModule"])({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
         entryComponents: [],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeModule"]],
-        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicRouteStrategy"] }],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeModule"], _modal_modal_module__WEBPACK_IMPORTED_MODULE_7__["ModalPageModule"], _modalCambioPerfil__WEBPACK_IMPORTED_MODULE_13__["ModalModule"]],
+        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicRouteStrategy"] }],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "bpxj":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modalCambioPerfil/modal.component.html ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jw-modal\">\n    <div class=\"jw-modal-body\">\n        <ng-content></ng-content>\n    </div>\n</div>\n<div class=\"jw-modal-background\"></div>");
+
+/***/ }),
+
+/***/ "hVeP":
+/*!***************************************!*\
+  !*** ./src/app/modal/modal.module.ts ***!
+  \***************************************/
+/*! exports provided: ModalPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalPageModule", function() { return ModalPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ "6NWb");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _modal_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modal.page */ "Af+r");
+/* harmony import */ var _modal_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modal-routing.module */ "+OVq");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+
+
+
+
+
+
+let ModalPageModule = class ModalPageModule {
+};
+ModalPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_7__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _modal_routing_module__WEBPACK_IMPORTED_MODULE_6__["ModalPageRoutingModule"],
+            _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeModule"]
+        ],
+        declarations: [_modal_page__WEBPACK_IMPORTED_MODULE_5__["ModalPage"]]
+    })
+], ModalPageModule);
 
 
 
@@ -381,6 +685,64 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
+/***/ "mEWK":
+/*!****************************************************!*\
+  !*** ./src/app/modalCambioPerfil/modal.service.ts ***!
+  \****************************************************/
+/*! exports provided: ModalService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalService", function() { return ModalService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+let ModalService = class ModalService {
+    constructor() {
+        this.modals = [];
+    }
+    add(modal) {
+        // add modal to array of active modals
+        this.modals.push(modal);
+    }
+    remove(id) {
+        // remove modal from array of active modals
+        this.modals = this.modals.filter(x => x.id !== id);
+    }
+    open(id) {
+        // open modal specified by id
+        const modal = this.modals.find(x => x.id === id);
+        modal.open();
+    }
+    close(id) {
+        // close modal specified by id
+        const modal = this.modals.find(x => x.id === id);
+        modal.close();
+    }
+};
+ModalService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({ providedIn: 'root' })
+], ModalService);
+
+
+
+/***/ }),
+
+/***/ "qdCT":
+/*!***************************************!*\
+  !*** ./src/app/modal/modal.page.scss ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".header {\n  position: absolute;\n}\n\n.cls-button {\n  border-radius: 50%;\n  --box-shadow:none;\n  --background:#d7e6a3!important;\n}\n\n.contenido {\n  --background: white!important;\n}\n\nion-toolbar {\n  --background: transparent;\n  --ion-color-base: transparent !important;\n}\n\n.container-gris {\n  background-color: #f6f5f4;\n  margin: 25px;\n  border-radius: 35px;\n  overflow: auto;\n}\n\n.franja-roja {\n  background-color: #c75142;\n  width: 100%;\n  height: 70px;\n  border-radius: 35px 35px 0 0;\n}\n\n.container-circulo {\n  position: relative;\n}\n\n.circulo {\n  height: 75px;\n  width: 75px;\n  background-color: white;\n  border-radius: 50%;\n  position: absolute;\n  transform: translate(-50%, -75%);\n  left: 50%;\n  text-align: center;\n}\n\n.icono {\n  color: black;\n  margin: 0;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n.titulo {\n  text-align: center;\n  color: #81af4f;\n  font-family: Cocogoose-SemiBold;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXG1vZGFsLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0FBQ0o7O0FBQ0E7RUFDSSxrQkFBQTtFQUNBLGlCQUFBO0VBQ0EsOEJBQUE7QUFFSjs7QUFBQTtFQUNJLDZCQUFBO0FBR0o7O0FBREE7RUFDSSx5QkFBQTtFQUNBLHdDQUFBO0FBSUo7O0FBRkE7RUFDSSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7QUFLSjs7QUFIQTtFQUNJLHlCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSw0QkFBQTtBQU1KOztBQUpBO0VBQ0ksa0JBQUE7QUFPSjs7QUFMQTtFQUNJLFlBQUE7RUFDQSxXQUFBO0VBQ0EsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0NBQUE7RUFDQSxTQUFBO0VBQ0Esa0JBQUE7QUFRSjs7QUFOQTtFQUNJLFlBQUE7RUFBYyxTQUFBO0VBQ2Qsa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLGdDQUFBO0FBVUo7O0FBUkE7RUFDSSxrQkFBQTtFQUNBLGNBQUE7RUFDQSwrQkFBQTtBQVdKIiwiZmlsZSI6Im1vZGFsLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oZWFkZXJ7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuLmNscy1idXR0b24ge1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgLS1ib3gtc2hhZG93Om5vbmU7XHJcbiAgICAtLWJhY2tncm91bmQ6I2Q3ZTZhMyFpbXBvcnRhbnQ7XHJcbn1cclxuLmNvbnRlbmlkb3tcclxuICAgIC0tYmFja2dyb3VuZDogd2hpdGUhaW1wb3J0YW50O1xyXG59XHJcbmlvbi10b29sYmFyIHtcclxuICAgIC0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcbiAgICAtLWlvbi1jb2xvci1iYXNlOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG59XHJcbi5jb250YWluZXItZ3Jpc3tcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmNmY1ZjQ7XHJcbiAgICBtYXJnaW46IDI1cHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzNXB4O1xyXG4gICAgb3ZlcmZsb3c6IGF1dG87XHJcbn1cclxuLmZyYW5qYS1yb2phIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNjNzUxNDI7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogNzBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDM1cHggMzVweCAwIDA7XHJcbn1cclxuLmNvbnRhaW5lci1jaXJjdWxve1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcbi5jaXJjdWxve1xyXG4gICAgaGVpZ2h0OiA3NXB4O1xyXG4gICAgd2lkdGg6IDc1cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTsgXHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNzUlKTtcclxuICAgIGxlZnQ6IDUwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4uaWNvbm97XHJcbiAgICBjb2xvcjogYmxhY2s7IG1hcmdpbjogMDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogNTAlO1xyXG4gICAgbGVmdDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XHJcbn1cclxuLnRpdHVsb3tcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yOiAjODFhZjRmO1xyXG4gICAgZm9udC1mYW1pbHk6IENvY29nb29zZS1TZW1pQm9sZDtcclxufSJdfQ== */");
+
+/***/ }),
+
 /***/ "vY5A":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -392,8 +754,8 @@ module.exports = webpackAsyncContext;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 
@@ -411,19 +773,40 @@ const routes = [
         path: 'producto',
         loadChildren: () => __webpack_require__.e(/*! import() | producto-producto-module */ "producto-producto-module").then(__webpack_require__.bind(null, /*! ./producto/producto.module */ "WiN2")).then(m => m.ProductoPageModule)
     },
+    {
+        path: 'perfil',
+        loadChildren: () => Promise.all(/*! import() | perfil-perfil-module */[__webpack_require__.e("default~modalCupon-modal-cupon-module~perfil-perfil-module"), __webpack_require__.e("perfil-perfil-module")]).then(__webpack_require__.bind(null, /*! ./perfil/perfil.module */ "ZEuG")).then(m => m.PerfilPageModule)
+    },
+    {
+        path: 'modal-cupon',
+        loadChildren: () => __webpack_require__.e(/*! import() | modalCupon-modal-cupon-module */ "default~modalCupon-modal-cupon-module~perfil-perfil-module").then(__webpack_require__.bind(null, /*! ./modalCupon/modal-cupon.module */ "2FBn")).then(m => m.ModalCuponPageModule)
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
 AppRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         imports: [
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { preloadingStrategy: _angular_router__WEBPACK_IMPORTED_MODULE_2__["PreloadAllModules"] })
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, { preloadingStrategy: _angular_router__WEBPACK_IMPORTED_MODULE_1__["PreloadAllModules"] })
         ],
-        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
     })
 ], AppRoutingModule);
 
 
+
+/***/ }),
+
+/***/ "wwHD":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modal/modal.page.html ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header class=\"ion-no-border header\">\r\n  <ion-toolbar >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button class=\"cls-button\" color=\"dark\" defaultHref=\"\" icon=\"close\" (click)=\"dismiss()\">\r\n      </ion-back-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content fullscreen class=\"contenido\">\r\n  <div class=\"container-gris\">\r\n    <div class=\"franja-roja\"></div>\r\n    <div class=\"container-circulo\">\r\n      <div class=\"circulo\" >\r\n        <fa-icon class=\"icono\" icon=\"dollar-sign\" size=3x></fa-icon>\r\n      </div>\r\n    </div>\r\n    <h2 class=\"titulo\">PRECIOS</h2>\r\n    <div>\r\n      <ion-img src=\"{{this.banner_aurrera}}\"></ion-img>\r\n    </div>\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col></ion-col>\r\n        <ion-col></ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col></ion-col>\r\n        <ion-col></ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col></ion-col>\r\n        <ion-col></ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ }),
 

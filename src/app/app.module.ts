@@ -12,11 +12,13 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
+import { ModalModule } from './modalCambioPerfil';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
-    HttpClientModule, FontAwesomeModule, ModalPageModule],
+    HttpClientModule, FontAwesomeModule, ModalPageModule, ModalModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
