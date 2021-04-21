@@ -124,6 +124,7 @@ let ProductoPage = class ProductoPage {
         this.dataService = dataService;
         this.modalController = modalController;
         this.producto_id = 6;
+        //producto_id = 5;
         this.user_id = 2;
     }
     precios() {
@@ -141,6 +142,7 @@ let ProductoPage = class ProductoPage {
             id: this.producto_id
         };
         this.dataService.post('producto', sendData).subscribe(data => {
+            console.log(data);
             this.producto_id = data[0].id;
             this.nombre = data[0].nombre;
             this.precio_comer = data[0].precio_comer;
@@ -152,6 +154,7 @@ let ProductoPage = class ProductoPage {
             this.banner_comer = data[0].banner_comer;
             this.banner_aurrera = data[0].banner_aurrera;
             this.banner_soriana = data[0].banner_soriana;
+            this.banner_publicidad = data[0].banner_publicidad;
             this.ingredientes = data[0].ingredientes;
             this.cantidad_tamano = data[0].cantidad_tamano;
             this.azucares = data[0].azucares;
@@ -166,6 +169,7 @@ let ProductoPage = class ProductoPage {
             //obtener el id del usuario
             //this.user_id = parseInt(localStorage.getItem('id'), 10);
             this.data_modal = [{
+                    nombre: this.nombre,
                     precio_comer: this.precio_comer,
                     precio_soriana: this.precio_soriana,
                     precio_aurrera: this.precio_aurrera,
@@ -175,6 +179,7 @@ let ProductoPage = class ProductoPage {
                     banner_comer: this.banner_comer,
                     banner_aurrera: this.banner_aurrera,
                     banner_soriana: this.banner_soriana,
+                    banner_publicidad: this.banner_publicidad,
                     user_id: this.user_id,
                     producto_id: this.producto_id
                 }];

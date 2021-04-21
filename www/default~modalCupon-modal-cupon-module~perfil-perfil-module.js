@@ -261,7 +261,7 @@ ModalCuponPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decor
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header >\n\n</ion-header>\n<body style=\"height:100%\" >\n  <div class=\"fondo\">\n    \n    <p class=\"titulo\">¿Canjear cupón?</p>\n\n    <div class=\"linea-punteada\">\n\n     \n    </div>\n    <div class=\"texto\">\n      <p>Usted cuenta con:</p>\n      <p style=\"font-weight: bold; font-size: 20px;\">\n        {{puntos}} puntos  \n      </p>\n      <p>lo que equivale a:</p>\n      <p style=\" font-weight: bold; font-size: 20px;\">\n        $ {{dinero}} pesos mexicanos\n      </p>\n      <br>\n      <p> Si desea cambiarlos presione el botón \"canjear puntos\", al hacerlo se mostrará el cupón de descuento\n        el cual puede mostrar en las siguientes tiendas de autoservicio: </p>\n      <p>- La Comer\n        <br>\n        - Bodega Ahurrera\n        <br>\n        - Soriana</p>\n      <p>Al canjear el cupón de descuento los puntos se eliminarán de su cuenta por lo que se recomienda tomar captura de pantalla o anotar el cupón de descuento</p>\n    </div>\n\n\n    <button class=\"boton\" (click)=\"aceptar()\" style=\"margin-right: 5%; background-color:#81af4f;\">\n      Canjear cupón\n    </button>\n    <button class=\"boton\" (click)=\"cancelar()\" style=\"margin-left: 5%; background-color: #c75142;\">\n      Cancelar\n    </button>\n\n  </div>\n\n</body>\n\n\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header >\r\n\r\n</ion-header>\r\n<body style=\"height:100%\" >\r\n  <div class=\"fondo\">\r\n    \r\n    <p class=\"titulo\">¿Canjear cupón?</p>\r\n\r\n    <div class=\"linea-punteada\">\r\n\r\n     \r\n    </div>\r\n    <div class=\"texto\">\r\n      <p>Usted cuenta con:</p>\r\n      <p style=\"font-weight: bold; font-size: 20px;\">\r\n        {{puntos}} puntos  \r\n      </p>\r\n      <p>lo que equivale a:</p>\r\n      <p style=\" font-weight: bold; font-size: 20px;\">\r\n        $ {{dinero}} pesos mexicanos\r\n      </p>\r\n      <br>\r\n      <p> Si desea cambiarlos presione el botón \"canjear puntos\", al hacerlo se mostrará el cupón de descuento\r\n        el cual puede mostrar en las siguientes tiendas de autoservicio: </p>\r\n      <p>- La Comer\r\n        <br>\r\n        - Bodega Ahurrera\r\n        <br>\r\n        - Soriana</p>\r\n      <p>Al canjear el cupón de descuento los puntos se eliminarán de su cuenta por lo que se recomienda tomar captura de pantalla o anotar el cupón de descuento</p>\r\n    </div>\r\n\r\n\r\n    <button class=\"boton\" (click)=\"aceptar()\" style=\"margin-right: 5%; background-color:#81af4f;\">\r\n      Canjear cupón\r\n    </button>\r\n    <button class=\"boton\" (click)=\"cancelar()\" style=\"margin-left: 5%; background-color: #c75142;\">\r\n      Cancelar\r\n    </button>\r\n\r\n  </div>\r\n\r\n</body>\r\n\r\n\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -284,7 +284,9 @@ __webpack_require__.r(__webpack_exports__);
 let DataService = class DataService {
     constructor(http) {
         this.http = http;
-        this.urlLaptop = 'http://192.168.1.74/webservice/checkfood/';
+        //la url de su compu; la ip es la que se muestra cuando corren el comando ionic serve
+        //
+        this.urlLaptop = 'http://192.168.0.22/webservice/checkfood/';
         this.url = 'http://localhost/webservice/checkfood/';
         this.api = '/service.php';
     }

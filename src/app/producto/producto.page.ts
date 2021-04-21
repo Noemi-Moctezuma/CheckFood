@@ -33,8 +33,10 @@ aditivos: any;
 sellos: any;
 imagen_rt: any;
 data_modal: any[];
-producto_id = 6;
+//producto_id = 6;
+producto_id = 5;
 user_id = 2;
+banner_publicidad: any;
   constructor(
     private dataService: DataService,
     public modalController: ModalController
@@ -54,6 +56,8 @@ user_id = 2;
     };
     this.dataService.post('producto', sendData).subscribe(data =>
       {
+        console.log(data);
+        
         this.producto_id = data[0].id;
         this.nombre = data[0].nombre;
         this.precio_comer = data[0].precio_comer;
@@ -65,6 +69,7 @@ user_id = 2;
         this.banner_comer = data[0].banner_comer;
         this.banner_aurrera = data[0].banner_aurrera;
         this.banner_soriana = data[0].banner_soriana;
+        this.banner_publicidad = data[0].banner_publicidad;
         this.ingredientes = data[0].ingredientes;
         this.cantidad_tamano = data[0].cantidad_tamano;
         this.azucares = data[0].azucares;
@@ -80,6 +85,8 @@ user_id = 2;
         //this.user_id = parseInt(localStorage.getItem('id'), 10);
         this.data_modal = [{
           precio_comer: this.precio_comer,
+          nombre: this.nombre,
+          tamano: this.cantidad_tamano,
           precio_soriana: this.precio_soriana,
           precio_aurrera: this.precio_aurrera,
           fecha_actualizacion_comer: this.fecha_actualizacion_comer,
@@ -88,6 +95,7 @@ user_id = 2;
           banner_comer: this.banner_comer,
           banner_aurrera: this.banner_aurrera,
           banner_soriana: this.banner_soriana,
+          banner_publicidad: this.banner_publicidad,
           user_id : this.user_id,
           producto_id : this.producto_id
         }];
