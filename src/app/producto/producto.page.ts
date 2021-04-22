@@ -33,7 +33,7 @@ aditivos: any;
 sellos: any;
 imagen_rt: any;
 data_modal: any[];
-producto_id = 6;
+producto_id = localStorage.getItem('producto_id');
 user_id = 2;
   constructor(
     private dataService: DataService,

@@ -157,65 +157,6 @@ let ModalPage = class ModalPage {
     }
     ionViewWillEnter() {
         this.data = this.navParams.data[0];
-        this.banner_aurrera = this.data.banner_aurrera;
-        this.banner_comer = this.data.banner_comer;
-        this.banner_soriana = this.data.banner_soriana;
-        this.precio_aurrera = this.data.precio_aurrera;
-        this.precio_comer = this.data.precio_comer;
-        this.precio_soriana = this.data.precio_soriana;
-        this.fecha_aurrera = this.data.fecha_actualizacion_aurrera;
-        this.fecha_soriana = this.data.fecha_actualizacion_comer;
-        this.precio_soriana = this.data.fecha_actualizacion_soriana;
-    }
-    dismiss() {
-        this.viewCtrl.dismiss();
-    }
-};
-ModalPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["NavParams"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
-];
-ModalPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        selector: 'app-modal',
-        template: _raw_loader_modal_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
-        styles: [_modal_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
-    })
-], ModalPage);
-
-
-
-/***/ }),
-
-/***/ "Af+r":
-/*!*************************************!*\
-  !*** ./src/app/modal/modal.page.ts ***!
-  \*************************************/
-/*! exports provided: ModalPage */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalPage", function() { return ModalPage; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _raw_loader_modal_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./modal.page.html */ "wwHD");
-/* harmony import */ var _modal_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modal.page.scss */ "qdCT");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
-
-
-
-
-
-let ModalPage = class ModalPage {
-    constructor(navParams, viewCtrl) {
-        this.navParams = navParams;
-        this.viewCtrl = viewCtrl;
-    }
-    ngOnInit() {
-    }
-    ionViewWillEnter() {
-        this.data = this.navParams.data[0];
         console.log(this.data);
         this.banner_aurrera = this.data.banner_aurrera;
         this.banner_comer = this.data.banner_comer;
@@ -414,6 +355,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "8tEE");
 /* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "twK/");
 /* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "wHSu");
+/* harmony import */ var _modalCambioPerfil__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modalCambioPerfil */ "XARU");
+/* harmony import */ var _ionic_native_screenshot_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/screenshot/ngx */ "jAoO");
+
+
 
 
 
@@ -440,13 +385,26 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
         entryComponents: [],
         imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeModule"], _modal_modal_module__WEBPACK_IMPORTED_MODULE_7__["ModalPageModule"]],
-        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicRouteStrategy"] }],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeModule"], _modal_modal_module__WEBPACK_IMPORTED_MODULE_7__["ModalPageModule"], _modalCambioPerfil__WEBPACK_IMPORTED_MODULE_13__["ModalModule"]],
+        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicRouteStrategy"] }, _ionic_native_screenshot_ngx__WEBPACK_IMPORTED_MODULE_14__["Screenshot"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
     })
 ], AppModule);
 
 
+
+/***/ }),
+
+/***/ "bpxj":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modalCambioPerfil/modal.component.html ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jw-modal\">\n    <div class=\"jw-modal-body\">\n        <ng-content></ng-content>\n    </div>\n</div>\n<div class=\"jw-modal-background\"></div>");
 
 /***/ }),
 
@@ -733,6 +691,51 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
+/***/ "mEWK":
+/*!****************************************************!*\
+  !*** ./src/app/modalCambioPerfil/modal.service.ts ***!
+  \****************************************************/
+/*! exports provided: ModalService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalService", function() { return ModalService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+let ModalService = class ModalService {
+    constructor() {
+        this.modals = [];
+    }
+    add(modal) {
+        // add modal to array of active modals
+        this.modals.push(modal);
+    }
+    remove(id) {
+        // remove modal from array of active modals
+        this.modals = this.modals.filter(x => x.id !== id);
+    }
+    open(id) {
+        // open modal specified by id
+        const modal = this.modals.find(x => x.id === id);
+        modal.open();
+    }
+    close(id) {
+        // close modal specified by id
+        const modal = this.modals.find(x => x.id === id);
+        modal.close();
+    }
+};
+ModalService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({ providedIn: 'root' })
+], ModalService);
+
+
+
+/***/ }),
+
 /***/ "qdCT":
 /*!***************************************!*\
   !*** ./src/app/modal/modal.page.scss ***!
@@ -783,6 +786,10 @@ const routes = [
     {
         path: 'modal-cupon',
         loadChildren: () => __webpack_require__.e(/*! import() | modalCupon-modal-cupon-module */ "default~modalCupon-modal-cupon-module~perfil-perfil-module").then(__webpack_require__.bind(null, /*! ./modalCupon/modal-cupon.module */ "2FBn")).then(m => m.ModalCuponPageModule)
+    },
+    {
+        path: 'categoria-seleccionada',
+        loadChildren: () => __webpack_require__.e(/*! import() | categoria-seleccionada-categoria-seleccionada-module */ "categoria-seleccionada-categoria-seleccionada-module").then(__webpack_require__.bind(null, /*! ./categoria-seleccionada/categoria-seleccionada.module */ "kIUw")).then(m => m.CategoriaSeleccionadaPageModule)
     },
 ];
 let AppRoutingModule = class AppRoutingModule {

@@ -24,7 +24,11 @@ const routes: Routes = [
   {
     path: 'modal-cupon',
     loadChildren: () => import('./modalCupon/modal-cupon.module').then( m => m.ModalCuponPageModule)
+  },  {
+    path: 'categoria-seleccionada',
+    loadChildren: () => import('./categoria-seleccionada/categoria-seleccionada.module').then( m => m.CategoriaSeleccionadaPageModule)
   },
+
 
 ];
 

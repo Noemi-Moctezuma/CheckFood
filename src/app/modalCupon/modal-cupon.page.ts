@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { DataService } from './../data-service.service';
-//import { Screenshot } from '@ionic-native/screenshot/ngx';
+import { Screenshot } from '@ionic-native/screenshot/ngx';
+
 @Component({
   selector: 'app-modal-cupon',
   templateUrl: './modal-cupon.page.html',
@@ -14,7 +15,7 @@ export class ModalCuponPage implements OnInit {
   constructor( private modalCtrl : ModalController, 
     public alertController: AlertController,
     private dataService: DataService,
-    //private screenshot: Screenshot
+    private   screenshot: Screenshot
     ) { }
 puntos;
 dinero;
@@ -119,7 +120,7 @@ id='2';
     async cupon() {
 
 
-      const alert = await this.alertController.create({
+      const alerta = await this.alertController.create({
         cssClass: 'my-custom-class',
         header: 'Cupón',
         message: 'CF'+ this.id + "P" + this.puntos + "A",
@@ -129,7 +130,10 @@ id='2';
             cssClass: 'primary',
             handler: () => {
               console.log('Captura');
-              //this.screenshot.save('jpg', 80, 'myscreenshot.jpg').then();
+            this.screenshot.save().then(()=>{
+  
+              console.log("guardada");
+            });
 
 
             }
@@ -143,7 +147,7 @@ id='2';
         ]
       });
   
-      await alert.present();
+      await alerta.present();
     }
   
 }
