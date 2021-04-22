@@ -4,7 +4,7 @@
 .cls-button {
     border-radius: 50%;
     --box-shadow:none;
-    --background:#d7e6a3!important;
+    --background: #d7e6a3!important;
 }
 .contenido{
     --background: white!important;
@@ -55,7 +55,9 @@ ion-toolbar {
 }
 .publicidad{
     height: 140px!important;
-    width: auto;
+    width: 90%;
+    margin: auto;
+    display: block;
 }
 ion-row{
     margin: 0 10px 25px;
@@ -65,23 +67,104 @@ ion-row{
 }
 .container-banner{
     border-radius: 20px 0 0 20px;
+    display: flex;
+    align-items: center;
 }
 .container-precio{
     border-radius: 0 20px 20px 0;
     background-color: #f6f5f4
 }
 .banners{
-    width: auto;
-    height: 50px;
+    height: 65px;
     object-fit: cover;
     object-position: 50% 50%;
 }
 .precio{
     color: #81af4f;
-    font-family: Opensans-SemiBold;
-}
-.cambio{
-    color: #c75142;
-    font-family: Opensans-Light;
+    font-family: OpenSans-Bold;
     letter-spacing: -1px;
+    text-align: center;
+    margin: 12px 0 ;
+}
+.botonSugerirPrecio {
+    text-align: center;
+    display: block;
+    float: right!important;
+    padding: 0;
+    color: #c75142;
+    font-family: OpenSans-Light;
+    letter-spacing: -1px;
+    font-size: 12px;
+    margin: 0;
+}
+.soloSugerir{
+    float: unset!important;
+    height: 100%;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 11; /* Sit on top */
+    padding-top: 50%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+.modal-header {
+    padding: 2px 16px;
+    background-color: #81af4f;
+    color: white;
+    width: calc (100%);
+    border: solid 1px  #81af4f;
+}
+.modal-body {
+    border: 1px solid #81af4f;
+    padding: 16px;
+    border-radius: 0 0 30px 30px ;
+
+    color: black;
+    ion-input {
+        width: 100%;
+        padding: 10px 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 2px solid #d7e6a3;
+        outline: none;
+    }
+}
+.modal-content {
+    border-radius: 30px 30px ;
+    overflow:hidden;
+    background-color: #fefefe;
+    margin: auto;
+    width: 85%;
+    
+}
+.container-buttons{ padding-top: 16px;
+    .container-aceptar{
+        display:inline-block;
+        width: 50%;
+        text-align: center;    
+    }
+    .container-cancelar{
+        display:inline-block;
+        width: 50%;
+        text-align: center;    
+    }
+    button{ 
+        height: 30px;
+        width: 80%;
+        outline: none;
+    }
+}
+#aceptar{
+    --background: #81af4f;
+    color: white;
+    
+}
+#cancelar{
+    --background: #c75142;
+    color: white;
 }
