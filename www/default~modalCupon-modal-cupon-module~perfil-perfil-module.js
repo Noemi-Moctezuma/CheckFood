@@ -58,6 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
 /* harmony import */ var _data_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../data-service.service */ "xf3R");
+/* harmony import */ var _ionic_native_screenshot_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/screenshot/ngx */ "jAoO");
 
 
 
@@ -65,12 +66,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//import { Screenshot } from '@ionic-native/screenshot/ngx';
+
 let ModalCuponPage = class ModalCuponPage {
-    constructor(modalCtrl, alertController, dataService) {
+    constructor(modalCtrl, alertController, dataService, screenshot) {
         this.modalCtrl = modalCtrl;
         this.alertController = alertController;
         this.dataService = dataService;
+        this.screenshot = screenshot;
         this.id = '2';
     }
     ngOnInit() {
@@ -160,7 +162,7 @@ let ModalCuponPage = class ModalCuponPage {
     }
     cupon() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const alert = yield this.alertController.create({
+            const alerta = yield this.alertController.create({
                 cssClass: 'my-custom-class',
                 header: 'Cupón',
                 message: 'CF' + this.id + "P" + this.puntos + "A",
@@ -170,7 +172,9 @@ let ModalCuponPage = class ModalCuponPage {
                         cssClass: 'primary',
                         handler: () => {
                             console.log('Captura');
-                            //this.screenshot.save('jpg', 80, 'myscreenshot.jpg').then();
+                            this.screenshot.save().then(() => {
+                                console.log("guardada");
+                            });
                         }
                     }, {
                         text: 'Cerrar',
@@ -181,14 +185,15 @@ let ModalCuponPage = class ModalCuponPage {
                     }
                 ]
             });
-            yield alert.present();
+            yield alerta.present();
         });
     }
 };
 ModalCuponPage.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"] },
-    { type: _data_service_service__WEBPACK_IMPORTED_MODULE_5__["DataService"] }
+    { type: _data_service_service__WEBPACK_IMPORTED_MODULE_5__["DataService"] },
+    { type: _ionic_native_screenshot_ngx__WEBPACK_IMPORTED_MODULE_6__["Screenshot"] }
 ];
 ModalCuponPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -286,7 +291,11 @@ let DataService = class DataService {
         this.http = http;
         //la url de su compu; la ip es la que se muestra cuando corren el comando ionic serve
         //
+<<<<<<< HEAD
+        this.urlLaptop = 'http://192.168.1.74/webservice/checkfood/';
+=======
         this.urlLaptop = 'http://192.168.0.22/webservice/checkfood/';
+>>>>>>> 0ea192039694dc56e4295762f999d10650149ce8
         this.url = 'http://localhost/webservice/checkfood/';
         this.api = '/service.php';
     }

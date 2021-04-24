@@ -13,13 +13,14 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import { ModalModule } from './modalCambioPerfil';
+import { Screenshot } from '@ionic-native/screenshot/ngx';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
     HttpClientModule, FontAwesomeModule, ModalPageModule, ModalModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Screenshot],
   bootstrap: [AppComponent],
 })
 export class AppModule {

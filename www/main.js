@@ -358,6 +358,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "twK/");
 /* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "wHSu");
 /* harmony import */ var _modalCambioPerfil__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modalCambioPerfil */ "XARU");
+<<<<<<< HEAD
+/* harmony import */ var _ionic_native_screenshot_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/screenshot/ngx */ "jAoO");
+
+=======
+>>>>>>> 0ea192039694dc56e4295762f999d10650149ce8
 
 
 
@@ -386,7 +391,11 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         entryComponents: [],
         imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeModule"], _modal_modal_module__WEBPACK_IMPORTED_MODULE_7__["ModalPageModule"], _modalCambioPerfil__WEBPACK_IMPORTED_MODULE_13__["ModalModule"]],
+<<<<<<< HEAD
+        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicRouteStrategy"] }, _ionic_native_screenshot_ngx__WEBPACK_IMPORTED_MODULE_14__["Screenshot"]],
+=======
         providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicRouteStrategy"] }],
+>>>>>>> 0ea192039694dc56e4295762f999d10650149ce8
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
     })
 ], AppModule);
@@ -404,7 +413,11 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+<<<<<<< HEAD
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jw-modal\">\n    <div class=\"jw-modal-body\">\n        <ng-content></ng-content>\n    </div>\n</div>\n<div class=\"jw-modal-background\"></div>");
+=======
 /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jw-modal\">\r\n    <div class=\"jw-modal-body\">\r\n        <ng-content></ng-content>\r\n    </div>\r\n</div>\r\n<div class=\"jw-modal-background\"></div>");
+>>>>>>> 0ea192039694dc56e4295762f999d10650149ce8
 
 /***/ }),
 
@@ -786,6 +799,10 @@ const routes = [
     {
         path: 'modal-cupon',
         loadChildren: () => __webpack_require__.e(/*! import() | modalCupon-modal-cupon-module */ "default~modalCupon-modal-cupon-module~perfil-perfil-module").then(__webpack_require__.bind(null, /*! ./modalCupon/modal-cupon.module */ "2FBn")).then(m => m.ModalCuponPageModule)
+    },
+    {
+        path: 'categoria-seleccionada',
+        loadChildren: () => __webpack_require__.e(/*! import() | categoria-seleccionada-categoria-seleccionada-module */ "categoria-seleccionada-categoria-seleccionada-module").then(__webpack_require__.bind(null, /*! ./categoria-seleccionada/categoria-seleccionada.module */ "kIUw")).then(m => m.CategoriaSeleccionadaPageModule)
     },
 ];
 let AppRoutingModule = class AppRoutingModule {

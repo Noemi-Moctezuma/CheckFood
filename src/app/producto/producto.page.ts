@@ -33,8 +33,7 @@ aditivos: any;
 sellos: any;
 imagen_rt: any;
 data_modal: any[];
-producto_id = 3;
-// producto_id = 5;
+producto_id = localStorage.getItem('producto_id');
 user_id = 2;
 banner_publicidad: any;
   constructor(

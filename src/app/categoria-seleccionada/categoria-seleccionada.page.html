@@ -1,0 +1,42 @@
+
+<body style="height:100%" >
+  <div class="fondo">
+      <img src="/assets/categoriaSeleccionada/0.png" >
+      <div class="foto">
+        <img [src]=foto  >
+      </div>
+      <div class="titulo">
+        {{categoriaNombre}}
+      </div>
+      <div class="linea-punteada"></div>
+      <div class="publicidad">
+        <!--<img src="/assets/categoriaSeleccionada/publicidad.png" >-->
+      </div>
+
+      <ion-content class="bloque">
+        <ion-grid class="extra">
+          <ion-row  class="extra">
+            <ion-col size="4" *ngFor=" let producto of productos">
+
+
+            <div class="card" (click)="seleccionarProducto(producto.id)"  routerLink="/producto" >
+              <div text-align= “center” > <img src=" {{producto.imagen_rt}}">
+              </div>
+              {{producto.nombre}}
+            </div>
+               
+
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+      
+  </div>
+  
+  <button routerLink="/perfil" class="botoncitoPerfil"></button>
+  <button routerLink="/home" class="botoncitoHome"></button>
+  <button routerLink="/categoria-seleccionada" class="botoncitoCategorias"></button>
+  
+<img src="/assets/botonesMenu/categorias.png" alt="" class="menu">
+</body>
+

@@ -123,8 +123,12 @@ let ProductoPage = class ProductoPage {
     constructor(dataService, modalController) {
         this.dataService = dataService;
         this.modalController = modalController;
+<<<<<<< HEAD
+        this.producto_id = localStorage.getItem('producto_id');
+=======
         this.producto_id = 6;
         //producto_id = 5;
+>>>>>>> 0ea192039694dc56e4295762f999d10650149ce8
         this.user_id = 2;
     }
     precios() {
@@ -236,7 +240,7 @@ let DataService = class DataService {
         this.http = http;
         //la url de su compu; la ip es la que se muestra cuando corren el comando ionic serve
         //
-        this.urlLaptop = 'http://192.168.0.22/webservice/checkfood/';
+        this.urlLaptop = 'http://192.168.1.74/webservice/checkfood/';
         this.url = 'http://localhost/webservice/checkfood/';
         this.api = '/service.php';
     }
