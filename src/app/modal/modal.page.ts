@@ -1,7 +1,9 @@
-import { element } from 'protractor';
 import { Component, OnInit } from '@angular/core';
-import { faAmericanSignLanguageInterpreting } from '@fortawesome/free-solid-svg-icons';
 import { ModalController, NavParams } from '@ionic/angular';
+
+import { element } from 'protractor';
+import { faAmericanSignLanguageInterpreting } from '@fortawesome/free-solid-svg-icons';
+import { DataService } from '../data-service.service';
 
 @Component({
   selector: 'app-modal',
@@ -11,7 +13,11 @@ import { ModalController, NavParams } from '@ionic/angular';
 export class ModalPage implements OnInit {
   banner_publicidad: any;
 
-  constructor(private navParams: NavParams, public viewCtrl: ModalController){}
+  constructor(
+    private navParams: NavParams, 
+    public viewCtrl: ModalController,
+    public dataService: DataService,
+    ){}
   user_id: any;
   producto_id: any;
   data: any;
@@ -54,6 +60,7 @@ export class ModalPage implements OnInit {
   }
   //cabrir modal in modal para sugerir precios
   sugerir(tienda){
+    var nombre_t = tienda;
     setTimeout(function(){
       var modal = document.getElementById("myModal");
       modal.style.display = "block";
@@ -62,15 +69,41 @@ export class ModalPage implements OnInit {
       window.onclick = function(event) {
         if (event.target == modal) {
           modal.style.display = "none";
+          nombre_t = null;
         }
       }      
+      //aceptar y guardar precio nuevo
+      let acceptButton: HTMLElement = document.getElementById("aceptar") as HTMLElement; 
+      acceptButton.addEventListener("click", aceptar);
+      function aceptar(){
+        if (nombre_t){
+            let precio = (<HTMLInputElement>document.getElementById("precio")).value;
+            precio = precio.toString();
+            precio = precio.slice(0, (precio.indexOf("."))+3);
+            Number(precio);
+
+            const sendData = {
+              opcion: 'sugerirPrecio',
+              user_id: this.user_id,
+              producto_id: this.producto_id,
+              precio: precio,
+              tienda: nombre_t
+            };
+            console.log(sendData);
+            
+            this.dataService.post('producto', sendData).subscribe(data =>{
+              console.log(data);
+              
+            })
+        }
+      }
       //cerrar modal in modal on button click
       let cancelButton: HTMLElement = document.getElementById("cancelar") as HTMLElement;
       cancelButton.addEventListener("click", cerrar);
       function cerrar(){
         setTimeout(function(){
           modal.style.display = "none";
-
+          nombre_t = null;
         }, 300);
       }
     }, 300);

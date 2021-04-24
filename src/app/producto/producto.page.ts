@@ -33,8 +33,8 @@ aditivos: any;
 sellos: any;
 imagen_rt: any;
 data_modal: any[];
-//producto_id = 6;
-producto_id = 5;
+producto_id = 3;
+// producto_id = 5;
 user_id = 2;
 banner_publicidad: any;
   constructor(
@@ -54,8 +54,7 @@ banner_publicidad: any;
       opcion: 'info',
       id: this.producto_id
     };
-    this.dataService.post('producto', sendData).subscribe(data =>
-      {
+    this.dataService.post('producto', sendData).subscribe(data => {
         console.log(data);
         
         this.producto_id = data[0].id;
