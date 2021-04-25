@@ -33,7 +33,7 @@ id='2';
     this.dataService.post('perfil', info).subscribe((data:any)=>{
       this.puntos = data[0].puntos;
       this.dinero = (this.puntos)/10;
-      console.log(this.dinero);
+      //console.log(this.dinero);
            
    })
   }
@@ -73,7 +73,7 @@ id='2';
             text: 'Aceptar',
             cssClass: 'primary',
             handler: () => {
-              console.log('Aceptar');
+              //console.log('Aceptar');
 
               var info = {
                 opcion:'limpiarPuntos',
@@ -93,7 +93,7 @@ id='2';
             text: 'Cancelar',
             cssClass: 'secondary',
             handler: () => {
-              console.log('Cancelar');
+              //console.log('Cancelar');
             }
           }
         ]
@@ -129,10 +129,10 @@ id='2';
             text: 'Tomar captura',
             cssClass: 'primary',
             handler: () => {
-              console.log('Captura');
+              //console.log('Captura');
             this.screenshot.save().then(()=>{
   
-              console.log("guardada");
+              //console.log("guardada");
             });
 
 
@@ -141,7 +141,7 @@ id='2';
             text: 'Cerrar',
             cssClass: 'secondary',
             handler: () => {
-              console.log('Cerrar');
+             // console.log('Cerrar');
             }
           }
         ]

@@ -1,64 +1,124 @@
 .fondo{
+    position: relative;
     text-align:center;
-    background-color: #f6f5f4;
-    border:3px solid #f6f5f4;
     border-radius:40px;
     margin: 5%;
-    height: 93%;
+    height: 95%;
+    background-image: url("/assets/fondo/borroso.png");
+    background-size: cover;
+    background-repeat: no-repeat;   
+    background-position: center;
+    z-index: 1;
     
 
 }
+.franja{
+    
+    border-radius: 30px 30px 0px 0px;
+    -moz-border-radius: 30px 30px 0px 0px;
+    -webkit-border-radius: 30px 30px 0px 0px;
+    background-color: #c75142;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    color: white;
+    font-family:  Cocogoose-Bold;
+    font-size: 22px;
+}
+
+.linea-punteada{
+    height: 25px;
+    border-bottom-style: dotted; 
+    border-bottom-width: 5px;
+    margin-bottom: 20px;
+    
+    color: white;
+}
+
 .fotoPerfil{
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: 110px;
     margin:0px auto;
     border:10px solid white ;
     border-radius:50%;
 
 }
 .fotoPerfil2{
-    width: 155px;
-    height: 155px;
+    width: 115px;
+    height: 115px;
     margin:1px auto;
     border:2px solid #d7e6a3 ;
     border-radius:50%;
     
 }
 .dato{
-    font-family:  Cocogoose-Light;
-    font-size: 12px;
-    letter-spacing: 1px;
-    color:black;
-    border-radius:18px;
-    height: 50px;
-    background-color:#f6f5f4;
+    margin-top: 10px;
+    position: center;
+    color:#c75142;
+    font-family: Cocogoose-Light;
+    border-radius:50px;
+    height: 40px;
+    background-color:white;
+    border:2px solid #d7e6a3 ;
+    width: 68%;
     text-align: center;
-    margin: 15px;
-    width: 80%;
+    
+    
 }
+.titulo{
+
+    font-family:Cocogoose-Bold;
+    font-size: 12px;
+    display:flex;
+    align-items: center;
+    margin-top: 7%;
+    position: relative;
+    color: #44280b;
+    margin-left: 20%;
+    
+}
+
 .boton{
-    border:2px solid;
+    
+    text-align: center;
+    position: center;
     color: white;
-    border-radius:18px;
+    border-radius:15px;
+    width: 40%;
     height: 40px;
     text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    width: 35%;
-    
     font-family:  Cocogoose-Light;
     font-size: 11px;
     letter-spacing: 1px;
-    
+    background-color: #81af4f;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30%;
+    margin-top: 60px;
+    margin-bottom: 40px;
 }
-.menu{
-    width: 50%;
-    position:absolute; 
-    left:25%; 
-    right:25%; 
-    bottom:0px;
+.texto{
+    font-family: Cocogoose-Light;
+    color: #44280b;
+    font-size: 14px;
 }
 
+.icono{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border:2px solid #c75142 ;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    margin-left: -12%;
+
+}
 
 
 
@@ -129,7 +189,7 @@ body.jw-modal-open {
     font-size: 12px;
     letter-spacing: 1px;
 }
-.linea-punteada{
+.linea-punteada2{
     height: 25px;
     border-bottom-style: dotted; 
     border-bottom-width: 5px;
@@ -154,37 +214,4 @@ body.jw-modal-open {
     font-size: 20px;
     font-weight: bold;
 
-}
-.botoncitoPerfil{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    //opacity: 0;
-    background-color: green;
-    border-radius: 50%;
-    margin-top: -18%;
-    margin-left: 61%;
-    z-index: 100
-}
-.botoncitoHome{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    //opacity: 0;
-    background-color: blue;
-    border-radius: 50%;
-    z-index: 100;
-    margin-top: -25%;
-    margin-left: 45%;
-}
-.botoncitoCategorias{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    background-color: red;
-    //opacity: 0;
-    border-radius: 50%;
-    margin-top: -18%;
-    margin-left: 29%;
-    z-index: 100
 }

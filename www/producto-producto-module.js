@@ -123,12 +123,7 @@ let ProductoPage = class ProductoPage {
     constructor(dataService, modalController) {
         this.dataService = dataService;
         this.modalController = modalController;
-<<<<<<< HEAD
         this.producto_id = localStorage.getItem('producto_id');
-=======
-        this.producto_id = 6;
-        //producto_id = 5;
->>>>>>> 0ea192039694dc56e4295762f999d10650149ce8
         this.user_id = 2;
     }
     precios() {
@@ -173,8 +168,9 @@ let ProductoPage = class ProductoPage {
             //obtener el id del usuario
             //this.user_id = parseInt(localStorage.getItem('id'), 10);
             this.data_modal = [{
-                    nombre: this.nombre,
                     precio_comer: this.precio_comer,
+                    nombre: this.nombre,
+                    tamano: this.cantidad_tamano,
                     precio_soriana: this.precio_soriana,
                     precio_aurrera: this.precio_aurrera,
                     fecha_actualizacion_comer: this.fecha_actualizacion_comer,

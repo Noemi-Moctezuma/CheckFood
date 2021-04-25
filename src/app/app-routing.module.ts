@@ -28,6 +28,14 @@ const routes: Routes = [
     path: 'categoria-seleccionada',
     loadChildren: () => import('./categoria-seleccionada/categoria-seleccionada.module').then( m => m.CategoriaSeleccionadaPageModule)
   },
+  {
+    path: 'inicio-sesion',
+    loadChildren: () => import('./inicio-sesion/inicio-sesion.module').then( m => m.InicioSesionPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
 
 
 ];

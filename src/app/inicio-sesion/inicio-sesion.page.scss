@@ -1,0 +1,91 @@
+.fondo{
+    position: relative;
+    text-align:center;
+    border-radius:40px;
+    margin: 5%;
+    height: 95%;
+    background-image: url("/assets/fondo/borroso.png");
+    background-size: cover;
+    background-repeat: no-repeat;   
+    background-position: center;
+    z-index: 1;
+    
+
+}
+.logo{
+    position: center;
+    background-size: cover;
+    background-repeat: no-repeat;   
+    background-position: center;
+    width: 40%;
+    height: auto;
+    margin-top: 30%;
+    //position: absolute;
+   z-index: 100;
+
+}
+.dato{
+    margin-top: 10px;
+    position: center;
+    color:#c75142;
+    font-family: Cocogoose-Light;
+    border-radius:50px;
+    height: 40px;
+    background-color:white;
+    border:2px solid #d7e6a3 ;
+    width: 70%;
+    text-align: center;
+    
+    
+}
+.icono{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border:2px solid #c75142 ;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    margin-left: -12%;
+
+}
+.titulo{
+
+    font-family:Cocogoose-Bold;
+    letter-spacing: -1px;
+    display:flex;
+    align-items: center;
+    margin-top: 10%;
+    position: relative;
+    color: #44280b;
+    margin-left: 20%;
+    
+}
+
+.boton{
+    
+    text-align: center;
+    position: center;
+    color: white;
+    border-radius:15px;
+    width: 40%;
+    height: 40px;
+    text-align: center;
+    font-family:  Cocogoose-Light;
+    font-size: 11px;
+    letter-spacing: 1px;
+    background-color: #81af4f;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30%;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+.texto{
+    font-family: Cocogoose-Light;
+    color: #44280b;
+    font-size: 14px;
+}

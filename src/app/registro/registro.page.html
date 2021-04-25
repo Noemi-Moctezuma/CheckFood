@@ -1,0 +1,98 @@
+
+<body style="height:100%" >
+  <div class="fondo">
+    <div class="franja">
+      REGISTRO
+    </div>  
+    <div class="linea-punteada">
+
+    </div>
+    <div class="fotoPerfil2">
+      <div class="fotoPerfil" >
+        <img [src]=foto (click)="openModal()" >
+      </div>
+    </div>
+
+    <div class="titulo">
+      <div class="icono">
+        <ion-icon name="person" style="color: #c75142; "></ion-icon>  
+      </div>
+        NOMBRE DE USUARIO
+    </div>
+    <input type="text" class="dato" id="nombreId">
+
+
+    <div class="titulo">
+      <div class="icono">
+        <ion-icon name="mail" style="color: #c75142; "></ion-icon>  
+      </div>
+        CORREO
+    </div>
+    <input type="text" class="dato" id="correoId">
+
+      <div class="titulo">
+      
+        <div class="icono">
+        
+          <ion-icon name="lock-closed" style="color: #c75142; "></ion-icon>
+          
+        </div>
+        
+          CONTRASEÑA
+      </div>
+      <input type="password" class="dato" id="contraId"
+      style="font-size: 60px; font-weight: bolder;">
+
+      <div class="boton" (click)="registrar()">
+        Registrarme
+      </div>
+      <div class="texto">
+        
+      Ya tengo cuenta <a href="inicio-sesion" style="color: #c75142; font-family: Cocogoose-Bold; font-size: 16px;"> Iniciar Sesión</a>
+
+      </div>
+
+
+
+      <div class="jw-modal-wrapper" id="idFondo">
+  
+        <div class="jw-modal">
+          <div class="jw-modal-body">
+  
+            <div class="modal-top">
+              <button class="botonCerrar"  (click)="cerrarModalFoto()">
+                x
+              </button>
+              <p>Elegir avatar</p>
+  
+            </div>
+            <div class="linea-punteada2"></div>
+            <div>
+              <ion-grid>
+                <ion-row>
+                  
+                  <ion-col size="6" *ngFor=" let imagen of imagenes" >
+              
+                    <div text-align= “center”> <img src="assets/fotosPerfil/{{imagen}}.png" class="foto" (click)="cambiarPerfil(imagen) ">
+                      </div>
+                  </ion-col>
+                    
+              
+                </ion-row>
+              </ion-grid>
+            </div>
+              
+              
+       
+          </div>
+        </div>
+        <div class="jw-modal-background">
+  
+        </div>
+        
+        </div>
+
+
+  </div>
+</body>
+

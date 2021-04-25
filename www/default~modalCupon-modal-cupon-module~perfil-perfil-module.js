@@ -86,7 +86,7 @@ let ModalCuponPage = class ModalCuponPage {
         this.dataService.post('perfil', info).subscribe((data) => {
             this.puntos = data[0].puntos;
             this.dinero = (this.puntos) / 10;
-            console.log(this.dinero);
+            //console.log(this.dinero);
         });
     }
     //cerrar modal y mandar los parámetros a vista principal
@@ -122,7 +122,7 @@ let ModalCuponPage = class ModalCuponPage {
                             text: 'Aceptar',
                             cssClass: 'primary',
                             handler: () => {
-                                console.log('Aceptar');
+                                //console.log('Aceptar');
                                 var info = {
                                     opcion: 'limpiarPuntos',
                                     id: this.id
@@ -142,7 +142,7 @@ let ModalCuponPage = class ModalCuponPage {
                             text: 'Cancelar',
                             cssClass: 'secondary',
                             handler: () => {
-                                console.log('Cancelar');
+                                //console.log('Cancelar');
                             }
                         }
                     ]
@@ -171,16 +171,16 @@ let ModalCuponPage = class ModalCuponPage {
                         text: 'Tomar captura',
                         cssClass: 'primary',
                         handler: () => {
-                            console.log('Captura');
+                            //console.log('Captura');
                             this.screenshot.save().then(() => {
-                                console.log("guardada");
+                                //console.log("guardada");
                             });
                         }
                     }, {
                         text: 'Cerrar',
                         cssClass: 'secondary',
                         handler: () => {
-                            console.log('Cerrar');
+                            // console.log('Cerrar');
                         }
                     }
                 ]
@@ -216,7 +216,7 @@ ModalCuponPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".fondo {\n  text-align: center;\n  background-color: #f6f5f4;\n  border: 0px solid #f6f5f4;\n  border-radius: 70px;\n  margin: 5%;\n  height: 93%;\n}\n\n.titulo {\n  margin: 0%;\n  border-radius: 70px 70px 0px 0px;\n  -moz-border-radius: 70px 70px 0px 0px;\n  -webkit-border-radius: 70px 70px 0px 0px;\n  background-color: #81af4f;\n  height: 10%;\n  display: flex;\n  justify-content: center;\n  align-content: center;\n  flex-direction: column;\n  color: white;\n  font-size: 25px;\n}\n\n.linea-punteada {\n  height: 35px;\n  border-bottom-style: dotted;\n  border-bottom-width: 10px;\n  margin-bottom: 20px;\n}\n\n.boton {\n  border: 2px solid;\n  color: white;\n  border-radius: 18px;\n  height: 40px;\n  text-align: center;\n  margin-top: 15px;\n  margin-bottom: 15px;\n  width: 35%;\n}\n\n.texto {\n  color: #c75142;\n  margin: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXG1vZGFsLWN1cG9uLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNJLGtCQUFBO0VBQ0EseUJBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7QUFBSjs7QUFFQTtFQUNJLFVBQUE7RUFDQSxnQ0FBQTtFQUNBLHFDQUFBO0VBQ0Esd0NBQUE7RUFDQSx5QkFBQTtFQUNBLFdBQUE7RUFFQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxxQkFBQTtFQUNBLHNCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7QUFBSjs7QUFHQTtFQUNJLFlBQUE7RUFDQSwyQkFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7QUFBSjs7QUFFQTtFQUNJLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLFVBQUE7QUFDSjs7QUFDQTtFQUNJLGNBQUE7RUFDQSxZQUFBO0FBRUoiLCJmaWxlIjoibW9kYWwtY3Vwb24ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbi5mb25kb3tcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2Y2ZjVmNDtcclxuICAgIGJvcmRlcjowcHggc29saWQgI2Y2ZjVmNDtcclxuICAgIGJvcmRlci1yYWRpdXM6NzBweDtcclxuICAgIG1hcmdpbjogNSU7XHJcbiAgICBoZWlnaHQ6IDkzJTtcclxufVxyXG4udGl0dWxve1xyXG4gICAgbWFyZ2luOiAwJTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDcwcHggNzBweCAwcHggMHB4O1xyXG4gICAgLW1vei1ib3JkZXItcmFkaXVzOiA3MHB4IDcwcHggMHB4IDBweDtcclxuICAgIC13ZWJraXQtYm9yZGVyLXJhZGl1czogNzBweCA3MHB4IDBweCAwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjODFhZjRmO1xyXG4gICAgaGVpZ2h0OiAxMCU7XHJcbiAgICBcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGFsaWduLWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBjb2xvcjogd2hpdGU7ICAgXHJcbiAgICBmb250LXNpemU6IDI1cHg7XHJcbn1cclxuXHJcbi5saW5lYS1wdW50ZWFkYXtcclxuICAgIGhlaWdodDozNXB4O1xyXG4gICAgYm9yZGVyLWJvdHRvbS1zdHlsZTogZG90dGVkOyBcclxuICAgIGJvcmRlci1ib3R0b20td2lkdGg6IDEwcHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG59XHJcbi5ib3RvbntcclxuICAgIGJvcmRlcjoycHggc29saWQ7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBib3JkZXItcmFkaXVzOjE4cHg7XHJcbiAgICBoZWlnaHQ6IDQwcHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tdG9wOiAxNXB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTVweDtcclxuICAgIHdpZHRoOiAzNSU7XHJcbn1cclxuLnRleHRve1xyXG4gICAgY29sb3I6ICNjNzUxNDI7XHJcbiAgICBtYXJnaW46IDIwcHg7XHJcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".fondo {\n  text-align: center;\n  background-color: #f6f5f4;\n  border: 0px solid #f6f5f4;\n  border-radius: 70px;\n  margin: 5%;\n  height: 93%;\n}\n\n.titulo {\n  margin: 0%;\n  border-radius: 70px 70px 0px 0px;\n  -moz-border-radius: 70px 70px 0px 0px;\n  -webkit-border-radius: 70px 70px 0px 0px;\n  background-color: #81af4f;\n  height: 10%;\n  display: flex;\n  justify-content: center;\n  align-content: center;\n  flex-direction: column;\n  color: white;\n  font-size: 25px;\n}\n\n.linea-punteada {\n  height: 35px;\n  border-bottom-style: dotted;\n  border-bottom-width: 10px;\n  margin-bottom: 20px;\n}\n\n.boton {\n  border: 2px solid;\n  color: white;\n  border-radius: 18px;\n  height: 40px;\n  text-align: center;\n  margin-top: 15px;\n  margin-bottom: 15px;\n  width: 35%;\n}\n\n.texto {\n  font-family: Cocogoose-Light;\n  color: #c75142;\n  margin: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXG1vZGFsLWN1cG9uLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNJLGtCQUFBO0VBQ0EseUJBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7QUFBSjs7QUFFQTtFQUNJLFVBQUE7RUFDQSxnQ0FBQTtFQUNBLHFDQUFBO0VBQ0Esd0NBQUE7RUFDQSx5QkFBQTtFQUNBLFdBQUE7RUFFQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxxQkFBQTtFQUNBLHNCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7QUFBSjs7QUFHQTtFQUNJLFlBQUE7RUFDQSwyQkFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7QUFBSjs7QUFFQTtFQUNJLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLFVBQUE7QUFDSjs7QUFDQTtFQUNJLDRCQUFBO0VBQ0EsY0FBQTtFQUNBLFlBQUE7QUFFSiIsImZpbGUiOiJtb2RhbC1jdXBvbi5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuLmZvbmRve1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjZmNWY0O1xyXG4gICAgYm9yZGVyOjBweCBzb2xpZCAjZjZmNWY0O1xyXG4gICAgYm9yZGVyLXJhZGl1czo3MHB4O1xyXG4gICAgbWFyZ2luOiA1JTtcclxuICAgIGhlaWdodDogOTMlO1xyXG59XHJcbi50aXR1bG97XHJcbiAgICBtYXJnaW46IDAlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNzBweCA3MHB4IDBweCAwcHg7XHJcbiAgICAtbW96LWJvcmRlci1yYWRpdXM6IDcwcHggNzBweCAwcHggMHB4O1xyXG4gICAgLXdlYmtpdC1ib3JkZXItcmFkaXVzOiA3MHB4IDcwcHggMHB4IDBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM4MWFmNGY7XHJcbiAgICBoZWlnaHQ6IDEwJTtcclxuICAgIFxyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24tY29udGVudDogY2VudGVyO1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIGNvbG9yOiB3aGl0ZTsgICBcclxuICAgIGZvbnQtc2l6ZTogMjVweDtcclxufVxyXG5cclxuLmxpbmVhLXB1bnRlYWRhe1xyXG4gICAgaGVpZ2h0OjM1cHg7XHJcbiAgICBib3JkZXItYm90dG9tLXN0eWxlOiBkb3R0ZWQ7IFxyXG4gICAgYm9yZGVyLWJvdHRvbS13aWR0aDogMTBweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XHJcbn1cclxuLmJvdG9ue1xyXG4gICAgYm9yZGVyOjJweCBzb2xpZDtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6MThweDtcclxuICAgIGhlaWdodDogNDBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbi10b3A6IDE1cHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxNXB4O1xyXG4gICAgd2lkdGg6IDM1JTtcclxufVxyXG4udGV4dG97XHJcbiAgICBmb250LWZhbWlseTogQ29jb2dvb3NlLUxpZ2h0O1xyXG4gICAgY29sb3I6ICNjNzUxNDI7XHJcbiAgICBtYXJnaW46IDIwcHg7XHJcbn1cclxuLmRhdG97XHJcbiAgICBcclxufSJdfQ== */");
 
 /***/ }),
 
@@ -266,7 +266,7 @@ ModalCuponPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decor
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header >\r\n\r\n</ion-header>\r\n<body style=\"height:100%\" >\r\n  <div class=\"fondo\">\r\n    \r\n    <p class=\"titulo\">¿Canjear cupón?</p>\r\n\r\n    <div class=\"linea-punteada\">\r\n\r\n     \r\n    </div>\r\n    <div class=\"texto\">\r\n      <p>Usted cuenta con:</p>\r\n      <p style=\"font-weight: bold; font-size: 20px;\">\r\n        {{puntos}} puntos  \r\n      </p>\r\n      <p>lo que equivale a:</p>\r\n      <p style=\" font-weight: bold; font-size: 20px;\">\r\n        $ {{dinero}} pesos mexicanos\r\n      </p>\r\n      <br>\r\n      <p> Si desea cambiarlos presione el botón \"canjear puntos\", al hacerlo se mostrará el cupón de descuento\r\n        el cual puede mostrar en las siguientes tiendas de autoservicio: </p>\r\n      <p>- La Comer\r\n        <br>\r\n        - Bodega Ahurrera\r\n        <br>\r\n        - Soriana</p>\r\n      <p>Al canjear el cupón de descuento los puntos se eliminarán de su cuenta por lo que se recomienda tomar captura de pantalla o anotar el cupón de descuento</p>\r\n    </div>\r\n\r\n\r\n    <button class=\"boton\" (click)=\"aceptar()\" style=\"margin-right: 5%; background-color:#81af4f;\">\r\n      Canjear cupón\r\n    </button>\r\n    <button class=\"boton\" (click)=\"cancelar()\" style=\"margin-left: 5%; background-color: #c75142;\">\r\n      Cancelar\r\n    </button>\r\n\r\n  </div>\r\n\r\n</body>\r\n\r\n\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header >\n\n</ion-header>\n<body style=\"height:100%\" >\n  <div class=\"fondo\">\n    \n    <p class=\"titulo\">¿Canjear cupón?</p>\n\n    <div class=\"linea-punteada\">\n\n     \n    </div>\n    <div class=\"texto\">\n      <p>Usted cuenta con:</p>\n      <p style=\"font-family:Couture-Bold; font-size: 20px; font-weight: bolder;\">\n        {{puntos}} puntos  \n      </p>\n      <p>lo que equivale a:</p>\n      <p style=\" font-family:Couture-Bold; font-size: 20px; font-weight: bolder;\">\n         {{dinero}} pesos mexicanos\n      </p>\n      <p> Si desea cambiarlos presione el botón \"canjear puntos\", al hacerlo se mostrará el cupón de descuento\n        el cual puede mostrar en las siguientes tiendas de autoservicio: </p>\n      <p>- La Comer\n        <br>\n        - Bodega Ahurrera\n        <br>\n        - Soriana</p>\n      <p>Al canjear el cupón de descuento los puntos se eliminarán de su cuenta por lo que se recomienda tomar captura de pantalla o anotar el cupón de descuento</p>\n    </div>\n\n\n    <button class=\"boton\" (click)=\"aceptar()\" style=\"margin-right: 5%; background-color:#81af4f;\">\n      Canjear cupón\n    </button>\n    <button class=\"boton\" (click)=\"cancelar()\" style=\"margin-left: 5%; background-color: #c75142;\">\n      Cancelar\n    </button>\n\n  </div>\n\n</body>\n\n\n\n\n");
 
 /***/ }),
 
@@ -291,11 +291,7 @@ let DataService = class DataService {
         this.http = http;
         //la url de su compu; la ip es la que se muestra cuando corren el comando ionic serve
         //
-<<<<<<< HEAD
         this.urlLaptop = 'http://192.168.1.74/webservice/checkfood/';
-=======
-        this.urlLaptop = 'http://192.168.0.22/webservice/checkfood/';
->>>>>>> 0ea192039694dc56e4295762f999d10650149ce8
         this.url = 'http://localhost/webservice/checkfood/';
         this.api = '/service.php';
     }
