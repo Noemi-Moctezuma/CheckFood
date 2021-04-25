@@ -53,8 +53,7 @@ banner_publicidad: any;
       opcion: 'info',
       id: this.producto_id
     };
-    this.dataService.post('producto', sendData).subscribe(data =>
-      {
+    this.dataService.post('producto', sendData).subscribe(data => {
         console.log(data);
         
         this.producto_id = data[0].id;
