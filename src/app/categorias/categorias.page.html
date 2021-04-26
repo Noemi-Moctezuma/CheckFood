@@ -1,0 +1,50 @@
+
+<body style="height:100%" >
+  <div class="fondo">
+    <div class="franja">
+      ¿QUIZÁ POR TEMÁTICA?
+    </div>  
+    <div class="linea-punteada">
+
+    </div>
+
+<div class="fondoCategorias">
+<img src="assets/categoriaSeleccionada/fondoCategorias.png" alt="" style="z-index: 2;">
+</div>
+<div class="fondoCategorias" style="margin-top:28vh;">
+  <img src="assets/categoriaSeleccionada/fondoCategorias.png" alt="" style="z-index: 2;">
+
+</div>
+<div class="fondoCategorias" style="margin-top:48vh;">
+  <img src="assets/categoriaSeleccionada/fondoCategorias.png" alt="" style="z-index: 2;">
+
+</div>
+        
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4" *ngFor="let item of map | keyvalue" >
+          
+          <div text-align= “center” class="foto"> <img src="assets/categoriaSeleccionada/{{item.key}}.png" class="foto" (click)="seleccionarCategoria(item.key) ">
+          </div>
+          <div class="titulo">
+            {{item.value}}
+          </div>
+        </ion-col>
+          
+    
+      </ion-row>
+    </ion-grid>
+    
+    
+    
+
+  </div>
+
+  
+  <button routerLink="/perfil" class="botoncitoPerfil"></button>
+  <button routerLink="/home" class="botoncitoHome"></button>
+  <button routerLink="/categorias" class="botoncitoCategorias"></button>
+  
+<img src="/assets/botonesMenu/categorias.png" alt="" class="menu">
+</body>
+
