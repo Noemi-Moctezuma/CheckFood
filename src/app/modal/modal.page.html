@@ -26,10 +26,10 @@
           <ng-container *ngIf="this.user_id; else login">
             <ng-container *ngIf="this.precio_comer != 0; else soloSugerirComer">
               <p class="precio">{{this.precio_comer | currency}} MXN</p>
-              <ion-button class=" botonSugerirPrecio" fill="clear" size="small" (click)="sugerir('comer')">SUGERIR PRECIO</ion-button>
+              <ion-button class=" botonSugerirPrecio" fill="clear" size="small" (click)="sugerir('comer', this.producto_id, this.user_id, dataService)">SUGERIR PRECIO</ion-button>
             </ng-container>
             <ng-template #soloSugerirComer >
-              <ion-button class="botonSugerirPrecio soloSugerir" fill="clear" size="small" expand="full" (click)="sugerir('comer')">SUGERIR PRECIO</ion-button>
+              <ion-button class="botonSugerirPrecio soloSugerir" fill="clear" size="small" expand="full" (click)="sugerir('comer', this.producto_id, this.user_id, dataService)">SUGERIR PRECIO</ion-button>
             </ng-template>
           </ng-container>
           <ng-template #login>logeate, ese</ng-template>
@@ -43,10 +43,10 @@
           <ng-container *ngIf="this.user_id; else login2">
             <ng-container *ngIf="this.precio_soriana != 0; else soloSugerirSoriana">
               <p class="precio">{{this.precio_soriana | currency}} MXN</p>
-              <ion-button class=" botonSugerirPrecio" fill="clear" size="small"  (click)="sugerir('soriana')">SUGERIR PRECIO</ion-button>
+              <ion-button class=" botonSugerirPrecio" fill="clear" size="small"  (click)="sugerir('soriana', this.producto_id, this.user_id, dataService)">SUGERIR PRECIO</ion-button>
             </ng-container>
             <ng-template #soloSugerirSoriana>
-              <ion-button class="botonSugerirPrecio soloSugerir" fill="clear" size="small" expand="full" (click)="sugerir('soriana')">SUGERIR PRECIO</ion-button>
+              <ion-button class="botonSugerirPrecio soloSugerir" fill="clear" size="small" expand="full" (click)="sugerir('soriana', this.producto_id, this.user_id, dataService)">SUGERIR PRECIO</ion-button>
             </ng-template>
           </ng-container>
           <ng-template #login2>logeate, ese</ng-template>
@@ -60,10 +60,10 @@
           <ng-container *ngIf="this.user_id; else login3">
             <ng-container *ngIf="this.precio_aurrera != 0; else soloSugerirAurrera">
               <p class="precio">{{this.precio_aurrera | currency}} MXN</p>
-              <ion-button class=" botonSugerirPrecio" fill="clear" size="small" (click)="sugerir('aurrera')">SUGERIR PRECIO</ion-button>
+              <ion-button class=" botonSugerirPrecio" fill="clear" size="small" (click)="sugerir('aurrera', this.producto_id, this.user_id, dataService)">SUGERIR PRECIO</ion-button>
             </ng-container>
             <ng-template #soloSugerirAurrera>
-              <ion-button class="botonSugerirPrecio soloSugerir" fill="clear" size="small" expand="full" (click)="sugerir('aurrera')">SUGERIR PRECIO</ion-button>
+              <ion-button class="botonSugerirPrecio soloSugerir" fill="clear" size="small" expand="full" (click)="sugerir('aurrera', this.producto_id, this.user_id, dataService)">SUGERIR PRECIO</ion-button>
             </ng-template>
           </ng-container>
           <ng-template #login3>logeate, ese</ng-template>

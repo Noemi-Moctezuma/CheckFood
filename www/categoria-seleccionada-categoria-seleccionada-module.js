@@ -23,7 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 let CategoriaSeleccionadaPage = class CategoriaSeleccionadaPage {
     constructor(dataService) {
         this.dataService = dataService;
-        this.idCategoria = '2';
+        this.idCategoria = localStorage.getItem('categoria_id');
         this.productos = [];
     }
     ngOnInit() {
@@ -170,49 +170,7 @@ CategoriaSeleccionadaPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__d
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<body style=\"height:100%\" >\n  <div class=\"fondo\">\n      <img src=\"/assets/categoriaSeleccionada/0.png\" >\n      <div class=\"foto\">\n        <img [src]=foto  >\n      </div>\n      <div class=\"titulo\">\n        {{categoriaNombre}}\n      </div>\n      <div class=\"linea-punteada\"></div>\n      <div class=\"publicidad\">\n        <!--<img src=\"/assets/categoriaSeleccionada/publicidad.png\" >-->\n      </div>\n\n      <ion-content class=\"bloque\">\n        <ion-grid class=\"extra\">\n          <ion-row  class=\"extra\">\n            <ion-col size=\"4\" *ngFor=\" let producto of productos\">\n\n\n            <div class=\"card\" (click)=\"seleccionarProducto(producto.id)\"  routerLink=\"/producto\" >\n              <div text-align= “center” > <img src=\" {{producto.imagen_rt}}\">\n              </div>\n              <div style=\"font-family:OpenSans-SemiBold;\">{{producto.nombre}}</div>\n            </div>\n               \n\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-content>\n      \n  </div>\n  \n  <button routerLink=\"/inicio-sesion\" class=\"botoncitoPerfil\"></button>\n  <button routerLink=\"/home\" class=\"botoncitoHome\"></button>\n  <button routerLink=\"/categoria-seleccionada\" class=\"botoncitoCategorias\"></button>\n  \n<img src=\"/assets/botonesMenu/categorias.png\" alt=\"\" class=\"menu\">\n</body>\n\n");
-
-/***/ }),
-
-/***/ "xf3R":
-/*!*****************************************!*\
-  !*** ./src/app/data-service.service.ts ***!
-  \*****************************************/
-/*! exports provided: DataService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-
-let DataService = class DataService {
-    constructor(http) {
-        this.http = http;
-        //la url de su compu; la ip es la que se muestra cuando corren el comando ionic serve
-        //
-        this.urlLaptop = 'http://192.168.1.74/webservice/checkfood/';
-        this.url = 'http://localhost/webservice/checkfood/';
-        this.api = '/service.php';
-    }
-    post(model, params) {
-        return this.http.post(this.urlLaptop + model + this.api, params, { responseType: 'json' });
-    }
-};
-DataService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
-];
-DataService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
-        providedIn: 'root'
-    })
-], DataService);
-
-
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<body style=\"height:100%\" >\r\n  <div class=\"fondo\">\r\n      <img src=\"/assets/categoriaSeleccionada/0.png\" >\r\n      <div class=\"foto\">\r\n        <img [src]=foto  >\r\n      </div>\r\n      <div class=\"titulo\">\r\n        {{categoriaNombre}}\r\n      </div>\r\n      <div class=\"linea-punteada\"></div>\r\n      <div class=\"publicidad\">\r\n        <!--<img src=\"/assets/categoriaSeleccionada/publicidad.png\" >-->\r\n      </div>\r\n\r\n      <ion-content class=\"bloque\">\r\n        <ion-grid class=\"extra\">\r\n          <ion-row  class=\"extra\">\r\n            <ion-col size=\"4\" *ngFor=\" let producto of productos\">\r\n\r\n\r\n            <div class=\"card\" (click)=\"seleccionarProducto(producto.id)\"  routerLink=\"/producto\" >\r\n              <div text-align= “center” > <img src=\" {{producto.imagen_rt}}\">\r\n              </div>\r\n              <div style=\"font-family:OpenSans-SemiBold;\">{{producto.nombre}}</div>\r\n            </div>\r\n               \r\n\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-content>\r\n      \r\n  </div>\r\n  \r\n  <button routerLink=\"/inicio-sesion\" class=\"botoncitoPerfil\"></button>\r\n  <button routerLink=\"/home\" class=\"botoncitoHome\"></button>\r\n  <button routerLink=\"/categorias\" class=\"botoncitoCategorias\"></button>\r\n  \r\n<img src=\"/assets/botonesMenu/categorias.png\" alt=\"\" class=\"menu\">\r\n</body>\r\n\r\n");
 
 /***/ })
 

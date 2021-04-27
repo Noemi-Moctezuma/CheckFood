@@ -44,7 +44,7 @@ ModalPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\anoem\OneDrive\Escritorio\App2\checkfood\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! C:\Users\Rodrigo\Desktop\checkfood\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -141,17 +141,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
 /* harmony import */ var _raw_loader_modal_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./modal.page.html */ "wwHD");
 /* harmony import */ var _modal_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modal.page.scss */ "qdCT");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _data_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../data-service.service */ "xf3R");
+
 
 
 
 
 
 let ModalPage = class ModalPage {
-    constructor(navParams, viewCtrl) {
+    constructor(navParams, viewCtrl, dataService, alertController) {
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
+        this.dataService = dataService;
+        this.alertController = alertController;
     }
     ngOnInit() {
     }
@@ -172,14 +176,14 @@ let ModalPage = class ModalPage {
         this.precio_soriana = this.data.fecha_actualizacion_soriana;
         this.user_id = this.data.user_id;
         this.producto_id = this.data.producto_id;
-        console.log(this.user_id);
     }
     //cerrar modal muestra de precios
     dismiss() {
         this.viewCtrl.dismiss();
     }
     //cabrir modal in modal para sugerir precios
-    sugerir(tienda) {
+    sugerir(tienda, producto, user, ds) {
+        var nombre_t = tienda;
         setTimeout(function () {
             var modal = document.getElementById("myModal");
             modal.style.display = "block";
@@ -187,25 +191,50 @@ let ModalPage = class ModalPage {
             window.onclick = function (event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
+                    nombre_t = null;
                 }
             };
             //cerrar modal in modal on button click
             let cancelButton = document.getElementById("cancelar");
-            cancelButton.addEventListener("click", cerrar);
-            function cerrar() {
+            cancelButton.addEventListener("click", function () {
                 setTimeout(function () {
                     modal.style.display = "none";
+                    nombre_t = null;
                 }, 300);
+            });
+            //aceptar y guardar precio nuevo
+            let acceptButton = document.getElementById("aceptar");
+            acceptButton.addEventListener("click", function () { aceptar(producto, user, ds); });
+            function aceptar(producto, user, dataService) {
+                if (nombre_t) {
+                    /*             let precio = (<HTMLInputElement>document.getElementById("precio")).value;
+                                precio = precio.toString();
+                                precio = precio.slice(0, (precio.indexOf("."))+3);
+                                const sendData = {
+                                  opcion: 'sugerirPrecio',
+                                  user_id: Number(user),
+                                  producto_id: Number(producto),
+                                  precio: Number(precio),
+                                  tienda: nombre_t
+                                };
+                                console.log(sendData);
+                                dataService.post('producto', sendData).subscribe(data =>{
+                                  console.log(data);
+                                  
+                                }) */
+                }
             }
         }, 300);
     }
 };
 ModalPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["NavParams"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavParams"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"] },
+    { type: _data_service_service__WEBPACK_IMPORTED_MODULE_5__["DataService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"] }
 ];
 ModalPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
         selector: 'app-modal',
         template: _raw_loader_modal_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_modal_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
@@ -374,14 +403,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "vY5A");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ "jhN1");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-/* harmony import */ var _modal_modal_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modal/modal.module */ "hVeP");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "8tEE");
-/* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "twK/");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "wHSu");
-/* harmony import */ var _modalCambioPerfil__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modalCambioPerfil */ "XARU");
-/* harmony import */ var _ionic_native_screenshot_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/screenshot/ngx */ "jAoO");
+/* harmony import */ var _modalCambioPerfil__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modalCambioPerfil */ "XARU");
+/* harmony import */ var _modal_modal_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modal/modal.module */ "hVeP");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _ionic_native_screenshot_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/screenshot/ngx */ "jAoO");
+/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "8tEE");
+/* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "twK/");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "wHSu");
 
 
 
@@ -399,19 +428,19 @@ __webpack_require__.r(__webpack_exports__);
 
 let AppModule = class AppModule {
     constructor(library) {
-        library.addIconPacks(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_12__["fas"], _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_11__["far"], _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_10__["fab"]);
+        library.addIconPacks(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__["fas"], _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_13__["far"], _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_12__["fab"]);
     }
 };
 AppModule.ctorParameters = () => [
     { type: _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FaIconLibrary"] }
 ];
 AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_8__["NgModule"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_9__["NgModule"])({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
         entryComponents: [],
         imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeModule"], _modal_modal_module__WEBPACK_IMPORTED_MODULE_7__["ModalPageModule"], _modalCambioPerfil__WEBPACK_IMPORTED_MODULE_13__["ModalModule"]],
-        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicRouteStrategy"] }, _ionic_native_screenshot_ngx__WEBPACK_IMPORTED_MODULE_14__["Screenshot"]],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeModule"], _modal_modal_module__WEBPACK_IMPORTED_MODULE_8__["ModalPageModule"], _modalCambioPerfil__WEBPACK_IMPORTED_MODULE_7__["ModalModule"]],
+        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicRouteStrategy"] }, _ionic_native_screenshot_ngx__WEBPACK_IMPORTED_MODULE_11__["Screenshot"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
     })
 ], AppModule);
@@ -429,7 +458,7 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jw-modal\">\n    <div class=\"jw-modal-body\">\n        <ng-content></ng-content>\n    </div>\n</div>\n<div class=\"jw-modal-background\"></div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jw-modal\">\r\n    <div class=\"jw-modal-body\">\r\n        <ng-content></ng-content>\r\n    </div>\r\n</div>\r\n<div class=\"jw-modal-background\"></div>");
 
 /***/ }),
 
@@ -797,7 +826,7 @@ const routes = [
     },
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'inicio-sesion',
         pathMatch: 'full'
     },
     {
@@ -824,6 +853,10 @@ const routes = [
         path: 'registro',
         loadChildren: () => __webpack_require__.e(/*! import() | registro-registro-module */ "registro-registro-module").then(__webpack_require__.bind(null, /*! ./registro/registro.module */ "+WFb")).then(m => m.RegistroPageModule)
     },
+    {
+        path: 'categorias',
+        loadChildren: () => __webpack_require__.e(/*! import() | categorias-categorias-module */ "categorias-categorias-module").then(__webpack_require__.bind(null, /*! ./categorias/categorias.module */ "cHTx")).then(m => m.CategoriasPageModule)
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -849,7 +882,49 @@ AppRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header class=\"ion-no-border header\">\r\n  <ion-toolbar >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button class=\"cls-button\" color=\"dark\" defaultHref=\"\" icon=\"close\" (click)=\"dismiss()\">\r\n      </ion-back-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content fullscreen class=\"contenido\">\r\n  <div class=\"container-gris\">\r\n    <div class=\"franja-roja\"></div>\r\n    <div class=\"container-circulo\">\r\n      <div class=\"circulo\" >\r\n        <fa-icon class=\"icono\" icon=\"dollar-sign\" size=3x></fa-icon>\r\n      </div>\r\n    </div>\r\n    <h2 class=\"titulo\">PRECIOS</h2>\r\n      <ion-img  class=\"publicidad\" src=\"{{this.banner_publicidad}}\"></ion-img>\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col class=\"container-banner\" size= \"7\">\r\n          <ion-img class=\"banners\" src=\"{{this.banner_comer}}\"></ion-img>\r\n        </ion-col>\r\n        <ion-col class=\"container-precio\">\r\n          <ng-container *ngIf=\"this.user_id; else login\">\r\n            <ng-container *ngIf=\"this.precio_comer != 0; else soloSugerirComer\">\r\n              <p class=\"precio\">{{this.precio_comer | currency}} MXN</p>\r\n              <ion-button class=\" botonSugerirPrecio\" fill=\"clear\" size=\"small\" (click)=\"sugerir('comer')\">SUGERIR PRECIO</ion-button>\r\n            </ng-container>\r\n            <ng-template #soloSugerirComer >\r\n              <ion-button class=\"botonSugerirPrecio soloSugerir\" fill=\"clear\" size=\"small\" expand=\"full\" (click)=\"sugerir('comer')\">SUGERIR PRECIO</ion-button>\r\n            </ng-template>\r\n          </ng-container>\r\n          <ng-template #login>logeate, ese</ng-template>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col class=\"container-banner\" size= \"7\">\r\n          <ion-img class=\"banners\" src=\"{{this.banner_soriana}}\"></ion-img>\r\n        </ion-col>\r\n        <ion-col class=\"container-precio\">\r\n          <ng-container *ngIf=\"this.user_id; else login2\">\r\n            <ng-container *ngIf=\"this.precio_soriana != 0; else soloSugerirSoriana\">\r\n              <p class=\"precio\">{{this.precio_soriana | currency}} MXN</p>\r\n              <ion-button class=\" botonSugerirPrecio\" fill=\"clear\" size=\"small\"  (click)=\"sugerir('soriana')\">SUGERIR PRECIO</ion-button>\r\n            </ng-container>\r\n            <ng-template #soloSugerirSoriana>\r\n              <ion-button class=\"botonSugerirPrecio soloSugerir\" fill=\"clear\" size=\"small\" expand=\"full\" (click)=\"sugerir('soriana')\">SUGERIR PRECIO</ion-button>\r\n            </ng-template>\r\n          </ng-container>\r\n          <ng-template #login2>logeate, ese</ng-template>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col class=\"container-banner\" size= \"7\">\r\n          <ion-img class=\"banners\" src=\"{{this.banner_aurrera}}\"></ion-img>\r\n        </ion-col>\r\n        <ion-col class=\"container-precio\">\r\n          <ng-container *ngIf=\"this.user_id; else login3\">\r\n            <ng-container *ngIf=\"this.precio_aurrera != 0; else soloSugerirAurrera\">\r\n              <p class=\"precio\">{{this.precio_aurrera | currency}} MXN</p>\r\n              <ion-button class=\" botonSugerirPrecio\" fill=\"clear\" size=\"small\" (click)=\"sugerir('aurrera')\">SUGERIR PRECIO</ion-button>\r\n            </ng-container>\r\n            <ng-template #soloSugerirAurrera>\r\n              <ion-button class=\"botonSugerirPrecio soloSugerir\" fill=\"clear\" size=\"small\" expand=\"full\" (click)=\"sugerir('aurrera')\">SUGERIR PRECIO</ion-button>\r\n            </ng-template>\r\n          </ng-container>\r\n          <ng-template #login3>logeate, ese</ng-template>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </div>\r\n</ion-content>\r\n  <!-- The Modal -->\r\n  <ion-item lines=\"none\" id=\"myModal\" class=\"modal\" color=\"transparent\">\r\n\r\n    <!-- Modal content -->\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h2>Sugerir precio nuevo</h2>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n          <ion-label class=\"ion-text-wrap\">Nuevo precio para {{nombre}} ({{tamano}})</ion-label>\r\n          <ion-input type=\"number\" clear-input autofocus inputmode=\"decimal\"></ion-input>\r\n          <div class=\"container-buttons\">\r\n            <div class=\"container-aceptar\">\r\n              <ion-button id=\"aceptar\">Aceptar</ion-button>\r\n            </div>\r\n            <div class=\"container-cancelar\">\r\n              <ion-button id=\"cancelar\" class=\"button\">Cancelar</ion-button>\r\n            </div>\r\n          </div>\r\n      </div>\r\n    </div>\r\n  </ion-item>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header class=\"ion-no-border header\">\r\n  <ion-toolbar >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button class=\"cls-button\" color=\"dark\" defaultHref=\"\" icon=\"close\" (click)=\"dismiss()\">\r\n      </ion-back-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content fullscreen class=\"contenido\">\r\n  <div class=\"container-gris\">\r\n    <div class=\"franja-roja\"></div>\r\n    <div class=\"container-circulo\">\r\n      <div class=\"circulo\" >\r\n        <fa-icon class=\"icono\" icon=\"dollar-sign\" size=3x></fa-icon>\r\n      </div>\r\n    </div>\r\n    <h2 class=\"titulo\">PRECIOS</h2>\r\n      <ion-img  class=\"publicidad\" src=\"{{this.banner_publicidad}}\"></ion-img>\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col class=\"container-banner\" size= \"7\">\r\n          <ion-img class=\"banners\" src=\"{{this.banner_comer}}\"></ion-img>\r\n        </ion-col>\r\n        <ion-col class=\"container-precio\">\r\n          <ng-container *ngIf=\"this.user_id; else login\">\r\n            <ng-container *ngIf=\"this.precio_comer != 0; else soloSugerirComer\">\r\n              <p class=\"precio\">{{this.precio_comer | currency}} MXN</p>\r\n              <ion-button class=\" botonSugerirPrecio\" fill=\"clear\" size=\"small\" (click)=\"sugerir('comer', this.producto_id, this.user_id, dataService)\">SUGERIR PRECIO</ion-button>\r\n            </ng-container>\r\n            <ng-template #soloSugerirComer >\r\n              <ion-button class=\"botonSugerirPrecio soloSugerir\" fill=\"clear\" size=\"small\" expand=\"full\" (click)=\"sugerir('comer', this.producto_id, this.user_id, dataService)\">SUGERIR PRECIO</ion-button>\r\n            </ng-template>\r\n          </ng-container>\r\n          <ng-template #login>logeate, ese</ng-template>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col class=\"container-banner\" size= \"7\">\r\n          <ion-img class=\"banners\" src=\"{{this.banner_soriana}}\"></ion-img>\r\n        </ion-col>\r\n        <ion-col class=\"container-precio\">\r\n          <ng-container *ngIf=\"this.user_id; else login2\">\r\n            <ng-container *ngIf=\"this.precio_soriana != 0; else soloSugerirSoriana\">\r\n              <p class=\"precio\">{{this.precio_soriana | currency}} MXN</p>\r\n              <ion-button class=\" botonSugerirPrecio\" fill=\"clear\" size=\"small\"  (click)=\"sugerir('soriana', this.producto_id, this.user_id, dataService)\">SUGERIR PRECIO</ion-button>\r\n            </ng-container>\r\n            <ng-template #soloSugerirSoriana>\r\n              <ion-button class=\"botonSugerirPrecio soloSugerir\" fill=\"clear\" size=\"small\" expand=\"full\" (click)=\"sugerir('soriana', this.producto_id, this.user_id, dataService)\">SUGERIR PRECIO</ion-button>\r\n            </ng-template>\r\n          </ng-container>\r\n          <ng-template #login2>logeate, ese</ng-template>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col class=\"container-banner\" size= \"7\">\r\n          <ion-img class=\"banners\" src=\"{{this.banner_aurrera}}\"></ion-img>\r\n        </ion-col>\r\n        <ion-col class=\"container-precio\">\r\n          <ng-container *ngIf=\"this.user_id; else login3\">\r\n            <ng-container *ngIf=\"this.precio_aurrera != 0; else soloSugerirAurrera\">\r\n              <p class=\"precio\">{{this.precio_aurrera | currency}} MXN</p>\r\n              <ion-button class=\" botonSugerirPrecio\" fill=\"clear\" size=\"small\" (click)=\"sugerir('aurrera', this.producto_id, this.user_id, dataService)\">SUGERIR PRECIO</ion-button>\r\n            </ng-container>\r\n            <ng-template #soloSugerirAurrera>\r\n              <ion-button class=\"botonSugerirPrecio soloSugerir\" fill=\"clear\" size=\"small\" expand=\"full\" (click)=\"sugerir('aurrera', this.producto_id, this.user_id, dataService)\">SUGERIR PRECIO</ion-button>\r\n            </ng-template>\r\n          </ng-container>\r\n          <ng-template #login3>logeate, ese</ng-template>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </div>\r\n</ion-content>\r\n  <!-- The Modal -->\r\n  <ion-item lines=\"none\" id=\"myModal\" class=\"modal\" color=\"transparent\">\r\n\r\n    <!-- Modal content -->\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h2>Sugerir precio nuevo</h2>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n          <ion-label class=\"ion-text-wrap\">Nuevo precio para {{nombre}} ({{tamano}})</ion-label>\r\n          <ion-input id=\"precio\" type=\"number\" clear-input autofocus inputmode=\"decimal\"></ion-input>\r\n          <div class=\"container-buttons\">\r\n            <div class=\"container-aceptar\">\r\n              <ion-button id=\"aceptar\">Aceptar</ion-button>\r\n            </div>\r\n            <div class=\"container-cancelar\">\r\n              <ion-button id=\"cancelar\">Cancelar</ion-button>\r\n            </div>\r\n          </div>\r\n      </div>\r\n    </div>\r\n  </ion-item>");
+
+/***/ }),
+
+/***/ "xf3R":
+/*!*****************************************!*\
+  !*** ./src/app/data-service.service.ts ***!
+  \*****************************************/
+/*! exports provided: DataService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+
+let DataService = class DataService {
+    constructor(http) {
+        this.http = http;
+        //la url de su compu; la ip es la que se muestra cuando corren el comando ionic serve
+        //
+        this.urlLaptop = 'http://192.168.0.14/webservice/checkfood/';
+        this.url = 'http://localhost/webservice/checkfood/';
+        this.api = '/service.php';
+    }
+    post(model, params) {
+        return this.http.post(this.urlLaptop + model + this.api, params, { responseType: 'json' });
+    }
+};
+DataService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+];
+DataService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+        providedIn: 'root'
+    })
+], DataService);
+
+
 
 /***/ }),
 

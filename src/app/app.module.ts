@@ -5,15 +5,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalModule } from './modalCambioPerfil';
 import { ModalPageModule } from './modal/modal.module';
 import { NgModule } from '@angular/core';
 import { RouteReuseStrategy } from '@angular/router';
+import { Screenshot } from '@ionic-native/screenshot/ngx';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-
-import { ModalModule } from './modalCambioPerfil';
-import { Screenshot } from '@ionic-native/screenshot/ngx';
 
 @NgModule({
   declarations: [AppComponent],

@@ -59,7 +59,7 @@ InicioSesionPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__dec
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<body style=\"height:100%\" >\n  <div class=\"fondo\">\n\n      <img class=\"logo\" src=\"/assets/fondo/logo.png\" alt=\"\">\n      <div class=\"titulo\">\n        <div class=\"icono\">\n          <ion-icon name=\"person\" style=\"color: #c75142; \"></ion-icon>  \n        </div>\n          CORREO\n      </div>\n      <input type=\"text\" class=\"dato\" id=\"nombreId\">\n      <div class=\"titulo\">\n      \n        <div class=\"icono\">\n        \n          <ion-icon name=\"lock-closed\" style=\"color: #c75142; \"></ion-icon>\n          \n        </div>\n        \n          CONTRASEÑA\n      </div>\n      <input type=\"password\" class=\"dato\" id=\"contraId\"\n      style=\"font-size: 60px; font-weight: bolder;\">\n\n      <div class=\"boton\" (click)=\"iniciarSesion()\">\n        Iniciar sesión\n      </div>\n      <div class=\"texto\">\n        \n      Aún no tengo cuenta <a href=\"registro\" style=\"color: #c75142; font-family: Cocogoose-Bold; font-size: 16px;\"> Registrarme</a>\n\n      </div>\n  </div>\n</body>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<body style=\"height:100%\" >\r\n  <div class=\"fondo\">\r\n\r\n      <img class=\"logo\" src=\"/assets/fondo/logo.png\" alt=\"\">\r\n      <div class=\"titulo\">\r\n        <div class=\"icono\">\r\n          <ion-icon name=\"person\" style=\"color: #c75142; \"></ion-icon>  \r\n        </div>\r\n          CORREO\r\n      </div>\r\n      <input type=\"text\" class=\"dato\" id=\"nombreId\">\r\n      <div class=\"titulo\">\r\n      \r\n        <div class=\"icono\">\r\n        \r\n          <ion-icon name=\"lock-closed\" style=\"color: #c75142; \"></ion-icon>\r\n          \r\n        </div>\r\n        \r\n          CONTRASEÑA\r\n      </div>\r\n      <input type=\"password\" class=\"dato\" id=\"contraId\"\r\n      style=\"font-size: 60px; font-weight: bolder;\">\r\n\r\n      <div class=\"boton\" (click)=\"iniciarSesion()\">\r\n        Iniciar sesión\r\n      </div>\r\n      <div class=\"texto\">\r\n        \r\n      Aún no tengo cuenta <a href=\"registro\" style=\"color: #c75142; font-family: Cocogoose-Bold; font-size: 16px;\"> Registrarme</a>\r\n\r\n      </div>\r\n  </div>\r\n</body>\r\n\r\n");
 
 /***/ }),
 
@@ -176,48 +176,6 @@ InicioSesionPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         styles: [_inicio_sesion_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
     })
 ], InicioSesionPage);
-
-
-
-/***/ }),
-
-/***/ "xf3R":
-/*!*****************************************!*\
-  !*** ./src/app/data-service.service.ts ***!
-  \*****************************************/
-/*! exports provided: DataService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-
-let DataService = class DataService {
-    constructor(http) {
-        this.http = http;
-        //la url de su compu; la ip es la que se muestra cuando corren el comando ionic serve
-        //
-        this.urlLaptop = 'http://192.168.1.74/webservice/checkfood/';
-        this.url = 'http://localhost/webservice/checkfood/';
-        this.api = '/service.php';
-    }
-    post(model, params) {
-        return this.http.post(this.urlLaptop + model + this.api, params, { responseType: 'json' });
-    }
-};
-DataService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
-];
-DataService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
-        providedIn: 'root'
-    })
-], DataService);
 
 
 

@@ -170,7 +170,7 @@ RegistroPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<body style=\"height:100%\" >\n  <div class=\"fondo\">\n    <div class=\"franja\">\n      REGISTRO\n    </div>  \n    <div class=\"linea-punteada\">\n\n    </div>\n    <div class=\"fotoPerfil2\">\n      <div class=\"fotoPerfil\" >\n        <img [src]=foto (click)=\"openModal()\" >\n      </div>\n    </div>\n\n    <div class=\"titulo\">\n      <div class=\"icono\">\n        <ion-icon name=\"person\" style=\"color: #c75142; \"></ion-icon>  \n      </div>\n        NOMBRE DE USUARIO\n    </div>\n    <input type=\"text\" class=\"dato\" id=\"nombreId\">\n\n\n    <div class=\"titulo\">\n      <div class=\"icono\">\n        <ion-icon name=\"mail\" style=\"color: #c75142; \"></ion-icon>  \n      </div>\n        CORREO\n    </div>\n    <input type=\"text\" class=\"dato\" id=\"correoId\">\n\n      <div class=\"titulo\">\n      \n        <div class=\"icono\">\n        \n          <ion-icon name=\"lock-closed\" style=\"color: #c75142; \"></ion-icon>\n          \n        </div>\n        \n          CONTRASEÑA\n      </div>\n      <input type=\"password\" class=\"dato\" id=\"contraId\"\n      style=\"font-size: 60px; font-weight: bolder;\">\n\n      <div class=\"boton\" (click)=\"registrar()\">\n        Registrarme\n      </div>\n      <div class=\"texto\">\n        \n      Ya tengo cuenta <a href=\"inicio-sesion\" style=\"color: #c75142; font-family: Cocogoose-Bold; font-size: 16px;\"> Iniciar Sesión</a>\n\n      </div>\n\n\n\n      <div class=\"jw-modal-wrapper\" id=\"idFondo\">\n  \n        <div class=\"jw-modal\">\n          <div class=\"jw-modal-body\">\n  \n            <div class=\"modal-top\">\n              <button class=\"botonCerrar\"  (click)=\"cerrarModalFoto()\">\n                x\n              </button>\n              <p>Elegir avatar</p>\n  \n            </div>\n            <div class=\"linea-punteada2\"></div>\n            <div>\n              <ion-grid>\n                <ion-row>\n                  \n                  <ion-col size=\"6\" *ngFor=\" let imagen of imagenes\" >\n              \n                    <div text-align= “center”> <img src=\"assets/fotosPerfil/{{imagen}}.png\" class=\"foto\" (click)=\"cambiarPerfil(imagen) \">\n                      </div>\n                  </ion-col>\n                    \n              \n                </ion-row>\n              </ion-grid>\n            </div>\n              \n              \n       \n          </div>\n        </div>\n        <div class=\"jw-modal-background\">\n  \n        </div>\n        \n        </div>\n\n\n  </div>\n</body>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<body style=\"height:100%\" >\r\n  <div class=\"fondo\">\r\n    <div class=\"franja\">\r\n      REGISTRO\r\n    </div>  \r\n    <div class=\"linea-punteada\">\r\n\r\n    </div>\r\n    <div class=\"fotoPerfil2\">\r\n      <div class=\"fotoPerfil\" >\r\n        <img [src]=foto (click)=\"openModal()\" >\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"titulo\">\r\n      <div class=\"icono\">\r\n        <ion-icon name=\"person\" style=\"color: #c75142; \"></ion-icon>  \r\n      </div>\r\n        NOMBRE DE USUARIO\r\n    </div>\r\n    <input type=\"text\" class=\"dato\" id=\"nombreId\">\r\n\r\n\r\n    <div class=\"titulo\">\r\n      <div class=\"icono\">\r\n        <ion-icon name=\"mail\" style=\"color: #c75142; \"></ion-icon>  \r\n      </div>\r\n        CORREO\r\n    </div>\r\n    <input type=\"text\" class=\"dato\" id=\"correoId\">\r\n\r\n      <div class=\"titulo\">\r\n      \r\n        <div class=\"icono\">\r\n        \r\n          <ion-icon name=\"lock-closed\" style=\"color: #c75142; \"></ion-icon>\r\n          \r\n        </div>\r\n        \r\n          CONTRASEÑA\r\n      </div>\r\n      <input type=\"password\" class=\"dato\" id=\"contraId\"\r\n      style=\"font-size: 60px; font-weight: bolder;\">\r\n\r\n      <div class=\"boton\" (click)=\"registrar()\">\r\n        Registrarme\r\n      </div>\r\n      <div class=\"texto\">\r\n        \r\n      Ya tengo cuenta <a href=\"inicio-sesion\" style=\"color: #c75142; font-family: Cocogoose-Bold; font-size: 16px;\"> Iniciar Sesión</a>\r\n\r\n      </div>\r\n\r\n\r\n\r\n      <div class=\"jw-modal-wrapper\" id=\"idFondo\">\r\n  \r\n        <div class=\"jw-modal\">\r\n          <div class=\"jw-modal-body\">\r\n  \r\n            <div class=\"modal-top\">\r\n              <button class=\"botonCerrar\"  (click)=\"cerrarModalFoto()\">\r\n                x\r\n              </button>\r\n              <p>Elegir avatar</p>\r\n  \r\n            </div>\r\n            <div class=\"linea-punteada2\"></div>\r\n            <div>\r\n              <ion-grid>\r\n                <ion-row>\r\n                  \r\n                  <ion-col size=\"6\" *ngFor=\" let imagen of imagenes\" >\r\n              \r\n                    <div text-align= “center”> <img src=\"assets/fotosPerfil/{{imagen}}.png\" class=\"foto\" (click)=\"cambiarPerfil(imagen) \">\r\n                      </div>\r\n                  </ion-col>\r\n                    \r\n              \r\n                </ion-row>\r\n              </ion-grid>\r\n            </div>\r\n              \r\n              \r\n       \r\n          </div>\r\n        </div>\r\n        <div class=\"jw-modal-background\">\r\n  \r\n        </div>\r\n        \r\n        </div>\r\n\r\n\r\n  </div>\r\n</body>\r\n\r\n");
 
 /***/ }),
 
@@ -219,48 +219,6 @@ RegistroPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorat
         exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
     })
 ], RegistroPageRoutingModule);
-
-
-
-/***/ }),
-
-/***/ "xf3R":
-/*!*****************************************!*\
-  !*** ./src/app/data-service.service.ts ***!
-  \*****************************************/
-/*! exports provided: DataService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-
-let DataService = class DataService {
-    constructor(http) {
-        this.http = http;
-        //la url de su compu; la ip es la que se muestra cuando corren el comando ionic serve
-        //
-        this.urlLaptop = 'http://192.168.1.74/webservice/checkfood/';
-        this.url = 'http://localhost/webservice/checkfood/';
-        this.api = '/service.php';
-    }
-    post(model, params) {
-        return this.http.post(this.urlLaptop + model + this.api, params, { responseType: 'json' });
-    }
-};
-DataService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
-];
-DataService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
-        providedIn: 'root'
-    })
-], DataService);
 
 
 
