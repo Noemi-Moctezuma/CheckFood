@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
 import { ModalModule } from './modalCambioPerfil';
 import { ModalPageModule } from './modal/modal.module';
 import { NgModule } from '@angular/core';
@@ -19,7 +20,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
     HttpClientModule, FontAwesomeModule, ModalPageModule, ModalModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Screenshot],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Screenshot, Keyboard],
   bootstrap: [AppComponent],
 })
 export class AppModule {

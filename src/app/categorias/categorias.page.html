@@ -24,7 +24,8 @@
       <ion-row>
         <ion-col size="4" *ngFor="let item of map | keyvalue" >
           
-          <div text-align= “center” class="foto"> <img src="assets/categoriaSeleccionada/{{item.key}}.png" class="foto" (click)="seleccionarCategoria(item.key) ">
+          <div text-align= “center” class="foto"> 
+            <img src="assets/categoriaSeleccionada/{{item.key}}.png" class="foto" (click)="seleccionarCategoria(item.key) ">
           </div>
           <div class="titulo">
             {{item.value}}

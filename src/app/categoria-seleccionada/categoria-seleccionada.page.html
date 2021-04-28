@@ -12,20 +12,16 @@
       <div class="publicidad">
         <!--<img src="/assets/categoriaSeleccionada/publicidad.png" >-->
       </div>
-
       <ion-content class="bloque">
         <ion-grid class="extra">
           <ion-row  class="extra">
             <ion-col size="4" *ngFor=" let producto of productos">
-
-
-            <div class="card" (click)="seleccionarProducto(producto.id)"  routerLink="/producto" >
-              <div text-align= “center” > <img src=" {{producto.imagen_rt}}">
+              <div class="card" (click)="seleccionarProducto(producto.id)"  routerLink="/producto" >
+                <div text-align= “center” > 
+                  <img src=" {{producto.imagen_rt}}">
+                </div>
+                <div style="font-family:OpenSans-SemiBold;">{{producto.nombre}}</div>
               </div>
-              <div style="font-family:OpenSans-SemiBold;">{{producto.nombre}}</div>
-            </div>
-               
-
             </ion-col>
           </ion-row>
         </ion-grid>

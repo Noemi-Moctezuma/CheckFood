@@ -1,22 +1,15 @@
 .fondo{
-    position: relative;
     text-align:center;
     border-radius:40px;
     margin: 5%;
     height: 95%;
     background-image: url("/assets/fondo/borroso.png");
-    background-size: cover;
-    background-repeat: no-repeat;   
-    background-position: center;
-    z-index: 1;
-    
-
+    display: block!important;
+    visibility: visible!important;
 }
+
 .franja{
-    
     border-radius: 30px 30px 0px 0px;
-    -moz-border-radius: 30px 30px 0px 0px;
-    -webkit-border-radius: 30px 30px 0px 0px;
     background-color: #c75142;
     height: 10%;
     display: flex;
@@ -27,23 +20,19 @@
     font-family:  Cocogoose-Bold;
     font-size: 22px;
 }
-
 .linea-punteada{
     height: 25px;
     border-bottom-style: dotted; 
     border-bottom-width: 5px;
     margin-bottom: 20px;
-    
     color: white;
 }
-
 .fotoPerfil{
     width: 110px;
     height: 110px;
     margin:0px auto;
     border:10px solid white ;
     border-radius:50%;
-
 }
 .fotoPerfil2{
     width: 115px;
@@ -51,7 +40,6 @@
     margin:1px auto;
     border:2px solid #d7e6a3 ;
     border-radius:50%;
-    
 }
 .dato{
     margin-top: 10px;
@@ -62,50 +50,43 @@
     height: 40px;
     background-color:white;
     border:2px solid #d7e6a3 ;
-    width: 68%;
-    text-align: center;
-    
-    
+    width: 70%;
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: start;
 }
 .titulo{
-
     font-family:Cocogoose-Bold;
     font-size: 12px;
     display:flex;
     align-items: center;
     margin-top: 7%;
-    position: relative;
     color: #44280b;
     margin-left: 20%;
-    
 }
-
 .boton{
-    
-    text-align: center;
-    position: center;
     color: white;
-    border-radius:15px;
-    width: 40%;
+    --border-radius:15px;
+    width: 50%;
     height: 40px;
     text-align: center;
-    font-family:  Cocogoose-Light;
-    font-size: 11px;
+    font-family:  Cocogoose-Bold;
+    font-size: 13px;
     letter-spacing: 1px;
-    background-color: #81af4f;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 30%;
-    margin-top: 60px;
-    margin-bottom: 40px;
+    --background: #81af4f;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    text-transform:none!important;
 }
 .texto{
+    margin-top: 3%;
     font-family: Cocogoose-Light;
     color: #44280b;
     font-size: 14px;
 }
-
 .icono{
     position: absolute;
     display:flex;
@@ -117,12 +98,7 @@
     height: 28px;
     background-color: white;
     margin-left: -12%;
-
 }
-
-
-
-
 body.jw-modal-open {
     /* body overflow is hidden to hide main scrollbar when modal window is open */
     overflow: hidden;
@@ -134,26 +110,20 @@ body.jw-modal-open {
     right: 0;
     bottom: 0;
     left: 0;
-
     /* z-index must be higher than .jw-modal-background */
     z-index: 1000;
-    
     /* enables scrolling for tall modals */
     overflow: auto;
-
-   
 }
 .jw-modal-body {
     background: white;
     width: 70%;
     height: 60%;
-
     /* margin exposes part of the modal background */
     margin: 15%;
     margin-top: 45%;
     border:0px solid #f6f5f4;
     border-radius:30px;
-    
 }
 .jw-modal-background {
     /* modal background fixed across whole screen */
@@ -162,11 +132,9 @@ body.jw-modal-open {
     right: 0;
     bottom: 0;
     left: 0;
-
     /* semi-transparent black  */
     background-color: #000;
     opacity: 0.75;
-    
     /* z-index must be below .jw-modal and above everything else  */
     z-index: 900;
 }
@@ -175,11 +143,8 @@ body.jw-modal-open {
 }
 .modal-top{
     border-radius: 30px 30px 0px 0px;
-    -moz-border-radius: 30px 30px 0px 0px;
-    -webkit-border-radius: 30px 30px 0px 0px;
     background-color: #81af4f;
     height: 10%;
-    
     display: flex;
     justify-content: center;
     align-content: center;
@@ -188,6 +153,7 @@ body.jw-modal-open {
     font-family:  Cocogoose-light;
     font-size: 12px;
     letter-spacing: 1px;
+    padding-left: 5%;
 }
 .linea-punteada2{
     height: 25px;
@@ -213,5 +179,4 @@ body.jw-modal-open {
     color: white;
     font-size: 20px;
     font-weight: bold;
-
 }

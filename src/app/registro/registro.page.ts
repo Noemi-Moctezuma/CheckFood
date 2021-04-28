@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NavController } from '@ionic/angular';
-
 import { AlertController } from '@ionic/angular';
-
 import { DataService } from './../data-service.service';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
+import { NavController } from '@ionic/angular';
+import Swal  from 'sweetalert2';
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
@@ -15,6 +16,7 @@ export class RegistroPage implements OnInit {
   constructor(
     public alertController: AlertController,
     private dataService: DataService,
+    private keyboard: Keyboard, 
     public navCtrl: NavController) { }
 
   ngOnInit() {

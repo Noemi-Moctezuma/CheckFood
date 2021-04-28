@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DataService } from './../data-service.service';
-
 import { AlertController } from '@ionic/angular';
-
+import { DataService } from './../data-service.service';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -13,10 +12,13 @@ import { NavController } from '@ionic/angular';
 })
 export class InicioSesionPage implements OnInit {
    constructor( private dataService: DataService, 
+    private keyboard: Keyboard, 
     public alertController: AlertController,
-    public navCtrl: NavController) { }
+    public navCtrl: NavController,
+    ) { }
 
   ngOnInit() {
+
   }
 iniciarSesion(){
   var info = {

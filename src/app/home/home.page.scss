@@ -1,3 +1,10 @@
+.header{
+  position: absolute;
+}
+ion-toolbar {
+  --background: transparent;
+  --ion-color-base: transparent !important;
+}
 .fondo{
   position:absolute;
   text-align:center;

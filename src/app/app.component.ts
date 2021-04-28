@@ -23,6 +23,8 @@ export class AppComponent {
       this.backButtonEvent();
       if (localStorage.getItem('usuario_id')){
         this.router.navigate(['/home/']);
+      }else{
+        this.router.navigate(['/inicio-sesion/']);
       }
     });
   }
@@ -30,7 +32,7 @@ export class AppComponent {
     
     const event = fromEvent(document, 'backbutton');
     event.subscribe(async () => {
-      if  (this.router.url === '/iniciar-sesion') {
+      if  (this.router.url === '/inicio-sesion') {
         navigator['app'].exitApp();
       }
       else if (this.router.url === '/home' && localStorage.getItem('usuario_id')){

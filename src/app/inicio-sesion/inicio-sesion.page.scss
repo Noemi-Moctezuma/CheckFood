@@ -1,16 +1,9 @@
 .fondo{
-    position: relative;
     text-align:center;
     border-radius:40px;
     margin: 5%;
     height: 95%;
     background-image: url("/assets/fondo/borroso.png");
-    background-size: cover;
-    background-repeat: no-repeat;   
-    background-position: center;
-    z-index: 1;
-    
-
 }
 .logo{
     position: center;
@@ -19,14 +12,10 @@
     background-position: center;
     width: 40%;
     height: auto;
-    margin-top: 30%;
-    //position: absolute;
-   z-index: 100;
-
+    margin-top: 25%;
 }
 .dato{
     margin-top: 10px;
-    position: center;
     color:#c75142;
     font-family: Cocogoose-Light;
     border-radius:50px;
@@ -34,9 +23,11 @@
     background-color:white;
     border:2px solid #d7e6a3 ;
     width: 70%;
-    text-align: center;
-    
-    
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: start;
 }
 .icono{
     position: absolute;
@@ -49,42 +40,33 @@
     height: 28px;
     background-color: white;
     margin-left: -12%;
-
 }
 .titulo{
-
     font-family:Cocogoose-Bold;
     letter-spacing: -1px;
     display:flex;
     align-items: center;
     margin-top: 10%;
-    position: relative;
     color: #44280b;
     margin-left: 20%;
-    
 }
-
 .boton{
-    
-    text-align: center;
-    position: center;
     color: white;
-    border-radius:15px;
-    width: 40%;
+    --border-radius:15px;
+    width: 50%;
     height: 40px;
     text-align: center;
-    font-family:  Cocogoose-Light;
-    font-size: 11px;
+    font-family:  Cocogoose-Bold;
+    font-size: 13px;
     letter-spacing: 1px;
-    background-color: #81af4f;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 30%;
-    margin-top: 60px;
-    margin-bottom: 40px;
+    --background: #81af4f;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+    text-transform:none!important;
 }
 .texto{
+    margin-top: 3%;
     font-family: Cocogoose-Light;
     color: #44280b;
     font-size: 14px;
