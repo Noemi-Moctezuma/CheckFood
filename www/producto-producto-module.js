@@ -123,12 +123,8 @@ let ProductoPage = class ProductoPage {
     constructor(dataService, modalController) {
         this.dataService = dataService;
         this.modalController = modalController;
-<<<<<<< HEAD
         this.producto_id = localStorage.getItem('producto_id');
-=======
-        this.producto_id = 6;
-        //producto_id = 5;
->>>>>>> 0ea192039694dc56e4295762f999d10650149ce8
+        //producto_id = 1;
         this.user_id = 2;
     }
     precios() {
@@ -173,8 +169,9 @@ let ProductoPage = class ProductoPage {
             //obtener el id del usuario
             //this.user_id = parseInt(localStorage.getItem('id'), 10);
             this.data_modal = [{
-                    nombre: this.nombre,
                     precio_comer: this.precio_comer,
+                    nombre: this.nombre,
+                    tamano: this.cantidad_tamano,
                     precio_soriana: this.precio_soriana,
                     precio_aurrera: this.precio_aurrera,
                     fecha_actualizacion_comer: this.fecha_actualizacion_comer,
@@ -216,48 +213,6 @@ ProductoPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (".header {\n  position: absolute;\n}\n\n.back-button {\n  --background:#d7e6a3;\n}\n\n.contenido {\n  --background: white!important;\n}\n\nion-toolbar {\n  --background: transparent;\n  --ion-color-base: transparent !important;\n}\n\n.container-gris {\n  background-color: #f6f5f4;\n  margin: 25px;\n  border-radius: 35px;\n  overflow: auto;\n}\n\n.franja-verde {\n  background-color: #81af4f;\n  width: 100%;\n  height: 35px;\n  border-radius: 35px 35px 0 0;\n}\n\n.container-blanco {\n  background-color: white;\n  border-radius: 25px;\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  margin: 25% 25px 25px 25px !important;\n}\n\n.container-foto {\n  position: relative;\n}\n\n.foto {\n  position: absolute;\n  transform: translate(-50%, -50%);\n  left: 50%;\n  border: 4px solid #d7e6a3;\n  z-index: 2;\n}\n\n.container-info {\n  position: relative;\n}\n\n.prod {\n  color: #c75142;\n  font-family: OpenSans-Bold;\n  text-align: center;\n  font-size: 14px;\n  padding-top: 30%;\n  padding: 30% 5% 0% 5%;\n  margin: 0%;\n  position: relative;\n}\n\n.acs-titulos {\n  color: black;\n  text-align: center;\n  margin: 0;\n  font-family: OpenSans-Light;\n  font-size: 13px;\n}\n\n.acs-contenido {\n  color: #c75142;\n  text-align: center;\n  margin: 0;\n  font-family: OpenSans-SemiBoldItalic;\n  font-size: 12px;\n}\n\n.col-nopadding {\n  padding-bottom: 0;\n}\n\n.rad-titulo {\n  color: #c75142;\n  font-family: OpenSans-Bold;\n  font-size: 14px;\n  margin: 3%;\n}\n\n.radiografia {\n  margin: 0 3%;\n  color: black;\n  font-size: 12px;\n}\n\n.radiografia p {\n  font-family: OpenSans-Italic;\n}\n\n.radiografia span {\n  font-family: OpenSans-Regular;\n}\n\n.ing-titulo {\n  color: #81af4f;\n  font-family: OpenSans-Bold;\n  font-size: 14px;\n  margin: 3%;\n}\n\n.ingredientes {\n  margin: 0 3%;\n  color: black;\n}\n\n.ingredientes p {\n  font-family: OpenSans-LightItalic;\n  font-size: 12px;\n}\n\n.precios {\n  position: absolute;\n  transform: translateY(-25%);\n  left: 77%;\n  border: 2px solid #c75142;\n  border-radius: 50%;\n  width: 50px !important;\n  height: 50px !important;\n  z-index: 2;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXHByb2R1Y3RvLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0FBQ0o7O0FBQ0E7RUFDSSxvQkFBQTtBQUVKOztBQUFBO0VBQ0ksNkJBQUE7QUFHSjs7QUFEQTtFQUNJLHlCQUFBO0VBQ0Esd0NBQUE7QUFJSjs7QUFGQTtFQUNJLHlCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsY0FBQTtBQUtKOztBQUhBO0VBQ0kseUJBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLDRCQUFBO0FBTUo7O0FBSkE7RUFDSSx1QkFBQTtFQUNBLG1CQUFBO0VBQ0EsMkJBQUE7RUFBQSx3QkFBQTtFQUFBLG1CQUFBO0VBQ0EscUNBQUE7QUFPSjs7QUFMQTtFQUNJLGtCQUFBO0FBUUo7O0FBTkE7RUFDSSxrQkFBQTtFQUNBLGdDQUFBO0VBQ0EsU0FBQTtFQUNBLHlCQUFBO0VBQ0EsVUFBQTtBQVNKOztBQVBBO0VBQ0ksa0JBQUE7QUFVSjs7QUFSQTtFQUNJLGNBQUE7RUFBZ0IsMEJBQUE7RUFDaEIsa0JBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxxQkFBQTtFQUNBLFVBQUE7RUFDQSxrQkFBQTtBQVlKOztBQVZBO0VBQ0ksWUFBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtFQUNBLDJCQUFBO0VBQ0EsZUFBQTtBQWFKOztBQVhBO0VBQ0ksY0FBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtFQUNBLG9DQUFBO0VBQ0EsZUFBQTtBQWNKOztBQVpBO0VBQ0ksaUJBQUE7QUFlSjs7QUFiQTtFQUNJLGNBQUE7RUFDQSwwQkFBQTtFQUNBLGVBQUE7RUFDQSxVQUFBO0FBZ0JKOztBQWRBO0VBQ0ksWUFBQTtFQUNBLFlBQUE7RUFDQSxlQUFBO0FBaUJKOztBQWhCSTtFQUNJLDRCQUFBO0FBa0JSOztBQWhCSTtFQUNJLDZCQUFBO0FBa0JSOztBQWZBO0VBQ0ksY0FBQTtFQUNBLDBCQUFBO0VBQ0EsZUFBQTtFQUNBLFVBQUE7QUFrQko7O0FBaEJBO0VBQ0ksWUFBQTtFQUNBLFlBQUE7QUFtQko7O0FBbEJJO0VBQ0ksaUNBQUE7RUFDQSxlQUFBO0FBb0JSOztBQWpCQTtFQUNJLGtCQUFBO0VBQ0EsMkJBQUE7RUFDQSxTQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtFQUNBLHNCQUFBO0VBQ0EsdUJBQUE7RUFDQSxVQUFBO0FBb0JKIiwiZmlsZSI6InByb2R1Y3RvLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oZWFkZXJ7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuLmJhY2stYnV0dG9ue1xyXG4gICAgLS1iYWNrZ3JvdW5kOiNkN2U2YTM7XHJcbn1cclxuLmNvbnRlbmlkb3tcclxuICAgIC0tYmFja2dyb3VuZDogd2hpdGUhaW1wb3J0YW50O1xyXG59XHJcbmlvbi10b29sYmFyIHtcclxuICAgIC0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcbiAgICAtLWlvbi1jb2xvci1iYXNlOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG59XHJcbi5jb250YWluZXItZ3Jpc3tcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmNmY1ZjQ7XHJcbiAgICBtYXJnaW46IDI1cHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzNXB4O1xyXG4gICAgb3ZlcmZsb3c6IGF1dG87XHJcbn1cclxuLmZyYW5qYS12ZXJkZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjODFhZjRmO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDM1cHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzNXB4IDM1cHggMCAwO1xyXG59XHJcbi5jb250YWluZXItYmxhbmNve1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjp3aGl0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDI1cHg7XHJcbiAgICBoZWlnaHQ6IGZpdC1jb250ZW50O1xyXG4gICAgbWFyZ2luOiAyNSUgMjVweCAyNXB4IDI1cHghaW1wb3J0YW50O1xyXG59XHJcbi5jb250YWluZXItZm90byB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn1cclxuLmZvdG8ge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlOyBcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xyXG4gICAgbGVmdDogNTAlO1xyXG4gICAgYm9yZGVyOiA0cHggc29saWQgI2Q3ZTZhMztcclxuICAgIHotaW5kZXg6IDI7XHJcbn1cclxuLmNvbnRhaW5lci1pbmZve1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcbi5wcm9ke1xyXG4gICAgY29sb3I6ICNjNzUxNDI7IGZvbnQtZmFtaWx5OiBPcGVuU2Fucy1Cb2xkO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgcGFkZGluZy10b3A6IDMwJTtcclxuICAgIHBhZGRpbmc6IDMwJSA1JSAwJSA1JTtcclxuICAgIG1hcmdpbjogMCU7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn1cclxuLmFjcy10aXR1bG9ze1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgZm9udC1mYW1pbHk6IE9wZW5TYW5zLUxpZ2h0O1xyXG4gICAgZm9udC1zaXplOiAxM3B4O1xyXG59XHJcbi5hY3MtY29udGVuaWRve1xyXG4gICAgY29sb3I6ICNjNzUxNDI7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW46IDA7XHJcbiAgICBmb250LWZhbWlseTogT3BlblNhbnMtU2VtaUJvbGRJdGFsaWM7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuLmNvbC1ub3BhZGRpbmd7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMDtcclxufVxyXG4ucmFkLXRpdHVsb3tcclxuICAgIGNvbG9yOiAjYzc1MTQyO1xyXG4gICAgZm9udC1mYW1pbHk6IE9wZW5TYW5zLUJvbGQ7XHJcbiAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICBtYXJnaW46IDMlO1xyXG59XHJcbi5yYWRpb2dyYWZpYXtcclxuICAgIG1hcmdpbjogMCAzJTtcclxuICAgIGNvbG9yOiBibGFjaztcclxuICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgIHB7XHJcbiAgICAgICAgZm9udC1mYW1pbHk6IE9wZW5TYW5zLUl0YWxpYztcclxuICAgIH1cclxuICAgIHNwYW57XHJcbiAgICAgICAgZm9udC1mYW1pbHk6IE9wZW5TYW5zLVJlZ3VsYXI7XHJcbiAgICB9XHJcbn1cclxuLmluZy10aXR1bG97XHJcbiAgICBjb2xvcjogIzgxYWY0ZjtcclxuICAgIGZvbnQtZmFtaWx5OiBPcGVuU2Fucy1Cb2xkO1xyXG4gICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgbWFyZ2luOiAzJTtcclxufVxyXG4uaW5ncmVkaWVudGVze1xyXG4gICAgbWFyZ2luOiAwIDMlO1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG4gICAgcHtcclxuICAgICAgICBmb250LWZhbWlseTogT3BlblNhbnMtTGlnaHRJdGFsaWM7XHJcbiAgICAgICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgfVxyXG59XHJcbi5wcmVjaW9zIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTsgXHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTI1JSk7XHJcbiAgICBsZWZ0OiA3NyU7XHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCAjYzc1MTQyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgd2lkdGg6IDUwcHghaW1wb3J0YW50O1xyXG4gICAgaGVpZ2h0OiA1MHB4IWltcG9ydGFudDtcclxuICAgIHotaW5kZXg6IDI7XHJcbn0iXX0= */");
-
-/***/ }),
-
-/***/ "xf3R":
-/*!*****************************************!*\
-  !*** ./src/app/data-service.service.ts ***!
-  \*****************************************/
-/*! exports provided: DataService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-
-let DataService = class DataService {
-    constructor(http) {
-        this.http = http;
-        //la url de su compu; la ip es la que se muestra cuando corren el comando ionic serve
-        //
-        this.urlLaptop = 'http://192.168.1.74/webservice/checkfood/';
-        this.url = 'http://localhost/webservice/checkfood/';
-        this.api = '/service.php';
-    }
-    post(model, params) {
-        return this.http.post(this.urlLaptop + model + this.api, params, { responseType: 'json' });
-    }
-};
-DataService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
-];
-DataService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
-        providedIn: 'root'
-    })
-], DataService);
-
-
 
 /***/ })
 

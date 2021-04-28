@@ -5,6 +5,7 @@ import { AlertController } from '@ionic/angular';
 
 import { DataService } from './../data-service.service';
 
+import { NavController } from '@ionic/angular';
 import { ModalService } from '../modalCambioPerfil';
 
 @Component({
@@ -17,10 +18,11 @@ export class PerfilPage implements OnInit {
   constructor(private modalCtrl:ModalController,
     public alertController: AlertController,
     private dataService: DataService,
-    private modalService: ModalService) { 
+    private modalService: ModalService, 
+    public navCtrl : NavController) { 
   
   }
-  id='2';
+  id= localStorage.getItem('usuario_id');
 foto = '' ;
 puntos ;
 dinero;
@@ -37,16 +39,18 @@ imagenes=[
 
 habilitarEditar = false;
   ngOnInit() {
+    
+  //console.log("id en perfil"+this.id);
     //petición para obtener datos del usuario y agregarlos desde que inicia la vista
     var info = {
       opcion:'perfil',
       id:this.id
   
     }
-    console.log(info);
+    //console.log(info);
     
     this.dataService.post('perfil', info).subscribe((data:any)=>{
-      console.log(data);
+      //console.log(data);
        this.foto='assets/fotosPerfil/' + data[0].avatar+'.png';
       document.getElementById("idNombre").setAttribute("value", data[0].username);
       document.getElementById("idContrasena").setAttribute("value", data[0].contrasena);
@@ -96,7 +100,7 @@ habilitarEditar = false;
     
     if (this.habilitarEditar == true){
       this.habilitarEditar=false;
-      console.log("mandar datos")
+      //console.log("mandar datos")
       document.getElementById("idEditar").setAttribute(
         "style","margin-right: 5%; background-color:green; color: white");
         document.getElementById("idNombre").setAttribute("disabled","true");
@@ -123,7 +127,7 @@ habilitarEditar = false;
 
     }
     else{
-      console.log("cambiar boton");
+      //console.log("cambiar boton");
       document.getElementById("idEditar").setAttribute(
         "style","margin-right: 5%; background-color:white; border-color:green; color: green");
 
@@ -137,6 +141,9 @@ habilitarEditar = false;
 
 
   cerrarSesion(){
+    
+    localStorage.setItem('usuario_id',null);
+    this.navCtrl.navigateRoot('/inicio-sesion');
     
 
   }
@@ -158,7 +165,7 @@ habilitarEditar = false;
       id:this.id,
       avatar:data
     }
-    console.log(info);
+    //console.log(info);
     this.dataService.post('perfil', info).subscribe((data:any)=>{
        
        if(data =! true){

@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'inicio-sesion',
     pathMatch: 'full'
   },
   {
@@ -24,9 +24,22 @@ const routes: Routes = [
   {
     path: 'modal-cupon',
     loadChildren: () => import('./modalCupon/modal-cupon.module').then( m => m.ModalCuponPageModule)
-  },  {
+  },
+  {
     path: 'categoria-seleccionada',
     loadChildren: () => import('./categoria-seleccionada/categoria-seleccionada.module').then( m => m.CategoriaSeleccionadaPageModule)
+  },
+  {
+    path: 'inicio-sesion',
+    loadChildren: () => import('./inicio-sesion/inicio-sesion.module').then( m => m.InicioSesionPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'categorias',
+    loadChildren: () => import('./categorias/categorias.module').then( m => m.CategoriasPageModule)
   },
 
 

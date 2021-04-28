@@ -12,7 +12,7 @@ export class CategoriaSeleccionadaPage implements OnInit {
   constructor(private dataService: DataService) {
 
    }
-  idCategoria='2';
+  idCategoria= localStorage.getItem('categoria_id');
   foto;
   categoriaNombre;
   productos =[];

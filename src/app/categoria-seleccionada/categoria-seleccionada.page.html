@@ -22,7 +22,7 @@
             <div class="card" (click)="seleccionarProducto(producto.id)"  routerLink="/producto" >
               <div text-align= “center” > <img src=" {{producto.imagen_rt}}">
               </div>
-              {{producto.nombre}}
+              <div style="font-family:OpenSans-SemiBold;">{{producto.nombre}}</div>
             </div>
                
 
@@ -33,9 +33,9 @@
       
   </div>
   
-  <button routerLink="/perfil" class="botoncitoPerfil"></button>
+  <button routerLink="/inicio-sesion" class="botoncitoPerfil"></button>
   <button routerLink="/home" class="botoncitoHome"></button>
-  <button routerLink="/categoria-seleccionada" class="botoncitoCategorias"></button>
+  <button routerLink="/categorias" class="botoncitoCategorias"></button>
   
 <img src="/assets/botonesMenu/categorias.png" alt="" class="menu">
 </body>

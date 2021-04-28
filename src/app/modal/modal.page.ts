@@ -1,7 +1,8 @@
-import { element } from 'protractor';
 import { Component, OnInit } from '@angular/core';
-import { faAmericanSignLanguageInterpreting } from '@fortawesome/free-solid-svg-icons';
 import { ModalController, NavParams } from '@ionic/angular';
+
+import { DataService } from '../data-service.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-modal',
@@ -11,9 +12,13 @@ import { ModalController, NavParams } from '@ionic/angular';
 export class ModalPage implements OnInit {
   banner_publicidad: any;
 
-  constructor(private navParams: NavParams, public viewCtrl: ModalController){}
-  user_id: any;
-  producto_id: any;
+  constructor(
+    private navParams: NavParams, 
+    public viewCtrl: ModalController,
+    public dataService: DataService,
+    ){}
+  user_id: number;
+  producto_id: number;
   data: any;
   nombre: any;
   tamano: any;
@@ -46,34 +51,69 @@ export class ModalPage implements OnInit {
     this.precio_soriana = this.data.fecha_actualizacion_soriana;
     this.user_id = this.data.user_id;
     this.producto_id = this.data.producto_id;
-    console.log(this.user_id);
   }
   //cerrar modal muestra de precios
   dismiss() {
     this.viewCtrl.dismiss();
   }
   //cabrir modal in modal para sugerir precios
-  sugerir(tienda){
+  sugerir(tienda, producto, user, ds){
+    
+    var nombre_t = tienda;
     setTimeout(function(){
       var modal = document.getElementById("myModal");
       modal.style.display = "block";
-    
       //cerrar modal in modal on backdrop click
       window.onclick = function(event) {
         if (event.target == modal) {
           modal.style.display = "none";
+          nombre_t = null;
         }
-      }      
-      //cerrar modal in modal on button click
-      let cancelButton: HTMLElement = document.getElementById("cancelar") as HTMLElement;
-      cancelButton.addEventListener("click", cerrar);
-      function cerrar(){
-        setTimeout(function(){
-          modal.style.display = "none";
-
-        }, 300);
+      }  
+       //cerrar modal in modal on button click
+       let cancelButton: HTMLElement = document.getElementById("cancelar") as HTMLElement;
+       cancelButton.addEventListener("click", function(){
+          setTimeout(function(){
+            modal.style.display = "none";
+            nombre_t = null;
+          }, 300);
+        });
+  
+      //aceptar y guardar precio nuevo
+      let acceptButton: HTMLElement = document.getElementById("aceptar") as HTMLElement; 
+      acceptButton.addEventListener("click",function(){ aceptar(producto, user, ds)});
+      function aceptar(producto, user, dataService){
+        if (nombre_t){
+            let precio = (<HTMLInputElement>document.getElementById("precio")).value;
+            precio = precio.toString();
+            precio = precio.slice(0, (precio.indexOf("."))+3);
+            const sendData = {
+              opcion: 'sugerirPrecio',
+              user_id: Number(user),
+              producto_id: Number(producto),
+              precio: Number(precio),
+              tienda: nombre_t
+            };
+            //console.log(sendData);
+            dataService.post('producto', sendData).subscribe(data =>{
+              console.log(data);
+              if (data){
+                 Swal.fire(
+                '¡Buen trabajo!',
+                '¡Haz contribuido exitosamente!',
+                'success'
+                )
+              }else{
+                Swal.fire({
+                icon: 'error',
+                title: 'Ha ocurrido un error',
+                text: 'Inténtalo de nuevo más tarde',
+              })
+              }
+              modal.style.display = "none";
+            })
+        }
       }
     }, 300);
- 
-    }
+  }
 }

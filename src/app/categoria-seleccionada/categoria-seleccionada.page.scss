@@ -20,12 +20,17 @@
     bottom:0px;
 }
 .titulo{
+    font-family:Cocogoose-Bold;
     margin-top: 10px;
     color: #81af4f;
     font-size: 20px;
-    font-weight: bolder;
 }
 .publicidad{
+    
+    background-image: url("/assets/publicidad/aurrera.png");
+    background-size: cover;
+    background-repeat: no-repeat;   
+    background-position: center;
     background-color: white;
     height: 15%;
     border-radius: 22px;
