@@ -22,7 +22,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.backButtonEvent();
       if (localStorage.getItem('usuario_id')){
-        this.router.navigate(['/home/']);
+        this.router.navigate(['/tablinks/']);
       }else{
         this.router.navigate(['/inicio-sesion/']);
       }

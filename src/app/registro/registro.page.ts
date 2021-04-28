@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AlertController } from '@ionic/angular';
 import { DataService } from './../data-service.service';
-import { Keyboard } from '@ionic-native/keyboard/ngx';
 import { NavController } from '@ionic/angular';
-import Swal  from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -16,9 +14,7 @@ export class RegistroPage implements OnInit {
   constructor(
     public alertController: AlertController,
     private dataService: DataService,
-    private keyboard: Keyboard, 
-    public navCtrl: NavController) { }
-
+    public navCtrl: NavController) {}
   ngOnInit() {
   }
   foto = 'assets/fotosPerfil/perfil0.png' ;
@@ -33,26 +29,18 @@ export class RegistroPage implements OnInit {
     "perfil7",
     "perfil8"
   ]
-  
   openModal() {
     document.getElementById('idFondo').style.display = 'block';
   }
-
   cambiarPerfil(data:any) {
-    
-    //console.log(data);
   document.getElementById('idFondo').style.display = 'none';
   this.avatar=data;
     this.foto='assets/fotosPerfil/' + data + '.png';
-
 }
-
 cerrarModalFoto(){
-  
   document.getElementById('idFondo').style.display = 'none';
 }
 registrar(){
-
   var info = {
     opcion:'registrar',
     nombre:((document.getElementById("nombreId") as HTMLInputElement).value),
@@ -61,17 +49,12 @@ registrar(){
     avatar:this.avatar  
   }
   this.dataService.post('registro', info).subscribe((data:any)=>{
-    //console.log(data);
     if(data!='error'){
-      //console.log("idi de usuairo: "+data[0] )
       localStorage.setItem('usuario_id', data[0]);
       this.alertOk();
     }
-
   })
-
 }
-
 alertError() {
   this.alertController.create({
     header: '¡Ocurrió un error!',
@@ -80,7 +63,6 @@ alertError() {
   }).then(res => {
     res.present();
   });
-
 };
 async alertOk() {
    const alert = await this.alertController.create({
@@ -92,17 +74,11 @@ async alertOk() {
         text: 'Aceptar',
         cssClass: 'primary',
         handler: () => {
-
-    
-          this.navCtrl.navigateRoot('/perfil');
-
+          this.navCtrl.navigateRoot('tablinks/perfil');
         }
       },
     ]
   });
-
    alert.present();
 }
-
-
 }

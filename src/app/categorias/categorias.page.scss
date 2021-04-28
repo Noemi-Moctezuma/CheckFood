@@ -28,47 +28,7 @@
     margin-bottom: 20px;
     color: black;
 }
-.botoncitoPerfil{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    //opacity: 0;
-    background-color: green;
-    border-radius: 50%;
-    margin-top: -10vh;
-    margin-left: 61%;
-    z-index: 100
-}
-.botoncitoHome{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    //opacity: 0;
-    background-color: blue;
-    border-radius: 50%;
-    z-index: 100;
-    margin-top: -13vh;
-    margin-left: 45%;
-}
-.botoncitoCategorias{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    background-color: red;
-    //opacity: 0;
-    border-radius: 50%;
-    margin-top: -10vh;
-    margin-left: 29%;
-    z-index: 100
-}
-.menu{
-    width: 50%;
-    position:absolute; 
-    left:25%; 
-    right:25%; 
-    bottom:0px;
-    z-index: 90;
-}
+
 .fondoCategorias{
 
     position: absolute;

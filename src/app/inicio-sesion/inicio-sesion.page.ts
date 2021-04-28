@@ -36,7 +36,7 @@ iniciarSesion(){
       
     localStorage.setItem('usuario_id', data[0].id);
     
-    this.navCtrl.navigateRoot('/perfil');
+    this.navCtrl.navigateRoot('/tablinks/perfil');
     }
     else{
       this.alertError();

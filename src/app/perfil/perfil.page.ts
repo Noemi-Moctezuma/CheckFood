@@ -38,23 +38,16 @@ imagenes=[
 
 habilitarEditar = false;
   ngOnInit() {
-    
-  //console.log("id en perfil"+this.id);
     //petición para obtener datos del usuario y agregarlos desde que inicia la vista
     var info = {
       opcion:'perfil',
       id:this.id
-  
     }
-    //console.log(info);
-    
     this.dataService.post('perfil', info).subscribe((data:any)=>{
-      //console.log(data);
-       this.foto='assets/fotosPerfil/' + data[0].avatar+'.png';
+      this.foto='assets/fotosPerfil/' + data[0].avatar+'.png';
       document.getElementById("idNombre").setAttribute("value", data[0].username);
       document.getElementById("idContrasena").setAttribute("value", data[0].contrasena);
       document.getElementById("idCorreo").setAttribute("value",data[0].correo);
-
     })
   
   }

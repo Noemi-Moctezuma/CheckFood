@@ -11,7 +11,7 @@
       <ion-input style="border:3px solid #c75142;" type="text" class="dato" id="idNombre" [disabled]="true"></ion-input>
       <ion-input style="border:1px solid #c75142;font-size: 20px; font-weight: bolder;" type="password" class="dato" disabled id="idContrasena"  ></ion-input>
       <ion-input style="border:1px solid #c75142;" type="text" class="dato" id="idCorreo" disabled></ion-input>
-      <ion-button style="border:3px solid #6b7932; text-transform: none; --background:white; padding: 0!important; --border-radius:18px" class="dato" (click)="abrirModalCupon()" >
+      <ion-button style="--border-width:3px; --border-style:solid; --border-color: #6b7932; text-transform: none; --background:white; padding: 0!important; --border-radius:18px" class="dato" (click)="abrirModalCupon()" >
         Canjear cupón
       </ion-button>
 
@@ -28,56 +28,33 @@
           </ion-button>
         </ion-col>
         <ion-col></ion-col>
-
       </ion-row>
-     
-      
     </div>
-
-    
     <div class="jw-modal-wrapper" id="idFondo">
-  
       <div class="jw-modal">
         <div class="jw-modal-body">
-
           <div class="modal-top">
             <button class="botonCerrar"  (click)="cerrarModalFoto()">
               x
             </button>
             <p>Cambiar foto de perfil</p>
-
           </div>
           <div class="linea-punteada"></div>
           <div>
             <ion-grid>
               <ion-row>
-                
                 <ion-col size="6" *ngFor=" let imagen of imagenes" >
-            
                   <div text-align= “center”> <img src="assets/fotosPerfil/{{imagen}}.png" class="foto" (click)="cambiarPerfil(imagen) ">
                     </div>
                 </ion-col>
-                  
-            
               </ion-row>
             </ion-grid>
           </div>
-            
-            
-     
         </div>
       </div>
       <div class="jw-modal-background">
-
       </div>
-      
       </div>
   </div>
-  
-  <button routerLink="/perfil" class="botoncitoPerfil"></button>
-  <button routerLink="/home" class="botoncitoHome"></button>
-  <button routerLink="/categorias" class="botoncitoCategorias"></button>
-  
-<img src="/assets/botonesMenu/perfil.png" alt="" class="menu">
 </body>
 

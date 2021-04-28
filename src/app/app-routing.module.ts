@@ -41,7 +41,10 @@ const routes: Routes = [
     path: 'categorias',
     loadChildren: () => import('./categorias/categorias.module').then( m => m.CategoriasPageModule)
   },
-
+  {
+    path: 'tablinks',
+    loadChildren: () => import('./tablinks/tablinks.module').then( m => m.TablinksPageModule)
+  },
 
 ];
 
