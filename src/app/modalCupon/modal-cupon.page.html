@@ -1,41 +1,36 @@
-<ion-header >
-
+<ion-header class="ion-no-border header">
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button class="cls-button" color="dark" defaultHref="" icon="close" (click)="cancelar()">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 <body style="height:100%" >
   <div class="fondo">
-    
-    <p class="titulo">¿Canjear cupón?</p>
-
-    <div class="linea-punteada">
-
-     
-    </div>
+    <p class="titulo">Canjear cupón</p>
     <div class="texto">
-      <p>Usted cuenta con:</p>
-      <p style="font-family:Couture-Bold; font-size: 20px; font-weight: bolder;">
-        {{puntos}} puntos  
+      <p>Usted cuenta con: 
+        <span style="font-family:Opensans-Bold; font-size: 20px; ">{{puntos}} puntos</span>
+        lo que equivale a: 
+        <span style=" font-family:Opensans-Bold; font-size: 20px; ">{{dinero | currency}} MXN</span>.
       </p>
-      <p>lo que equivale a:</p>
-      <p style=" font-family:Couture-Bold; font-size: 20px; font-weight: bolder;">
-         {{dinero}} pesos mexicanos
-      </p>
-      <p> Si desea cambiarlos presione el botón "canjear puntos", al hacerlo se mostrará el cupón de descuento
-        el cual puede mostrar en las siguientes tiendas de autoservicio: </p>
+      
+      <p> Si desea cambiarlos presione el botón "canjear puntos", para generar el cupón de descuento
+        que puede mostrar en los siguinetes establecimientos: </p>
       <p>- La Comer
         <br>
-        - Bodega Ahurrera
+        - Bodega Aurrera
         <br>
         - Soriana</p>
-      <p>Al canjear el cupón de descuento los puntos se eliminarán de su cuenta por lo que se recomienda tomar captura de pantalla o anotar el cupón de descuento</p>
+      <p style="font-size: 14px">Al canjear el cupón de descuento, los puntos se restarán de su cuenta por lo que le recomendamos tomar captura de pantalla o anotar el código del cupón.</p>
     </div>
-
-
-    <button class="boton" (click)="aceptar()" style="margin-right: 5%; background-color:#81af4f;">
+    <ion-button class="boton" (click)="aceptar()" style=" --background:#81af4f;">
       Canjear cupón
-    </button>
-    <button class="boton" (click)="cancelar()" style="margin-left: 5%; background-color: #c75142;">
+    </ion-button>
+    <ion-button class="boton" (click)="cancelar()" style=" --background: #c75142;">
       Cancelar
-    </button>
+    </ion-button>
 
   </div>
 

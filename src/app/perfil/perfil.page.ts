@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
+import { AlertController } from '@ionic/angular';
+import { DataService } from './../data-service.service';
 import { ModalController } from '@ionic/angular';
 import { ModalCuponPage } from '../modalCupon/modal-cupon.page';
-import { AlertController } from '@ionic/angular';
-
-import { DataService } from './../data-service.service';
-
-import { NavController } from '@ionic/angular';
 import { ModalService } from '../modalCambioPerfil';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-perfil',
@@ -102,7 +101,7 @@ habilitarEditar = false;
       this.habilitarEditar=false;
       //console.log("mandar datos")
       document.getElementById("idEditar").setAttribute(
-        "style","margin-right: 5%; background-color:green; color: white");
+        "style","--background:#81af4f;; color: white");
         document.getElementById("idNombre").setAttribute("disabled","true");
         document.getElementById("idContrasena").setAttribute("disabled","true");
         document.getElementById("idCorreo").setAttribute("disabled","true");
@@ -129,7 +128,7 @@ habilitarEditar = false;
     else{
       //console.log("cambiar boton");
       document.getElementById("idEditar").setAttribute(
-        "style","margin-right: 5%; background-color:white; border-color:green; color: green");
+        "style"," --background:white; border-color:#81af4f; color: #81af4f");
 
         document.getElementById("idNombre").removeAttribute("disabled");
         document.getElementById("idContrasena").removeAttribute("disabled");

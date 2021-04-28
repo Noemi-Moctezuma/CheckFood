@@ -1,49 +1,50 @@
-
+.header{
+    position: absolute;
+}
+.cls-button {
+    border-radius: 50%;
+    --box-shadow:none;
+    --background: #d7e6a3!important;
+}
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+}
 .fondo{
     text-align:center;
     background-color: #f6f5f4;
     border:0px solid #f6f5f4;
-    border-radius:70px;
+    border-radius: 35px;
     margin: 5%;
-    height: 93%;
+    height: 95%;
 }
 .titulo{
     margin: 0%;
-    border-radius: 70px 70px 0px 0px;
-    -moz-border-radius: 70px 70px 0px 0px;
-    -webkit-border-radius: 70px 70px 0px 0px;
+    border-radius: 35px 35px 0 0;
     background-color: #81af4f;
     height: 10%;
-    
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
     color: white;   
     font-size: 25px;
-}
-
-.linea-punteada{
-    height:35px;
-    border-bottom-style: dotted; 
-    border-bottom-width: 10px;
-    margin-bottom: 20px;
+    font-family: Opensans-Bold;
 }
 .boton{
     border:2px solid;
     color: white;
     border-radius:18px;
+    --border-radius:18px;
     height: 40px;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
     width: 35%;
+    text-transform: none;
 }
 .texto{
     font-family: Cocogoose-Light;
     color: #c75142;
     margin: 20px;
-}
-.dato{
-    
 }
