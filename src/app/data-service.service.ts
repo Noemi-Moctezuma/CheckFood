@@ -9,7 +9,8 @@ export class DataService {
   constructor(private http: HttpClient) { }
   //la url de su compu; la ip es la que se muestra cuando corren el comando ionic serve
   //
-    urlLaptop = 'http://192.168.1.74/webservice/checkfood/';
+    // urlLaptop = 'http://192.168.1.74/webservice/checkfood/';
+    urlLaptop = 'http://localhost/webservice/checkfood/';
     url = 'http://localhost/webservice/checkfood/';
     api = '/service.php';
     

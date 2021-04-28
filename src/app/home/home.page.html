@@ -1,27 +1,120 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" style="background-color: white;">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="fondo">
+    <div class="head">
+      <div class="text">
+        ¿QUÉ ESTÁS BUSCANDO?
+      </div>
+      <div class="linea-punteada"></div>
+      <ion-img src="/assets/publicidad/aurrera.png" class="publicidad"></ion-img>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  <ion-img width="80" height="80" src="assets/fotos/barras-de-granola-nature-valley-avena-y-miel.png"></ion-img>
-  <ion-button routerLink="/producto">producto</ion-button>
+
+      <div class="barra-busqueda">
+        <ion-searchbar (ionChange)="getItems($event)" cancel-button-text="Cancelar" placeholder="" showCancelButton="focus" class="barra-busqueda"></ion-searchbar>
+        <ion-list *ngIf="isItemAvailable" style="position: absolute; width: 100%; max-height: 200px; overflow-y: scroll;">
+          <ion-item *ngFor="let nombre of items" style="width: 500%;" (click)="goProd(nombre);">{{ nombre }}</ion-item>
+      </ion-list>
+      </div>    
+
+
+    </div>
   </div>
 
-  
-  <ion-button routerLink="/perfil">Perfil</ion-button>
-  <ion-button routerLink="/categoria-seleccionada">Categoria seleccionada</ion-button>
+
+<div class="cont">
+  <div>
+    <hr>
+    <p class="tproductos"> <span style="background-color: #f6f5f4;">PRODUCTOS DESTACADOS</span> </p>
+  </div>
+  <ion-grid style="width: 93%; margin-left: 4%;">
+    <ion-row>
+
+      <ion-col>
+        <div>
+          <ion-img src="/assets/fotos/chocoroles.png" class="prod-img"></ion-img>
+          <p class="tnombre">Chocorroles Marinela</p>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-img src="/assets/fotos/frijoles-charros-la-costena.png" class="prod-img"></ion-img>
+          <p class="tnombre"> Frijoles charros La Costeña</p>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-img src="/assets/fotos/cookie-crisp.png" class="prod-img"></ion-img>
+          <p class="tnombre">Cookie Crisp</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+<div class="cont" style="margin-top: 135%;">
+  <div>
+    <hr>
+    <p class="tproductos"> <span style="background-color: #f6f5f4;">PRODUCTOS SIMILARES</span> </p>
+  </div>
+  <ion-grid style="width: 93%; margin-left: 4%;">
+    <ion-row>
+
+      <ion-col>
+        <div>
+          <ion-img src="/assets/fotos/papas-fritas-flamin-hot.png" class="prod-img"></ion-img>
+          <p class="tnombre">Flaming hot Sabirtas</p>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-img src="/assets/fotos/churritos-nopalia.png" class="prod-img"></ion-img>
+          <p class="tnombre">Churros de nopal Nopalia</p>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-img src="/assets/fotos/papas-toreadas-sabor-chile-habanero.png" class="prod-img"></ion-img>
+          <p class="tnombre">Toreadas Barcel</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+<div class="cont" style="margin-top: 185%;">
+  <div>
+    <hr>
+    <p class="tproductos"> <span style="background-color: #f6f5f4;">PRODUCTOS RECOMENDADOS</span> </p>
+  </div>
+  <ion-grid style="width: 93%; margin-left: 4%;">
+    <ion-row>
+
+      <ion-col>
+        <div>
+          <ion-img src="/assets/fotos/ades-almendra-sabor-vainilla.png" class="prod-img"></ion-img>
+          <p class="tnombre">Adeas sabor vainilla</p>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-img src="/assets/fotos/salchichas-de-pechuga-de-pavo-san-rafael.png" class="prod-img"></ion-img>
+          <p class="tnombre">Salchicha de pavo San Rafael</p>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-img src="/assets/fotos/fitness-fruits.png" class="prod-img"></ion-img>
+          <p class="tnombre">Fitness Nestle</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
 
 </ion-content>

@@ -1,27 +1,84 @@
-#container {
-  text-align: center;
+.fondo{
+  position:absolute;
+  text-align:center;
+  background-color: #f6f5f4;
+  border:3px solid #f6f5f4;
+  border-radius:40px;
+  margin: 5%;
+  height: 95%;
+  width: 90%;
+}
+.head{
+align-content: center;
+margin: -1%;
+position:absolute;
+background-color: #81af4f;
+height: 10%;
+width: 102%;
+border-radius: 30px 30px 0px 0px;
+-moz-border-radius: 30px 30px 0px 0px;
+-webkit-border-radius: 30px 30px 0px 0px;
 
+  .text{
+  font-size: 18px;
+  font-family: Cocogoose-Bold;
+  margin-top: 8%;
+  text-align:center;
+  color: white;
+  }
+  .linea-punteada{
+  margin-top: 6%;
+  height: 25px;
+  border-bottom-style: dotted; 
+  border-bottom-width: 5px;
+  margin-bottom: 20px;
+  }
+  .barra-busqueda{
+    position: absolute center;
+    margin-top: -6%;
+    --cancel-button-color: #81af4f;
+    --border-radius: 40px;
+    --background: white;
+  }
+  
+}
+.publicidad{
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  align-content: center;
+  margin-top: 13%;
+  margin-left: 10%;
+  width: 80%;
 }
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+hr {
+  position: static;
+  height: 3px;
+  background-color: white;
+  margin-top: -5%;
 }
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.cont{
+  position: absolute;
+  margin-left: 1%;
+  margin-top: 84%;
+  width: 95%;
 }
-
-#container a {
-  text-decoration: none;
+.tproductos{
+  position: static;
+  font-family: Cocogoose-LightItalic;
+  text-align: center;
+  margin-top: -4%;
+  font-size: 12px;
+  color: #81af4f;
+  width: 100%;
+}
+.prod-img{
+  position: absolute;
+  margin-top: -10%;
+}
+.tnombre{
+  color: #c75142;
+  position: absolute;
+  font-family: Cocogoose-LightItalic;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 90%;
 }
