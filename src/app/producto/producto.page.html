@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border header">
   <ion-toolbar >
     <ion-buttons slot="start">
-      <ion-back-button class="back-button" color="dark" defaultHref="tablinks/home"></ion-back-button>
+      <ion-back-button class="back-button" color="dark" defaultHref="" (click)="gotoBack()"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -16,7 +16,7 @@
           <fa-icon style="pointer-events:none;" icon="dollar-sign" size=2x></fa-icon>
         </ion-fab-button>
       <div class="container-info">
-        <p class="prod">{{ nombre }} ({{ cantidad_tamano }})</p>
+        <p class="prod">{{ nombre }} <span *ngIf="cantidad_tamano">({{ cantidad_tamano }})</span></p>
         <ion-grid *ngIf=" azucares || sodio || calorias || adulcorante || fibra || grasas ">
           <ion-row>
             <ion-col class="col-nopadding"  *ngIf= "azucares">

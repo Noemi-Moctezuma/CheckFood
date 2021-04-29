@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { DataService } from './../data-service.service';
+import { Location } from '@angular/common';
 import { ModalController } from '@ionic/angular';
 import { ModalPage } from './../modal/modal.page';
 
@@ -34,13 +35,15 @@ sellos: any;
 imagen_rt: any;
 data_modal: any[];
 producto_id = localStorage.getItem('producto_id');
-//producto_id = 1;
-user_id = 2;
+user_id:any;
+
 banner_publicidad: any;
   constructor(
     private dataService: DataService,
-    public modalController: ModalController
+    public modalController: ModalController,
+    private location: Location,
   ) { }
+
 
   async precios() {
     const modal = await this.modalController.create({
@@ -55,7 +58,7 @@ banner_publicidad: any;
       id: this.producto_id
     };
     this.dataService.post('producto', sendData).subscribe(data => {
-        console.log(data);
+        //console.log(data);
         
         this.producto_id = data[0].id;
         this.nombre = data[0].nombre;
@@ -81,7 +84,7 @@ banner_publicidad: any;
         this.sellos = data[0].sellos;
         this.imagen_rt = data[0].imagen_rt;
         //obtener el id del usuario
-        //this.user_id = parseInt(localStorage.getItem('id'), 10);
+        this.user_id = parseInt(localStorage.getItem('usuario_id'), 10);
         this.data_modal = [{
           precio_comer: this.precio_comer,
           nombre: this.nombre,
@@ -100,5 +103,7 @@ banner_publicidad: any;
         }];
       });
   }
-
+  gotoBack() {
+    this.location.back();
+    }
 }

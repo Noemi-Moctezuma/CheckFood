@@ -1,97 +1,71 @@
+.header{
+    position: absolute;
+}
+.cls-button {
+    border-radius: 50%;
+    --box-shadow:none;
+    --background: #d7e6a3!important;
+}
+.contenido{
+    --background: white!important;
+}
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+}
 .fondo{
-    position:absolute;
-    text-align:center;
     background-color: #f6f5f4;
-    border:3px solid #f6f5f4;
-    border-radius:40px;
-    margin: 5%;
-    height: 93%;
+    margin: 25px;
+    border-radius: 35px;
+    overflow: auto;
 }
 .foto{
     margin:0px auto;
     width: 90px;
     margin-top: -28%;
 }
-.menu{
-    width: 50%;
-    position:absolute; 
-    left:25%; 
-    right:25%; 
-    bottom:0px;
-}
 .titulo{
     font-family:Cocogoose-Bold;
     margin-top: 10px;
     color: #81af4f;
     font-size: 20px;
+    text-align: center;
 }
 .publicidad{
-    
-    background-image: url("/assets/publicidad/aurrera.png");
-    background-size: cover;
-    background-repeat: no-repeat;   
-    background-position: center;
-    background-color: white;
-    height: 15%;
-    border-radius: 22px;
-    margin-bottom: 20px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .linea-punteada{
-    height: 25px;
+    height: 15px;
     border-bottom-style: dotted; 
     border-bottom-width: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 5%;
 }
-.botoncitoPerfil{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    //opacity: 0;
-    background-color: green;
-    border-radius: 50%;
-    margin-top: 193%;
-    margin-left: 61%;
-    z-index: 100
-}
-.botoncitoHome{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    //opacity: 0;
-    background-color: blue;
-    border-radius: 50%;
-    z-index: 100;
-    margin-top: 186%;
-    margin-left: 45%;
-}
-.botoncitoCategorias{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    background-color: red;
-    //opacity: 0;
-    border-radius: 50%;
-    margin-top: 193%;
-    margin-left: 29%;
-    z-index: 100
-}
-
-.card{
-
-    border-radius: 10px;
-    background-color:white;
+.element{
+    margin: 5px!important;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: f6f5f4;
+    padding: 0;
+    overflow: hidden;
+  }
+  .tnombre{
+    color: #c75142;
+    font-family: Cocogoose-Light;
+    font-size: 11px;
+    text-align: center;
     margin: 5px;
-    padding: 5px;
-}
-.bloque{
+  }.container-img{
+    overflow: hidden;
+    border-radius: 0 0 20px 20px ;
     background-color: #f6f5f4;
-    border-radius:40px;
-    height: 50%;
-    margin: 50px;
-    
-
-}
-.extra{
-    background-color: #f6f5f4;
-}
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    padding: 0 1%;
+    margin: 5% 0;
+  }

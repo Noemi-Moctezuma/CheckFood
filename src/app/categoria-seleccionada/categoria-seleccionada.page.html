@@ -1,5 +1,13 @@
+<ion-header class="ion-no-border header">
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button class="cls-button" color="dark" defaultHref="/tablinks/categorias">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-<body style="height:100%" >
+<ion-content fullscreen class="contenido">
   <div class="fondo">
       <img src="/assets/categoriaSeleccionada/0.png" >
       <div class="foto">
@@ -9,30 +17,19 @@
         {{categoriaNombre}}
       </div>
       <div class="linea-punteada"></div>
-      <div class="publicidad">
+      <ion-img class="publicidad" src="/assets/publicidad/aurrera.png">
         <!--<img src="/assets/categoriaSeleccionada/publicidad.png" >-->
-      </div>
-      <ion-content class="bloque">
-        <ion-grid class="extra">
-          <ion-row  class="extra">
-            <ion-col size="4" *ngFor=" let producto of productos">
-              <div class="card" (click)="seleccionarProducto(producto.id)"  routerLink="/producto" >
-                <div text-align= “center” > 
-                  <img src=" {{producto.imagen_rt}}">
-                </div>
-                <div style="font-family:OpenSans-SemiBold;">{{producto.nombre}}</div>
+      </ion-img>
+        <div class="wrapper" >
+              <div class="element" *ngFor=" let producto of productos; " size="4" (click)="seleccionarProducto(producto.id)"  routerLink="/producto">
+                <div class="container-img">
+                    <ion-img src=" {{producto.imagen_rt}}"></ion-img>
+                  </div>
+                  <ion-row class="tnombre">
+                    {{producto.nombre}} 
+                  </ion-row>
               </div>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-content>
-      
+        </div>
   </div>
-  
-  <button routerLink="/inicio-sesion" class="botoncitoPerfil"></button>
-  <button routerLink="/home" class="botoncitoHome"></button>
-  <button routerLink="/categorias" class="botoncitoCategorias"></button>
-  
-<img src="/assets/botonesMenu/categorias.png" alt="" class="menu">
-</body>
+</ion-content>
 

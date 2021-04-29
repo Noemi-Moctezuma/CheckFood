@@ -1,7 +1,7 @@
-import { stringify } from '@angular/compiler/src/util';
 import { Component } from '@angular/core';
 import { DataService } from './../data-service.service';
 import { NavController } from '@ionic/angular';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-home',
@@ -63,4 +63,8 @@ idP;
      })
 
      }
+     seleccionarProducto(id){
+      //console.log(id);
+      localStorage.setItem('producto_id', id);
+    }
 }

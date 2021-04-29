@@ -19,15 +19,15 @@
       <ion-grid >
         <hr class="hr-text" data-content="PRODUCTOS DESTACADOS">        
         <ion-row>
-          <ion-col>
+          <ion-col (click)="seleccionarProducto(20)"  routerLink="/producto">
             <div class="container-img">
               <ion-img src="/assets/fotos/chocoroles.png"  ></ion-img>
             </div>
             <ion-row >
-              <p class="tnombre">Chocorroles Marinela</p>
+              <p class="tnombre">ChocoRoles</p>
             </ion-row>
           </ion-col>
-          <ion-col>
+          <ion-col (click)="seleccionarProducto(37)"  routerLink="/producto">
             <div class="container-img">
               <ion-img src="/assets/fotos/frijoles-charros-la-costena.png" ></ion-img>
             </div>
@@ -35,7 +35,8 @@
               <p class="tnombre"> Frijoles charros La Costeña</p>
             </ion-row>
           </ion-col>
-          <ion-col>
+
+          <ion-col (click)="seleccionarProducto(26)"  routerLink="/producto">
             <div class="container-img">
               <ion-img src="/assets/fotos/cookie-crisp.png" ></ion-img>
             </div>
@@ -47,56 +48,60 @@
         <hr class="hr-text" data-content="PRODUCTOS SIMILARES">        
 
         <ion-row>
-          <ion-col>
+          <ion-col (click)="seleccionarProducto(12)"  routerLink="/producto">
             <div class="container-img">
               <ion-img src="/assets/fotos/papas-fritas-flamin-hot.png" ></ion-img>
             </div>
             <ion-row>
-              <p class="tnombre">Flaming hot Sabirtas</p>
+              <p class="tnombre">Papas fritas Flamin´ Hot</p>
             </ion-row>
           </ion-col>
-          <ion-col>
+
+          <ion-col (click)="seleccionarProducto(38)"  routerLink="/producto">
             <div class="container-img">
               <ion-img src="/assets/fotos/churritos-nopalia.png" ></ion-img>
             </div>
             <ion-row>
-              <p class="tnombre">Churros de nopal Nopalia</p>
+              <p class="tnombre">Churritos Nopalia</p>
             </ion-row>
           </ion-col>
-          <ion-col>
+
+          <ion-col (click)="seleccionarProducto(11)"  routerLink="/producto">
             <div class="container-img">
               <ion-img src="/assets/fotos/papas-toreadas-sabor-chile-habanero.png" ></ion-img>
             </div>
           <ion-row>
-            <p class="tnombre">Toreadas Barcel</p>
+            <p class="tnombre">Papas Toreadas sabor chile habanero</p>
           </ion-row>
           </ion-col>
         </ion-row>
         <hr class="hr-text" data-content="PRODUCTOS RECOMENDADOS">        
 
         <ion-row>
-          <ion-col>
+          <ion-col (click)="seleccionarProducto(10)"  routerLink="/producto">
             <div class="container-img">
               <ion-img src="/assets/fotos/ades-almendra-sabor-vainilla.png" ></ion-img>
             </div>
           <ion-row>
-            <p class="tnombre">Adeas sabor vainilla</p>
+            <p class="tnombre">Adés Almendra sabor Vainilla</p>
           </ion-row>
           </ion-col>
-          <ion-col>
+
+          <ion-col (click)="seleccionarProducto(32)"  routerLink="/producto">
             <div class="container-img">
               <ion-img src="/assets/fotos/salchichas-de-pechuga-de-pavo-san-rafael.png" ></ion-img>
             </div>
             <ion-row>
-              <p class="tnombre">Salchicha de pavo San Rafael</p>
+              <p class="tnombre">Salchichas de pechuga de pavo San Rafael</p>
             </ion-row>
           </ion-col>
-          <ion-col>
+
+          <ion-col (click)="seleccionarProducto(29)"  routerLink="/producto">
             <div class="container-img">
               <ion-img src="/assets/fotos/fitness-fruits.png" ></ion-img>
             </div>
             <ion-row>
-              <p class="tnombre">Fitness Nestle</p>
+              <p class="tnombre">Fitness Fruits</p>
             </ion-row>
           </ion-col>
         </ion-row>

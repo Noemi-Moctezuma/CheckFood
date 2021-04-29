@@ -1,27 +1,84 @@
-<body style="height:100%" >
+<ion-content overflow-scroll="false" [fullscreen]="true" style="--background: white; ">
   <div class="fondo">
-    <div class="franja">
-      ¿QUIZÁ POR TEMÁTICA?
+    <div class="franja-verde">
+      <p class="text">
+        ¿QUIZÁ POR TEMÁTICA?
+      </p>
     </div>  
-    <div class="linea-punteada">
+    <div class="linea-punteada"></div>
+<ion-grid>
+  <ion-row class="fondoCategorias">
+    <ion-col size="4">
+      <span class="helper"></span><img src="assets/categoriaSeleccionada/1.png" class="foto" (click)="seleccionarCategoria(1) ">
+      <div class="titulo">
+        LÁCTEOS Y REFRIGERADOS
+      </div>
+    </ion-col>
+    <ion-col size="4">
+            
+      <span class="helper"></span><img src="assets/categoriaSeleccionada/2.png" class="foto" (click)="seleccionarCategoria(2) ">
+      <div class="titulo">
+        BEBIDAS
+      </div>
+    </ion-col>
+    <ion-col size="4">
+            
+      <span class="helper"></span><img src="assets/categoriaSeleccionada/3.png" class="foto" (click)="seleccionarCategoria(3) ">
+      <div class="titulo">
+        BOTANAS
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="fondoCategorias">
+    <ion-col size="4">
+      <span class="helper"></span><img src="assets/categoriaSeleccionada/4.png" class="foto" (click)="seleccionarCategoria(4) ">
+      <div class="titulo">
+        DULCES
+      </div>
+    </ion-col>
+    <ion-col size="4">
+            
+      <span class="helper"></span><img src="assets/categoriaSeleccionada/5.png" class="foto" (click)="seleccionarCategoria(5) ">
+      <div class="titulo">
+        BEBÉS
+      </div>
+    </ion-col>
+    <ion-col size="4">
+            
+      <span class="helper"></span><img src="assets/categoriaSeleccionada/6.png" class="foto" (click)="seleccionarCategoria(6) ">
+      <div class="titulo">
+        CEREALES
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="fondoCategorias">
+    <ion-col size="4">
+        <span class="helper"></span><img src="assets/categoriaSeleccionada/7.png" class="foto" (click)="seleccionarCategoria(7) ">
+      
+      <div class="titulo">
+        SALCHICHONERÍA Y CARNES
+      </div>
+    </ion-col>
+    <ion-col size="4">
+        <span class="helper"></span><img src="assets/categoriaSeleccionada/8.png" class="foto" (click)="seleccionarCategoria(8) ">
+        <div class="titulo">
+        ENLATADOS Y CONSERVAS
+      </div>
+    </ion-col>
+    <ion-col size="4">
+            
+        <span class="helper"></span><img src="assets/categoriaSeleccionada/9.png" class="foto" (click)="seleccionarCategoria(9) ">
+        <div class="titulo">
+        ALIMENTOS SALUDABLES
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
-    </div>
-
-<div class="fondoCategorias">
-<img src="assets/categoriaSeleccionada/fondoCategorias.png" alt="" style="z-index: 2;">
-</div>
-<div class="fondoCategorias" style="margin-top:28vh;">
-  <img src="assets/categoriaSeleccionada/fondoCategorias.png" alt="" style="z-index: 2;">
-
-</div>
-<div class="fondoCategorias" style="margin-top:48vh;">
-  <img src="assets/categoriaSeleccionada/fondoCategorias.png" alt="" style="z-index: 2;">
-
-</div>
         
-    <ion-grid>
-      <ion-row>
-        <ion-col size="4" *ngFor="let item of map | keyvalue" >
+    <!-- <ion-grid>
+      <ng-container *ngFor="let item of map | keyvalue">
+        <ion-col size="4">
           
           <div text-align= “center” class="foto"> 
             <img src="assets/categoriaSeleccionada/{{item.key}}.png" class="foto" (click)="seleccionarCategoria(item.key) ">
@@ -31,9 +88,7 @@
           </div>
         </ion-col>
           
-    
-      </ion-row>
-    </ion-grid>
+    </ng-container>
+    </ion-grid> -->
   </div>
-</body>
-
+</ion-content>
